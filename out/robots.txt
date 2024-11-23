@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Disallow: /start/?
+Disallow: /info/
+Disallow: /settings/
+
+Sitemap: https://encrypt.zeoseven.com/sitemap.xml
