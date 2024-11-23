@@ -131,7 +131,7 @@ const Header = () => {
 
 const Footer = () => {
     return (
-        <footer className="footer-div">
+        <footer className="footer-div p-5">
             <div>ZSEncrypt 已诞生：<span id="footer_date1">000天00时00分00秒</span></div>
             <div>
                 <img src="https://zeoseven.com/_const/s/beian.icon-v1.png" className="icp-beian" /> <a href="https://beian.mps.gov.cn/#/query/webSearch?code=41130302000659" rel="noreferrer" target="_blank">豫公网安备41130302000659号</a>
