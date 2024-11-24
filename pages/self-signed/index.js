@@ -80,7 +80,7 @@ export default ({ dTitle, copy }) => {
                 setLoading('d-none');
                 setError(err.message);
             }
-        }, 1);
+        }, 500);
     };
 
     return (<>
