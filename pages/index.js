@@ -10,7 +10,7 @@ export default () => {
         <h1 className="display-5 mb-5">ZSEncrypt</h1>
         <div className="mb-5">
             <p className="mb-3">ZSEncrypt 的目的是提供一个简单快速申请有效 TLS/SSL 证书的平台，快速为您的站点提供 HTTPS 协议访问，而不是 ACME 自动化。</p>
-            <p>支持 单域名证书、多域名证书 和 通配符证书，一切来自 <a href="https://letsencrypt.org/" target="_blank" rel="noopener noreferrer nofollow">Let's Encrypt</a> !</p>
+            <p>支持 单域名证书、多域名证书 和 通配符证书，一切来自 <a href="https://letsencrypt.org/" target="_blank">Let's Encrypt</a> !</p>
         </div>
         <div className="mb-4">
             <h2 className="fw-light mb-3">开始</h2>

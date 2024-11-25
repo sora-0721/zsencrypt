@@ -143,7 +143,7 @@ export default ({ copy, dTitle, getQuery }) => {
     <div class="step1Hide step2Show">
 
 <div class="mb-4">
-    <label for="x-q-domain">*域名</label>
+    <label for="x-q-domain">域名</label>
     <textarea id="x-q-domain" class="in_domains inputLang form-control q-form" rows="1"
         placeholder-cn="example.org, *.example.org"></textarea>
 </div>
@@ -156,7 +156,7 @@ export default ({ copy, dTitle, getQuery }) => {
         </div>
 
 <div class="mb-3">
-    <p>*证书类型(私钥)</p>
+    <p>证书类型(私钥)</p>
 
     <input type="radio" name="q-privateKey" id="q-privateKey-auto" value="auto" class="d-none" checked>
     <label for="q-privateKey-auto" class="label-radio">自动</label>
@@ -218,7 +218,7 @@ export default ({ copy, dTitle, getQuery }) => {
 
 
         <div class="mb-5">
-            <label for="x-q-email">*电子邮箱地址</label>
+            <label for="x-q-email">电子邮箱地址</label>
             <div class="FlexBox">
                 <div class="FlexItem">
                     <input class="in_email inputLang form-control q-form" id="x-q-email"
