@@ -92,7 +92,7 @@ img {
 input[type="radio"]:checked + .label-radio {
     outline: 0;
     box-shadow: none;
-    background-color: #00ff6e40;
+    background-color: #00ff6e25;
 }
 
 

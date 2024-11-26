@@ -3,7 +3,7 @@ import Head from 'next/head';
 import forge from 'node-forge';
 
 export default ({ dTitle, copy }) => {
-    const [domain, setDomain] = useState(null);
+    const [domainInput, setDomainInput] = useState('');
     const [certificate, setCertificate] = useState('');
     const [privateKey, setPrivateKey] = useState('');
     const [error, setError] = useState('');
@@ -27,7 +27,7 @@ export default ({ dTitle, copy }) => {
                 const attrs = [
                     {
                         name: 'commonName',
-                        value: domain,
+                        value: domainInput.split('\n')[0],
                     },
                     {
                         name: 'countryName',
@@ -38,13 +38,21 @@ export default ({ dTitle, copy }) => {
                 cert.setIssuer([
                     {
                         name: 'commonName',
-                        value: domain,
+                        value: domainInput.split('\n')[0],
                     },
                     {
                         name: 'countryName',
                         value: 'US',
                     },
                 ]);
+
+                const altNames = domainInput
+                    .split('\n')
+                    .filter(Boolean)
+                    .map((name) => ({
+                        type: 2,
+                        value: name,
+                    }));
 
                 cert.setExtensions([
                     {
@@ -63,12 +71,7 @@ export default ({ dTitle, copy }) => {
                     },
                     {
                         name: 'subjectAltName',
-                        altNames: [
-                            {
-                                type: 2,
-                                value: domain,
-                            },
-                        ],
+                        altNames: altNames,
                     },
                 ]);
                 cert.sign(forge.pki.privateKeyFromPem(privateKeyPem), forge.md.sha256.create());
@@ -93,13 +96,14 @@ export default ({ dTitle, copy }) => {
 
         <div className='mb-3'>
             <div className='mb-3'>
-                <input
+                <textarea
                     type="text"
-                    value={domain}
+                    value={domainInput}
                     className='form-control q-form'
-                    onChange={(e) => setDomain(e.target.value)}
-                    placeholder="输入域名 ..."
-                />
+                    onChange={(e) => setDomainInput(e.target.value)}
+                    placeholder="输入域名、IPv4 或 IPv6 ，以换行分隔多条 ..."
+                    rows="3"
+                ></textarea>
             </div>
             <div className='input-group mb-3'>
                 <select value={validityPeriod} className='form-control q-form' onChange={(e) => setValidityPeriod(parseInt(e.target.value, 10))}>
@@ -177,7 +181,7 @@ export default ({ dTitle, copy }) => {
                         </svg><span className="ms-2">再申请一张！</span>
                     </button>
                 </div>
-            : null
+                : null
         }
 
     </>);

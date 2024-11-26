@@ -106,7 +106,8 @@ const Header = () => {
                                     </a>
                                 </li>
                                 <li className="nav-item dropdown">
-                                    <a className={`nav-link${tagid === 'updatelogs' ? ' active' : ''
+                                    <a className={`nav-link${tagid === 'updatelogs' ||
+                                        tagid === 'open' ? ' active' : ''
                                         }`} href="javascript:;" data-bs-toggle="dropdown" aria-expanded="false">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" className="bi bi-three-dots" viewBox="0 0 16 16">
                                             <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
@@ -132,17 +133,12 @@ const Header = () => {
 const Footer = () => {
     return (
         <footer className="footer-div p-5">
-            <div>ZSEncrypt 已诞生：<span id="footer_date1">000天00时00分00秒</span></div>
+            <p>© 2024 ZeoSeven | GPLv3</p>
             <div>
                 <img src="https://zeoseven.com/_const/s/beian.icon-v1.png" className="icp-beian" /> <a href="https://beian.mps.gov.cn/#/query/webSearch?code=41130302000659" rel="noreferrer" target="_blank">豫公网安备41130302000659号</a>
                 <span> | </span>
                 <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">豫ICP备2024064405号</a>
-                <span> | </span>
-                <a href="/info/privacy/">隐私政策</a>
-                <span> | </span>
-                <a href="/info/user-agreement/">用户协议</a>
             </div>
-            <p>© 2024 ZeoSeven | GPLv3</p>
         </footer>
     );
 };
@@ -182,8 +178,6 @@ class MyApp extends App {
 
     componentDidMount() {
         if (typeof window !== 'undefined') {
-
-            document.getElementById("footer_date1").innerText = ((new Date() - new Date("2024-11-23 12:35:24")) / (1000 * 60 * 60 * 24)).toFixed(2) + " 天";
 
             document.addEventListener('dragstart', function (e) {
                 e.preventDefault();

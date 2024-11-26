@@ -148,6 +148,7 @@ export default ({ copy, dTitle, getQuery }) => {
         placeholder-cn="example.org, *.example.org"></textarea>
 </div>
 
+
         <div class="form-check d-none">
             <input class="form-check-input choice_domains_store" type="checkbox" id="q-steps2-checkbox1">
             <label class="form-check-label" for="q-steps2-checkbox1">
@@ -261,8 +262,11 @@ export default ({ copy, dTitle, getQuery }) => {
                     <path d="M5.52.359A.5.5 0 0 1 6 0h4a.5.5 0 0 1 .474.658L8.694 6H12.5a.5.5 0 0 1 .395.807l-7 9a.5.5 0 0 1-.873-.454L6.823 9.5H3.5a.5.5 0 0 1-.48-.641z"/>
                 </svg><span class="ms-2">继续 <em>Go!</em></span>
             </button>
-            <p class="fs-12">点击继续后代表你同意 <a href="https://letsencrypt.org/documents/LE-SA-v1.4-April-3-2024.pdf"
-                    target="_blank" rel="nofollow noreferrer noopener">Let's Encrypt 使用条款</a> 。</p>
+            <div class="fs-12">
+                <span>点击继续后代表你同意 </span><a href="https://letsencrypt.org/documents/LE-SA-v1.4-April-3-2024.pdf"
+                    target="_blank" rel="nofollow noreferrer noopener">Let's Encrypt 使用条款</a> 。
+                <p>来自 <a href="https://letsencrypt.org/" target="_blank">Let's Encrypt</a> 的 90 天 TLS 证书。</p>
+            </div>
         </div>
 
 
