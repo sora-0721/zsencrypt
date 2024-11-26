@@ -25,6 +25,11 @@ export default ({ dTitle }) => {
                     target="_blank" rel="nofollow noopener noreferrer"
                 >ACME HTML Web Browser Client</a><span> Version 1.0.230820 - GPLv3</span>
             </p>
+            <p>
+                <a href="https://github.com/digitalbazaar/forge"
+                    target="_blank" rel="nofollow noopener noreferrer"
+                >Forge</a><span> Version 1.3.1 - BSD</span>
+            </p>
         </div>
     </>)
 };
