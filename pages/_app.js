@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import App from 'next/app';
 import Head from 'next/head';
 import Script from 'next/script';
-import '../components/main.css';
+import '@components/main.css';
 
 
 
