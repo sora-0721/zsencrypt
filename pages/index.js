@@ -3,7 +3,6 @@ import Head from "next/head";
 export default () => {
     return (<>
         <Head>
-            <meta name="description" content="ZSEncrypt 是一个简单快速免费申请有效 TLS/SSL 证书的平台，为了更快，无需注册任何账户，支持 单域名证书、多域名证书 和 通配符证书，一切来自 Let's Encrypt !" />
             <meta name="keywords" content="ZSEncrypt,SSL,证书,免费证书,单域名证书,多域名证书,通配符证书,SSL证书申请,免费SSL证书,TLS证书,https证书,DV证书" />
         </Head>
         <span id="tagid">home</span>
