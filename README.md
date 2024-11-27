@@ -1,4 +1,4 @@
-# ZSEncrypt - 简单快速免费的申请 TLS/SSL 证书
+# ZSEncrypt - 简单快速的申请免费 TLS/SSL 证书
 
 ZSEncrypt 的目的是提供一个简单快速申请有效 TLS/SSL 证书的平台，快速为您的站点提供 HTTPS 协议访问，而不是 ACME 自动化。
 
