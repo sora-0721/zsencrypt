@@ -41,7 +41,7 @@ function copyDiv(message) {
 
 export const copy = (text) => {
     navigator.clipboard.writeText(text).then(() => {
-        copyDiv("已复制！");
+        copyDiv("已复制~");
     }).catch(err => {
         copyDiv(err);
     });

@@ -26,8 +26,13 @@ p {
 }
 
 a {
+    display: inline;
     text-decoration: underline;
     color: #00cc00;
+}
+
+a:hover {
+    color: #007700;
 }
 
 .alert {
@@ -83,10 +88,17 @@ img {
 
 
 .label-radio {
+    display: inline-block;
+    text-decoration: none;
     border: 1px solid #aaa;
     padding: 6px 12px;
     margin-right: 8px;
     margin-bottom: 8px;
+    color: inherit;
+}
+
+.label-radio:hover {
+    color: #007700;
 }
 
 input[type="radio"]:checked + .label-radio {
@@ -405,7 +417,7 @@ svg {
 
 
 
-.documents * {
+.documents {
     font-weight: 300;
 }
 
@@ -421,12 +433,14 @@ svg {
 .documents h2 {
     margin-top: 5rem;
     margin-bottom: 1rem;
+    font-weight: 300;
 }
 
 .documents h4 {
     padding: 0 2rem;
     margin-top: 2rem;
     margin-bottom: 1rem;
+    font-weight: 300;
 }
 
 .documents h2 a,

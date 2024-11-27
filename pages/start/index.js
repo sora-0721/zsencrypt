@@ -17,12 +17,18 @@ export default ({ copy, dTitle, getQuery }) => {
             }
             setTimeout(() => {
                 document.querySelector('#x-q-domain').value = domainValue;
-            }, 500);
+            }, 100);
         };
 
 
 
-        // 自动创建填充和记忆账户密钥
+        // 前往设置后，如果发生改变，立即重新输入账户私钥值
+        window.addEventListener('storage', function(event) {
+            if (event.key === 'q-acmeAccountKey') {
+                document.querySelector('.in_accountKey').value = event.newValue;
+            };
+        });
+        // 自动创建填充和记忆账户私钥
         const storageAccountKey = localStorage.getItem('q-acmeAccountKey');
         const accountKey = document.querySelector('.in_accountKey');
         if (!storageAccountKey && storageAccountKey === '') {
@@ -156,26 +162,6 @@ export default ({ copy, dTitle, getQuery }) => {
             </label>
         </div>
 
-<div class="mb-3">
-    <p>证书类型(私钥)</p>
-
-    <input type="radio" name="q-privateKey" id="q-privateKey-auto" value="auto" class="d-none" checked>
-    <label for="q-privateKey-auto" class="label-radio">自动</label>
-
-    <input type="radio" name="q-privateKey" id="q-privateKey-ecc" value="ecc" class="d-none">
-    <label for="q-privateKey-ecc" class="label-radio">ECC</label>
-
-    <input type="radio" name="q-privateKey" id="q-privateKey-rsa" value="rsa" class="d-none">
-    <label for="q-privateKey-rsa" class="label-radio">RSA</label>
-
-    <input type="radio" name="q-privateKey" id="q-privateKey-user" value="rsa" class="d-none">
-    <label for="q-privateKey-user" class="label-radio">自定义</label>
-    <div class="mt-2">
-        <textarea style="display: none;" id="q-privateKey-userInput" class="form-control q-form fs-12" rows="5" placeholder="输入证书私钥 ..."></textarea>
-    </div>
-
-</div>
-
 
 <div class="d-none">
                         <label>
@@ -218,7 +204,7 @@ export default ({ copy, dTitle, getQuery }) => {
 
 
 
-        <div class="mb-5">
+        <div class="mb-4">
             <label for="x-q-email">电子邮箱地址</label>
             <div class="FlexBox">
                 <div class="FlexItem">
@@ -232,6 +218,52 @@ export default ({ copy, dTitle, getQuery }) => {
                 <p class="fs-12">这用于 Let's Encrypt 为你发送证书即将过期的邮件。</p>
             </div>
         </div>
+
+
+<p class="no-a">
+  <a data-bs-toggle="collapse" href="#g" role="button" aria-expanded="false" aria-controls="g">
+    高级选项
+  </a>
+</p>
+<div class="collapse" id="g">
+<div class="mt-3">
+
+
+    <p>证书类型(私钥)</p>
+
+    <input type="radio" name="q-privateKey" id="q-privateKey-auto" value="auto" class="d-none" checked>
+    <label for="q-privateKey-auto" class="label-radio">自动</label>
+
+    <input type="radio" name="q-privateKey" id="q-privateKey-ecc" value="ecc" class="d-none">
+    <label for="q-privateKey-ecc" class="label-radio">ECC<span class="fs-12"> (效率推荐)</span></label>
+
+    <input type="radio" name="q-privateKey" id="q-privateKey-rsa" value="rsa" class="d-none">
+    <label for="q-privateKey-rsa" class="label-radio">RSA<span class="fs-12"> (兼容性推荐)</span></label>
+
+    <input type="radio" name="q-privateKey" id="q-privateKey-user" value="rsa" class="d-none">
+    <label for="q-privateKey-user" class="label-radio">自定义</label>
+    <div class="mt-2 mb-3">
+        <textarea style="display: none;" id="q-privateKey-userInput" class="form-control q-form fs-12" rows="3" placeholder="输入证书私钥 ..."></textarea>
+    </div>
+
+
+    <p>ACME 账户私钥</p>
+
+    <input type="radio" id="q-accountKey-auto" class="d-none" checked>
+    <label for="q-accountKey-auto" class="label-radio">自动</label>
+
+    <a href="../settings/" target="_blank" class="label-radio">
+        <span>前往设置 </span>
+        <span class="fs-12">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
+                <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
+            </svg>
+        </span>
+    </a>
+
+</div>
+</div>
 
 
 
@@ -256,7 +288,7 @@ export default ({ copy, dTitle, getQuery }) => {
 
 
 
-        <div class="Center text-end">
+        <div class="Center text-end mt-5">
             <button class="mainBtn btn btn-q" onclick="configStepClick()">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-lightning-fill" viewBox="0 0 16 16">
                     <path d="M5.52.359A.5.5 0 0 1 6 0h4a.5.5 0 0 1 .474.658L8.694 6H12.5a.5.5 0 0 1 .395.807l-7 9a.5.5 0 0 1-.873-.454L6.823 9.5H3.5a.5.5 0 0 1-.48-.641z"/>
@@ -271,7 +303,8 @@ export default ({ copy, dTitle, getQuery }) => {
 
 
 
-        <div class="configStepState fw-bold mt-2"></div>
+        <div class="configStepState fw-bold mt-2 fs-14"></div>
+
     </div>
 </div>
 
@@ -381,7 +414,9 @@ export default ({ copy, dTitle, getQuery }) => {
                 <title>{`申请证书 | ${dTitle}`}</title>
             </Head>
             <span id="tagid">start</span>
-            <h1 className='display-5 mb-5'>申请证书</h1>
+            <span id='_zsApi_no#'></span>
+            <h1 className='display-5 mb-2'>申请证书</h1>
+            <p className='mb-5 fs-14'>需要帮助吗？ ZeoSeven 提供了 <a href='../documents/' target='_blank'>参考文档</a> 。</p>
             <div dangerouslySetInnerHTML={{ __html: PageInfo }} />
             <script src="/q/start/api.js"></script>
             <script src="/q/start/depend/a.js"></script>

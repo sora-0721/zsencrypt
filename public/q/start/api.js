@@ -373,31 +373,31 @@
 
         //校验是否输入
         if (!domains.length)
-            return ShowState(sEl, Lang("error 域名是必须项。", " "), 1);
+            return ShowState(sEl, Lang("ERROR 域名是必须项。", " "), 1);
         if (!accountKey)
-            return ShowState(sEl, Lang("error 需要创建或输入 ACME 账户的私钥。", " "), 1);
+            return ShowState(sEl, Lang("ERROR 需要创建或输入 ACME 账户的私钥。", " "), 1);
         if (!privateKey)
-            return ShowState(sEl, Lang("error 需要证书的私钥。", " "), 1);
+            return ShowState(sEl, Lang("ERROR 需要证书的私钥。", " "), 1);
         if (!/.+@.+\..+/.test(email) || /[\s,;]/.test(email))
-            return ShowState(sEl, Lang("error 需要填写电子邮箱地址。", " "), 1);
+            return ShowState(sEl, Lang("ERROR 需要填写电子邮箱地址。", " "), 1);
         if (ACME.StepData.needEAB && !(eabKid && eabKey))
             return ShowState(sEl, Lang("EAB KID and HMAC KEY not found.", " "), 1);
         if (ACME.StepData.termsURL && !termsAgree)
-            return ShowState(sEl, Lang("error 需要同意使用条款。", " "), 1);
+            return ShowState(sEl, Lang("ERROR 需要同意使用条款。", " "), 1);
 
         //校验私钥格式是否支持
         var privateKeyInfo, parsePrivateKey = function () {
             X509.KeyParse(privateKey, function (info) {
                 privateKeyInfo = info; parseAccountKey();
             }, function (err) {
-                ShowState(sEl, Lang("证书的私钥无效：", "The private key of the certificate is invalid: ") + err, 1);
+                ShowState(sEl, Lang("ERROR 证书私钥无效", "The private key of the certificate is invalid: "), 1);
             }, 1);
         };
         var accountKeyInfo, parseAccountKey = function () {
             X509.KeyParse(accountKey, function (info) {
                 accountKeyInfo = info; parseKeyOK();
             }, function (err) {
-                ShowState(sEl, Lang("ACME账户的私钥无效：", "The private key of the ACME account is invalid: ") + err, 1);
+                ShowState(sEl, Lang("ERROR 账户私钥无效，无法工作，请前往<a href='/settings/'>设置</a>页面清空数据", "The private key of the ACME account is invalid: "), 1);
             }, 1);
         };
 

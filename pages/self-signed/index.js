@@ -111,14 +111,10 @@ export default ({ dTitle, copy }) => {
                     <option value={2}>2 年</option>
                     <option value={3}>3 年</option>
                     <option value={5}>5 年</option>
+                    <option value={7}>7 年</option>
                     <option value={10}>10 年</option>
                     <option value={15}>15 年</option>
-                    <option value={20}>20 年</option>
-                    <option value={25}>25 年</option>
-                    <option value={30}>30 年</option>
-                    <option value={40}>40 年</option>
-                    <option value={50}>50 年</option>
-                    <option value={75}>75 年</option>
+                    <option value={500}>困囚五行山</option>
                 </select>
                 <select value={rsaKeySize} className='form-control q-form' onChange={(e) => setRsaKeySize(parseInt(e.target.value, 10))}>
                     <option value={512}>RSA 512</option>
