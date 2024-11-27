@@ -169,7 +169,7 @@ const WhitePage = ({ children }) => {
 
 
 
-const dTitle = "ZSEncrypt - 简单快速免费的申请 TLS/SSL 证书";
+const dTitle = "ZSEncrypt - 简单快速的申请免费 TLS/SSL 证书";
 
 
 
