@@ -5,8 +5,8 @@
     "start": "next start",
     "lint": "next lint",
     "d": "next dev",
-    "b": "next build && next-sitemap && next build && next-sitemap",
-    "s": "next build && next-sitemap && next start"
+    "b": "next build && next-sitemap && next build",
+    "s": "next build && next-sitemap && next build && next start"
   },
   "dependencies": {
     "next": "^14.2.16",
