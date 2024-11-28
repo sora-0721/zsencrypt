@@ -400,8 +400,13 @@ svg {
 }
 
 .updatelogs h3 p {
+    text-indent: 0;
     font-weight: 400;
     font-size: 12px;
+    margin-bottom: 0;
+}
+
+.updatelogs .alert p {
     text-indent: 0;
     margin-bottom: 0;
 }
