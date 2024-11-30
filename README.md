@@ -2,13 +2,13 @@
 
 ZSEncrypt 的目的是提供一个简单快速申请有效 TLS/SSL 证书的平台，快速为您的站点提供 HTTPS 协议访问，而不是 ACME 自动化。
 
-支持 单域名证书、多域名证书 和 通配符证书，一切来自 <a href="https://letsencrypt.org/" target="_blank">Let's Encrypt</a> !
+支持 单域名证书、多域名证书 和 通配符证书，一切来自 <a href="https://letsencrypt.org/">Let's Encrypt</a> !
 
 ## 开始
 
 为了更快，您无需注册任何账户，只需要提供一些 DNS 记录来验证您对域名的所有权，剩下的一切交给 ZSEncrypt 。
 
-<a href="https://zsencrypt.zeoseven.com/#begin" target="_blank">前往 zsencrypt.zeoseven.com 开始申请！</a>
+<a href="https://zsencrypt.zeoseven.com/#begin">前往 zsencrypt.zeoseven.com 开始申请！</a>
 
 ## 准备好一切
 
@@ -28,7 +28,7 @@ ZSEncrypt 的目的是提供一个简单快速申请有效 TLS/SSL 证书的平�
 
 ## 文档
 
-使用文档将可以在 <a href="https://zsencrypt.zeoseven.com/documents/">zsencrypt.zeoseven.com/documents</a> 上查阅。
+使用文档可以在 <a href="https://zsencrypt.zeoseven.com/documents/">zsencrypt.zeoseven.com/documents</a> 上查阅。
 
 ## 使用的开源软件 & 致谢
 
