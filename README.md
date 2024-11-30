@@ -8,7 +8,10 @@ ZSEncrypt 的目的是提供一个简单快速申请有效 TLS/SSL 证书的平�
 
 为了更快，您无需注册任何账户，只需要提供一些 DNS 记录来验证您对域名的所有权，剩下的一切交给 ZSEncrypt 。
 
-<a href="https://zsencrypt.zeoseven.com/start/" target="_blank">申请证书！</a>
+<form action="https://zsencrypt.zeoseven.com" method="GET">
+    <input type="text" name="domain">
+    <button type="submit"><em>Go!</em></button>
+</form>
 
 ## 准备好一切
 
@@ -26,10 +29,14 @@ ZSEncrypt 的目的是提供一个简单快速申请有效 TLS/SSL 证书的平�
 
 <a href="./LICENSE">GPLv3</a>
 
+## 文档
+
+使用文档将可以在 <a href="https://zsencrypt.zeoseven.com/documents/">zsencrypt.zeoseven.com/documents</a> 上查阅。
+
 ## 使用的开源软件 & 致谢
 
-<p><a href="https://nextjs.org/" target="_blank">Next.js</a><span> Version 14.2.16 - MIT</span></p>
-<p><a href="https://getbootstrap.com/" target="_blank">Bootstrap</a><span> Version 5.3.3 - MIT</span></p>
-<p><a href="https://github.com/xiangyuecn/ACME-HTML-Web-Browser-Client" target="_blank">ACME HTML Web Browser Client</a><span> Version 1.0.230820 - GPLv3</span></p>
-<p><a href="https://github.com/digitalbazaar/forge" target="_blank">Forge</a><span> Version 1.3.1 - BSD</span></p>
+<p><a href="https://nextjs.org/">Next.js</a><span> Version 14.2.16 - MIT</span></p>
+<p><a href="https://getbootstrap.com/">Bootstrap</a><span> Version 5.3.3 - MIT</span></p>
+<p><a href="https://github.com/xiangyuecn/ACME-HTML-Web-Browser-Client">ACME HTML Web Browser Client</a><span> Version 1.0.230820 - GPLv3</span></p>
+<p><a href="https://github.com/digitalbazaar/forge">Forge</a><span> Version 1.3.1 - BSD</span></p>
 
