@@ -120,7 +120,11 @@ export default ({ copy, dTitle, getQuery }) => {
     }, []);
 
     const PageInfo = `
-<script src="/q/start/load.js"></script>
+<script>
+    const Version = "1.0.230820";
+    console.log("LICENSE: GPL-3.0, https://github.com/xiangyuecn/ACME-HTML-Web-Browser-Client/blob/main/LICENSE");
+</script>
+
 <div id="q-steps1">
     <div class="d-none">
         <div>
@@ -419,10 +423,7 @@ export default ({ copy, dTitle, getQuery }) => {
             <p className='mb-5 fs-14'>需要帮助吗？ ZeoSeven 提供了 <a href='../documents/' target='_blank'>参考文档</a> 。</p>
             <div dangerouslySetInnerHTML={{ __html: PageInfo }} />
             <script src="/q/start/api.js"></script>
-            <script src="/q/start/depend/a.js"></script>
-            <script src="/q/start/depend/b.js"></script>
-            <script src="/q/start/depend/c.js"></script>
-            <script src="/q/start/depend/d.js"></script>
+            <script src="/q/start/depend.js"></script>
         </>
     )
 };
