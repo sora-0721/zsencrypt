@@ -8,10 +8,7 @@ ZSEncrypt 的目的是提供一个简单快速申请有效 TLS/SSL 证书的平�
 
 为了更快，您无需注册任何账户，只需要提供一些 DNS 记录来验证您对域名的所有权，剩下的一切交给 ZSEncrypt 。
 
-<form action="https://zsencrypt.zeoseven.com" method="GET">
-    <input type="text" name="domain">
-    <button type="submit"><em>Go!</em></button>
-</form>
+<a href="https://zsencrypt.zeoseven.com/" target="__blank">前往 zsencrypt.zeoseven.com 开始申请！</a>
 
 ## 准备好一切
 
