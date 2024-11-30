@@ -183,6 +183,26 @@ class MyApp extends App {
                 e.preventDefault();
             });
 
+            if (window.self !== window.top) {
+                let iframeDiv = document.createElement('div');
+                iframeDiv.innerHTML = `
+                    <iframe
+                        src="https://zeoseven.com/_const/d/iframe/httpError/?i=no-iframe"
+                        frameborder="0"
+                        style="
+                            position: fixed;
+                            width: 100vw;
+                            height: 100vh;
+                            top: 0px;
+                            left: 0px;
+                            z-index: 4;
+                            background-color: #fff;
+                        "
+                    ></iframe>
+                `;
+                document.body.appendChild(iframeDiv);
+            };
+
         }
     }
 
@@ -196,6 +216,21 @@ class MyApp extends App {
                     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
                     <link rel="icon" href='/favicon.ico' type='image/x-icon' />
                 </Head>
+                <noscript>
+                    <iframe
+                        src="https://zeoseven.com/_const/d/iframe/httpError/"
+                        frameborder="0"
+                        style={{
+                            position: 'fixed',
+                            width: '100vw',
+                            height: '100vh',
+                            top: '0px',
+                            left: '0px',
+                            zIndex: '4',
+                            backgroundColor: '#fff'
+                        }}
+                    ></iframe>
+                </noscript>
                 <Header />
                 <WhitePage>
                     <main>
