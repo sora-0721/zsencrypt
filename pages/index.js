@@ -12,7 +12,7 @@ export default () => {
             <p>支持 单域名证书、多域名证书 和 通配符证书，一切来自 <a href="https://letsencrypt.org/" target="_blank">Let's Encrypt</a> !</p>
         </div>
         <div className="mb-4">
-            <h2 className="fw-light mb-3">开始</h2>
+            <h2 className="fw-light mb-3" id="begin">开始</h2>
             <p>为了更快，您无需注册任何账户，只需要提供一些 DNS 记录来验证您对域名的所有权，剩下的一切交给 ZSEncrypt 。</p>
         </div>
         <div className="mb-5">
