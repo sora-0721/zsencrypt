@@ -127,7 +127,6 @@ const Header = () => {
                 </div>
             </nav>
         </header>
-        <button id="_zsApi_goTop" data-border-color="#00ff6e90" data-background-color="#00ff6e75" style={{ display: 'none' }}></button>
     </>);
 };
 
@@ -180,10 +179,6 @@ class MyApp extends App {
 
     componentDidMount() {
         if (typeof window !== 'undefined') {
-
-            document.addEventListener('dragstart', function (e) {
-                e.preventDefault();
-            });
 
             if (window.self !== window.top) {
                 let iframeDiv = document.createElement('div');
@@ -245,6 +240,7 @@ class MyApp extends App {
                         />
                     </main>
                 </WhitePage>
+                <button id="_zsApi-goTop" data-border-color="#00ff6e90" data-background-color="#00ff6e75" style={{ display: 'none' }}></button>
                 <Footer />
 
                 {

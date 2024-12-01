@@ -418,7 +418,6 @@ export default ({ copy, dTitle, getQuery }) => {
                 <title>{`申请证书 | ${dTitle}`}</title>
             </Head>
             <span id="tagid">start</span>
-            <span id='_zsApi_no#'></span>
             <h1 className='display-5 mb-2'>申请证书</h1>
             <p className='mb-5 fs-14'>需要帮助吗？ ZeoSeven 提供了 <a href='../documents/' target='_blank'>参考文档</a> 。</p>
             <div dangerouslySetInnerHTML={{ __html: PageInfo }} />
