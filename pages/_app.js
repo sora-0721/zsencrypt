@@ -63,19 +63,20 @@ const Header = () => {
             setTagid(tagid.textContent.trim());
         }
     }, []);
+    const s = 'md', b = 'lg';
     return (<>
-        <div className='daohang-top d-none'></div>
+        {/* <div className='daohang-top'></div> */}
         <header className="seven0daohanglan">
-            <nav className="navbar navbar-expand-md">
-                <div className="container-fluid">
+            <nav className={`navbar navbar-expand-${s}`}>
+                <div className={`container-fluid fs-14 px-${b}-5`}>
                     <a className="navbar-brand me-5" href="/">
                         <img src='https://zeoseven.com/_const/s/logo/zsencrypt/logoa-v2.png' className='logo' />
                     </a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#daohanginfo" aria-controls="daohanginfo" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div className="mt-3 mb-2 px-4 mt-md-0 mb-md-0 px-md-0 collapse navbar-collapse" id="daohanginfo">
-                        <ul className="navbar-nav mx-auto">
+                    <div className={`mt-3 mb-2 px-4 mt-${s}-0 mb-${s}-0 px-${s}-0 px-${b}-5 collapse navbar-collapse`} id="daohanginfo">
+                        <ul className="navbar-nav ms-auto">
                             <li className='nav-item'>
                                 <a className={`nav-link${tagid === 'home' ? ' active' : ''}`} href='/'>
                                     首页
