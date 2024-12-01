@@ -18,7 +18,7 @@
     window.initMainUI = function () {
         $(".eccCurveNames").html(X509.SupportECCType2Names().join(Lang("、", ", ")));
         $(".donateBtnIco").html(unescape("%uD83D%uDE18"));
-        $(".versionBox").html(Lang("版本: " + Version, "Ver: " + Version));
+        $(".versionBox").html(Lang("版本: " + Version, ""));
 
         if (/mobile/i.test(navigator.userAgent)) {
             $(".main").prepend($(".langBtnBox").css("position", null));
@@ -107,11 +107,11 @@
     };
     //请稍候提示
     var PleaseWaitTips = function () {
-        return Lang(" 请稍候... ", " Please wait... ");
+        return Lang(" 请稍候... ", "");
     };
     //请重试提示
     var TryAgainTips = function () {
-        return Lang(" 请重试！", " Please try again! ");
+        return Lang(" 请重试！", "");
     };
     //每一步的状态更新显示
     var ShowState = function (elem, msg, color, tag) {
@@ -140,7 +140,7 @@
     var UserClickSyncID = 0;
     var UserClickSyncKill = function (id, tag, msg) {
         if (id != UserClickSyncID) {
-            var abort = Lang("被终止", "Abort", 1);
+            var abort = Lang("被终止", "", 1);
             CLog(tag + " " + abort, 3, "From: " + msg + " [" + abort + "]");
             return true;
         }
@@ -171,7 +171,7 @@
 
         var url = $(".in_acmeURL").val().trim();
         if (!url) {
-            ShowState(sEl, Lang("请填写服务URL！", "Please fill in the service URL!"), 1);
+            ShowState(sEl, Lang("请填写服务URL！", ""), 1);
             return;
         }
         localStorage[ChoiceAcmeURLStoreKey] = url;
@@ -191,11 +191,11 @@
             }, function (err, status) {
                 if (UserClickSyncKill(id, tag, msg0 + " err: " + err)) return;
                 if (status === 0) { //可能是跨域无法读取到任何数据
-                    CLog(tag, 1, ShowState(sEl, Lang("初始化出错：无法访问此URL。", "Read service directory error: This URL cannot be accessed.") + TryAgainTips(), 1));
+                    CLog(tag, 1, ShowState(sEl, Lang("初始化出错：无法访问此URL。", "") + TryAgainTips(), 1));
 
-                    acmeReadDirGotoCORS(Lang("如果你可以在浏览器中直接打开并访问此ACME服务URL，代表此ACME服务对跨域访问支持不良，则请按下面步骤操作：", "If you can open and access this ACME service URL directly in your browser, it represents that this ACME service has poor support for cross-domain access, please follow the steps below:"));
+                    acmeReadDirGotoCORS(Lang("如果你可以在浏览器中直接打开并访问此ACME服务URL，代表此ACME服务对跨域访问支持不良，则请按下面步骤操作：", ""));
                 } else {
-                    CLog(tag, 1, ShowState(sEl, Lang("初始化出错：" + err, "Read service directory error: " + err) + TryAgainTips(), 1));
+                    CLog(tag, 1, ShowState(sEl, Lang("初始化出错：" + err, "") + TryAgainTips(), 1));
                 };
             });
         };
@@ -210,10 +210,10 @@
         //ZeroSSL接口跨域支持太差，发现这种就直接在他们网站里面跑
         var testCORS = function () {
             if (UserClickSyncKill(id, tag, msg0)) return;
-            msg0 = CLog(tag, 0, ShowState(sEl, PleaseWaitTips() + Lang("正在测试浏览器支持情况，", "Testing browser support for this ACME service, ") + " URL=" + ACME.URL, 2));
+            msg0 = CLog(tag, 0, ShowState(sEl, PleaseWaitTips() + Lang("正在测试浏览器支持情况，", "") + " URL=" + ACME.URL, 2));
             ACME.GetNonce(true, function () {
                 ACME.TestAccountCORS(function () {
-                    CLog(tag, 0, Lang("此 ACME 服务对浏览器的支持良好。", "This ACME service has good browser support."));
+                    CLog(tag, 0, Lang("此 ACME 服务对浏览器的支持良好。", ""));
                     saveCacheCors(true);
                     dirOK();
                 }, testCORSFail);
@@ -226,7 +226,7 @@
             if (UserClickSyncKill(id, tag, msg0 + " err: " + err)) return;
             CLog(tag, 1, ShowState(sEl, Lang(
                 "测试此ACME服务对浏览器的支持情况，发生错误：" + err
-                , "Test browser support for this ACME service, An error occurred: " + err)
+                , "")
                 + (corsFail ? "" : TryAgainTips()), 1));
             LangReview(sEl);//err from cache
             if (corsFail) acmeReadDirGotoCORS();
@@ -254,7 +254,7 @@
         if (DropConfigFile.eabKey) $(".in_eab_key").val(DropConfigFile.eabKey);
 
         $(".termsAgreeBox")[ACME.StepData.termsURL ? 'show' : 'hide']();
-        $(".termsAgreeTips").html(Lang('我同意此证书颁发机构ACME服务的<a href="' + ACME.StepData.termsURL + '" target="_blank">服务条款</a>。', 'I agree to the <a href="' + ACME.StepData.termsURL + '" target="_blank">terms of service</a> for this Certificate Authority ACME Service.'));
+        $(".termsAgreeTips").html(Lang('我同意此证书颁发机构ACME服务的<a href="' + ACME.StepData.termsURL + '" target="_blank">服务条款</a>。', ''));
         $(".choice_termsAgree").prop("checked", true);
 
         var el = $(".in_domains");//填充上次填写的域名列表
@@ -300,14 +300,14 @@
             return;
         };
 
-        var msg0 = CLog(tag, 0, ShowState(sEl, PleaseWaitTips() + Lang("正在创建", "Generating ") + keyTag, 2));
+        var msg0 = CLog(tag, 0, ShowState(sEl, PleaseWaitTips() + Lang("正在创建", "") + keyTag, 2));
         X509.KeyGenerate(type, type2, function (pem) {
             if (UserClickSyncKill(id, tag, msg0)) return;
             $(".in_privateKey").val(pem);
-            CLog(tag, 0, ShowState(sEl, keyTag + Lang("，创建成功。", ", generated successfully."), 2), '\n' + pem);
+            CLog(tag, 0, ShowState(sEl, keyTag + Lang("，创建成功。", ""), 2), '\n' + pem);
         }, function (err) {
             if (UserClickSyncKill(id, tag, msg0 + " err: " + err)) return;
-            CLog(tag, 1, ShowState(sEl, keyTag + Lang("，发生错误：" + err, ", An error occurred: " + err), 1));
+            CLog(tag, 1, ShowState(sEl, keyTag + Lang("，发生错误：" + err, ""), 1));
         });
     };
     //生成ACME账户的密钥对
@@ -327,14 +327,14 @@
             return;
         };
 
-        var msg0 = CLog(tag, 0, ShowState(sEl, PleaseWaitTips() + Lang("正在创建", "Generating ") + keyTag, 2));
+        var msg0 = CLog(tag, 0, ShowState(sEl, PleaseWaitTips() + Lang("正在创建", "") + keyTag, 2));
         X509.KeyGenerate(type, type2, function (pem) {
             if (UserClickSyncKill(id, tag, msg0)) return;
             $(".in_accountKey").val(pem);
-            CLog(tag, 0, ShowState(sEl, keyTag + Lang("，创建成功，请复制保管，下次输入自己的账户私钥。", ", generated successfully."), 2), '\n' + pem);
+            CLog(tag, 0, ShowState(sEl, keyTag + Lang("，创建成功，请复制保管，下次输入自己的账户私钥。", ""), 2), '\n' + pem);
         }, function (err) {
             if (UserClickSyncKill(id, tag, msg0 + " err: " + err)) return;
-            CLog(tag, 1, ShowState(sEl, keyTag + Lang("，发生错误：" + err, ", An error occurred: " + err), 1));
+            CLog(tag, 1, ShowState(sEl, keyTag + Lang("，发生错误：" + err, ""), 1));
         });
     };
     //点击确定按钮，完成配置域名和私钥的配置
@@ -363,9 +363,9 @@
             if (!domain) {
                 domains.splice(i, 1); i--; continue;
             } else if (mp[domain])
-                return ShowState(sEl, Lang("域名" + domain + "重复！", "Duplicate domain name " + domain + "!"), 1);
+                return ShowState(sEl, Lang("域名" + domain + "重复！", ""), 1);
             if (/[:\/;]/.test(domain))//简单校验域名格式
-                return ShowState(sEl, Lang("域名" + domain + "格式错误！", "Format error of domain name " + domain + "!"), 1);
+                return ShowState(sEl, Lang("域名" + domain + "格式错误！", ""), 1);
             mp[domain] = 1;
         }
         localStorage[InputDomainsStoreKey] = domainsStore ? domains.join(", ") : "";
@@ -390,14 +390,14 @@
             X509.KeyParse(privateKey, function (info) {
                 privateKeyInfo = info; parseAccountKey();
             }, function (err) {
-                ShowState(sEl, Lang("ERROR 证书私钥无效", "The private key of the certificate is invalid: "), 1);
+                ShowState(sEl, Lang("ERROR 证书私钥无效", ""), 1);
             }, 1);
         };
         var accountKeyInfo, parseAccountKey = function () {
             X509.KeyParse(accountKey, function (info) {
                 accountKeyInfo = info; parseKeyOK();
             }, function (err) {
-                ShowState(sEl, Lang("ERROR 账户私钥无效，无法工作，请前往<a href='/settings/'>设置</a>页面清空数据", "The private key of the ACME account is invalid: "), 1);
+                ShowState(sEl, Lang("ERROR 账户私钥无效，无法工作，请前往<a href='/settings/'>设置</a>页面清空数据", ""), 1);
             }, 1);
         };
 
@@ -428,7 +428,7 @@
             }, function (err) {
                 if (UserClickSyncKill(id, tag, msg0 + " err: " + err)) return;
                 CLog(tag, 1, ShowState(sEl, Lang("调用 ACME 服务的 newAccount 接口：", " ")
-                    + ACME.DirData.newAccount + Lang("，发生错误：" + err, ", An error occurred: " + err), 1));
+                    + ACME.DirData.newAccount + Lang("，发生错误：" + err, ""), 1));
             });
         };
         //ACME订单创建接口调用
@@ -442,8 +442,8 @@
                 acmeOK();
             }, function (err) {
                 if (UserClickSyncKill(id, tag, msg0 + " err: " + err)) return;
-                CLog(tag, 1, ShowState(sEl, Lang("调用 ACME 服务订单接口：", "Call the order interface of the ACME service: ")
-                    + ACME.DirData.newOrder + Lang("，发生错误：" + err, ", An error occurred: " + err), 1));
+                CLog(tag, 1, ShowState(sEl, Lang("调用 ACME 服务订单接口：", "")
+                    + ACME.DirData.newOrder + Lang("，发生错误：" + err, ""), 1));
             });
         };
         //ACME接口调用完成，显示下一步
@@ -452,7 +452,7 @@
 
             CLog(tag, 0, ShowState(sEl, Lang(
                 "配置完成，"
-                , "Configuration is complete, ")
+                , "")
                 + NextStepTips(), 2), ACME.StepData);
         };
 
@@ -532,7 +532,7 @@
                 }
                 var challName = ACME.ChallName(challs[auth.challIdx]);
                 if (auth.authState == 12) {//验证失败
-                    ShowState(stateEl, challName + Lang("，验证失败：", ", Verify failed: ")
+                    ShowState(stateEl, challName + Lang("，验证失败：", "")
                         + auth.authError, 1, "");
                     errCount++;
                     continue;
@@ -542,21 +542,21 @@
                     ShowState(stateEl, false);
                     clearTimeout(auth.authTimer); auth.authTimer = 0;
                 } else if (auth.authState == 2)
-                    ShowState(stateEl, Lang("等待重试中...", "Waiting for retry...")
+                    ShowState(stateEl, Lang("等待重试中...", "")
                         + " " + auth.authTryCount + " " + auth.authError, 3, "");
                 else if (auth.authState == 1)
-                    ShowState(stateEl, Lang("验证中...", "Verify in progress..."), 0, "");
-                else ShowState(stateEl, Lang("等待验证...", "Waiting for verify..."), 0, "");
+                    ShowState(stateEl, Lang("验证中...", ""), 0, "");
+                else ShowState(stateEl, Lang("等待验证...", ""), 0, "");
             }
             if (!isStop || stopNow) {
                 var goto2 = Lang("请重试", " ");
-                var msg = ShowState(sEl, (isFail ? Lang("验证失败，", "Verify failed, ") + goto2 :
+                var msg = ShowState(sEl, (isFail ? Lang("验证失败，", "") + goto2 :
                     isStop ? Lang("已取消，", "Canceled, ") + goto2 :
-                        Lang("正在验证，请耐心等待... ", "Verifying, please wait... "))
+                        Lang("正在验证，请耐心等待... ", ""))
                     + "<div>"
-                    + Lang("验证通过：", "Verify pass: ") + okCount + ", "
-                    + Lang("未通过：", "Failed: ") + errCount + ", "
-                    + Lang("验证中：", "Verify in progress: ") + execCount
+                    + Lang("验证通过：", "") + okCount + ", "
+                    + Lang("未通过：", "") + errCount + ", "
+                    + Lang("验证中：", "") + execCount
                     + "</div>"
                     , isStop ? 1 : 0);
                 if (isStop) {
@@ -640,7 +640,7 @@
             var msg0, onProgress = function (tips) {
                 if (id != UserClickSyncID) return;
                 msg0 = CLog(tag, 0, ShowState(sEl, PleaseWaitTips()
-                    + Lang("验证已通过，正在签发证书。", "Verify passed, issuing certificate.")
+                    + Lang("验证已通过，正在签发证书。", "")
                     + ' ' + tips, 2));
             }; onProgress("");
             ACME.StepFinalizeOrder(onProgress, function () {
@@ -650,13 +650,13 @@
 
                 CLog(tag, 0, ShowState(sEl, Lang(
                     "验证已通过，证书已签发，"
-                    , "Verification passed, The certificate has been issued, ")
+                    , "")
                     + NextStepTips(), 2), ACME.StepData);
             }, function (err) {
                 if (UserClickSyncKill(id, tag, msg0 + " err: " + err)) return;
                 $(".finalizeOrderBtn").show();
-                CLog(tag, 1, ShowState(sEl, Lang("签发证书发生错误，", "Error issuing certificate, ") + TryAgainTips()
-                    + Lang("如果多次重试都无法签发证书，请直接刷新页面重新开始。", "If the certificate cannot be issued after multiple retries, you may need to return to step 2 to restart the operation.")
+                CLog(tag, 1, ShowState(sEl, Lang("签发证书发生错误，", "") + TryAgainTips()
+                    + Lang("如果多次重试都无法签发证书，请直接刷新页面重新开始。", "")
                     + " Error: " + err, 1));
             });
         };
@@ -682,7 +682,7 @@
 
         var config = ACME.StepData.config;
         var hasPEM = ACME.StepData.order.downloadPEM;
-        var pemTxt = hasPEM || Lang("未发现证书，请刷新页面重新开始。", "No certificate found, please go to the step 2 to operate again!", true);
+        var pemTxt = hasPEM || Lang("未发现证书，请刷新页面重新开始。", "", true);
 
         $(".txt_downloadCert").val(pemTxt);
         $(".txt_downloadKey").val(config.privateKey.pem);
@@ -711,31 +711,31 @@
 
         var logTitle = '/********** ' + Lang($(".clientNameCN").html(), $(".clientNameEN").html(), true) + ' *********/';
         logTxts.push(logTitle);
-        logTxts.push(Lang("在线网址（GitHub）：", "Online website (GitHub): ", true) + 'https://xiangyuecn.github.io/ACME-HTML-Web-Browser-Client/ACME-HTML-Web-Browser-Client.html');
-        logTxts.push(Lang("在线网址（Gitee）：", "Online website (Gitee): ", true) + 'https://xiangyuecn.gitee.io/acme-html-web-browser-client/ACME-HTML-Web-Browser-Client.html');
+        logTxts.push(Lang("在线网址（GitHub）：", "", true) + 'https://xiangyuecn.github.io/ACME-HTML-Web-Browser-Client/ACME-HTML-Web-Browser-Client.html');
+        logTxts.push(Lang("在线网址（Gitee）：", "", true) + 'https://xiangyuecn.gitee.io/acme-html-web-browser-client/ACME-HTML-Web-Browser-Client.html');
         logTxts.push("");
         logTxts.push('GitHub: https://github.com/xiangyuecn/ACME-HTML-Web-Browser-Client');
         logTxts.push('Gitee: https://gitee.com/xiangyuecn/ACME-HTML-Web-Browser-Client');
         logTxts.push("");
-        logTxts.push(Lang("提示：你可以将本文件拖拽进客户端网页内，将自动填充本次证书申请的所有配置参数。", "Tip: You can drag and drop this file into the client web page, and all configuration parameters of this certificate application will be filled automatically.", true));
+        logTxts.push(Lang("提示：你可以将本文件拖拽进客户端网页内，将自动填充本次证书申请的所有配置参数。", "", true));
         logTxts.push("");
-        SP(Lang("证书申请时间", "Certificate Application Time", true))
+        SP(Lang("证书申请时间", "", true))
             .push(new Date().toLocaleString());
-        SP(Lang("域名列表", "Domain Name List", true))
+        SP(Lang("域名列表", "", true))
             .push(config.domains.join(", "));
-        SP(Lang("ACME服务地址", "ACME Service URL", true))
+        SP(Lang("ACME服务地址", "", true))
             .push(ACME.URL);
-        SP(Lang("CSR文本", "CSR Text", true))
+        SP(Lang("CSR文本", "", true))
             .push(ACME.StepData.order.orderCSR);
-        SP(Lang("证书PEM文本", "Certificate PEM Text", true))
+        SP(Lang("证书PEM文本", "", true))
             .push(pemTxt);
-        SP(Lang("证书私钥PEM文本", "Certificate Private Key PEM Text", true))
+        SP(Lang("证书私钥PEM文本", "", true))
             .push(config.privateKey.pem);
-        SP(Lang("账户私钥PEM文本", "Account Private Key PEM Text", true))
+        SP(Lang("账户私钥PEM文本", "", true))
             .push(config.accountKey.pem);
-        SP(Lang("账户URL", "Account URL", true))
+        SP(Lang("账户URL", "", true))
             .push(ACME.StepData.account.url);
-        SP(Lang("完整配置信息", "Complete Configuration Information", true))
+        SP(Lang("完整配置信息", "", true))
             .push("<ACME-HTML-Web-Browser-Client>" + JSON.stringify(logSet) + "</ACME-HTML-Web-Browser-Client>");
         logTxts.push(""); logTxts.push(logTitle); logTxts.push("");
 
@@ -753,14 +753,14 @@
             reader.onload = function (e) {
                 var txt = reader.result;
                 var m = /ACME-HTML-Web-Browser-Client>(.+?)<\/ACME-HTML-Web-Browser-Client/.exec(txt);
-                if (!m) return Toast(Lang("拖入的文件中未发现配置信息，请拖上次申请证书时保存的记录LOG文件！", "No configuration information is found in the dragged file. Please drag the LOG file saved in the last certificate application!"), 1);
+                if (!m) return Toast(Lang("拖入的文件中未发现配置信息，请拖上次申请证书时保存的记录LOG文件！", ""), 1);
 
                 DropConfigFile = JSON.parse(m[1]);
                 for (var k in DropConfigFile.X509) X509[k] = DropConfigFile.X509[k];
                 for (var k in DropConfigFile.Window) window[k] = DropConfigFile.Window[k];
 
                 CLog("DropConfigFile", 0, "Reset Config", DropConfigFile);
-                Toast(Lang("识别到拖入的记录LOG文件，已填充上次申请证书时使用的配置。", "The LOG file of the dragged record is identified, and the configuration used in the last certificate application has been filled."), 2);
+                Toast(Lang("识别到拖入的记录LOG文件，已填充上次申请证书时使用的配置。", ""), 2);
                 resetStep1();//重新初始化第1步
                 downloadFileNameShow();
             }
@@ -807,7 +807,7 @@
 
     //Test_打头的方法仅供测试用：完成第二步后允许进行UI调试，手动调用Test_AllStepData_Save()，刷新页面可恢复界面
     window.Test_AllStepData_Save = function () {
-        if (!ACME.StepData.order) throw new Error(Lang("未完成第二步操作", "The step 2 is not completed", true));
+        if (!ACME.StepData.order) throw new Error(Lang("未完成第二步操作", "", true));
 
         var config = ACME.StepData.config;
         delete ACME.PrevNonce;
@@ -816,17 +816,17 @@
 
         localStorage[Test_AllStepData_StoreKey] = JSON.stringify(ACME);
         ACME = null;
-        console.warn(Lang("仅供测试：已保存测试数据，需刷新页面", "For testing only: the test data has been saved, and the page needs to be refreshed", true));
+        console.warn(Lang("仅供测试：已保存测试数据，需刷新页面", "", true));
     };
     var Test_AllStepData_StoreKey = "ACME_HTML_Test_AllStepData";
     var initTest_Restore = function () {
         if (localStorage[Test_AllStepData_StoreKey]) {
-            console.warn(Lang("仅供测试：已保存测试数据，调用Test_Restore_StepXXX()进行恢复步骤界面", "For testing only: test data has been saved, call Test_Restore_StepXXX() to restore the step interface", true));
+            console.warn(Lang("仅供测试：已保存测试数据，调用Test_Restore_StepXXX()进行恢复步骤界面", "", true));
         }
     }
     var Test_AllStepData_Restore = function (next) {
         var data = JSON.parse(localStorage[Test_AllStepData_StoreKey] || "{}");
-        if (!data.StepData) throw new Error(Lang("未保存数据", "No data saved", true));
+        if (!data.StepData) throw new Error(Lang("未保存数据", "", true));
         for (var k in data) ACME[k] = data[k];
 
         var config = ACME.StepData.config;
@@ -841,13 +841,13 @@
     };
     window.Test_Restore_StepAuth = function () {
         Test_AllStepData_Restore(function () {
-            console.warn(Lang("仅供测试：已手动恢复步骤三界面", "For testing only: Step 3 interface has been manually restored", true));
+            console.warn(Lang("仅供测试：已手动恢复步骤三界面", "", true));
             verifyStepShow();
         });
     };
     window.Test_Restore_StepDownload = function () {
         Test_AllStepData_Restore(function () {
-            console.warn(Lang("仅供测试：已手动恢复步骤四界面", "For testing only: Step 4 interface has been manually restored", true));
+            console.warn(Lang("仅供测试：已手动恢复步骤四界面", "", true));
             downloadStepShow();
         });
     };

@@ -997,13 +997,17 @@
 //===========================================================
 //LICENSE: GPL-3.0, https://github.com/xiangyuecn/ACME-HTML-Web-Browser-Client
 
+// ===========================================
+// ===== Modified by: Qiu (zeoseven.com) =====
+// ===========================================
+
 (function () {
     "use strict";
 
     /************** Language **************/
     window.LangCur = "cn";
-    window.Lang = function (cn, en, txt) {
-        if ((cn || en) && (!cn || !en)) throw new Error("Lang bad args");
+    window.Lang = function (getCn, getEn, getTxt) {
+        const cn = getCn, en = " "+getEn,txt = getTxt;
         if (txt) return LangCur == "cn" ? cn : en;
         var html = "", ks = { cn: cn, en: en };
         for (var k in ks) {

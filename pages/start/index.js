@@ -343,7 +343,7 @@ export default ({ copy, dTitle, getQuery }) => {
                         <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"/>
                     </svg><span class="ms-2">重试 ...</span>
                 </button>
-                <div class="alert alert-warning mt-3 fs-14" role="alert">
+                <div class="alert alert-warning mt-3 fs-13" role="alert">
                     <p>开始验证前请确保所有 DNS 记录或文件都已准备就绪，建议准备就绪后等待 30 秒后再点击。</p>
                     <p>重试将刷新验证所需信息，需要重新设置 DNS 记录或文件。</p>
                 </div>
