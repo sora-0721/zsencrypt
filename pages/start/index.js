@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import Head from 'next/head';
 
-export default ({ copy, dTitle, getQuery }) => {
+export default ({ copy, dTitle, getQuery, tanchuang }) => {
     useEffect(() => {
 
         // 首页到开始的域名填充
@@ -17,6 +17,7 @@ export default ({ copy, dTitle, getQuery }) => {
             }
             setTimeout(() => {
                 document.querySelector('#x-q-domain').value = domainValue;
+                tanchuang('已自动填充域名，请输入电子邮箱后继续~')
             }, 100);
         };
 
@@ -272,12 +273,10 @@ export default ({ copy, dTitle, getQuery }) => {
 
 
         <div class="itemBox eabShow d-none">
-            <div class="pd Bold"><span class="langCN">EAB 凭据：</span><span class="langEN">EAB Credentials:</span></div>
+            <div class="pd Bold"><span class="langCN">EAB 凭据：</span><span class="langEN"></span></div>
             <div class="pd" style="font-size:13px;color:#aaa"><span class="langCN">当前 ACME 服务要求提供外部账号绑定凭据 (External
                     Account Binding)，比如 ZeroSSL ：你可以在 ZeroSSL 的管理控制台的 Developer 中获得此凭据，所以你需要先注册一个 ZeroSSL
-                    的账号。</span><span class="langEN">The current ACME service requires external account binding
-                    credentials, such as ZeroSSL: You can obtain this credentials in the Developer of the ZeroSSL
-                    management console, so you need to register a ZeroSSL account first.</span></div>
+                    的账号。</span><span class="langEN"></span></div>
             <div class="FlexBox" style="line-height:30px">
                 <div><i class="must">*</i>EAB KID:</div>
                 <div class="FlexItem" style="padding:0 50px 0 6px"><input class="in_eab_kid inputLang"
@@ -405,7 +404,7 @@ export default ({ copy, dTitle, getQuery }) => {
                         readonly></textarea></div>
                 <div style="padding-left:10px;line-height:30px;font-size:13px;color:#aaa">
                     <div class="mainBtn" onclick="downloadBtnClick('Log')"><span class="langCN">下载保存</span><span
-                            class="langEN">Download</span></div>
+                            class="langEN"></span></div>
                 </div>
             </div>
         </div>

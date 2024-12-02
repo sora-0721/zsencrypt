@@ -8,8 +8,9 @@ import '@components/main.css';
 
 
 
-function copyDiv(message) {
-    var toast = document.createElement('div');
+function copyDiv(message, time) {
+    const t = time || 2000;
+    let toast = document.createElement('div');
     toast.textContent = message;
     toast.style.position = 'fixed';
     toast.style.top = '20vh';
@@ -36,7 +37,7 @@ function copyDiv(message) {
         setTimeout(function () {
             document.body.removeChild(toast);
         }, 500);
-    }, 2000);
+    }, t);
 };
 
 export const copy = (text) => {
@@ -47,8 +48,8 @@ export const copy = (text) => {
     });
 };
 
-export const tanchuang = (i) => {
-    copyDiv(i);
+export const tanchuang = (i, t) => {
+    copyDiv(i, t);
 };
 
 
@@ -133,7 +134,7 @@ const Header = () => {
 const Footer = () => {
     return (
         <footer className="footer-div p-5">
-            <p>如果 ZSEncrypt 无法正常工作，可前往 <a href='/settings/'>设置</a> 清空数据。</p>
+            <p>如果 ZSEncrypt 无法正常工作，可前往 <a href='/settings/' target="_blank">设置</a> 清空数据。</p>
             <p className='my-2'>© 2024 ZeoSeven | GPLv3</p>
             <div>
                 <img src="https://zeoseven.com/_const/s/beian.icon-v1.png" className="icp-beian" /> <a href="https://beian.mps.gov.cn/#/query/webSearch?code=41130302000659" rel="noreferrer" target="_blank">豫公网安备41130302000659号</a>
