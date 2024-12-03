@@ -17,7 +17,7 @@ export default ({ copy, dTitle, getQuery, tanchuang }) => {
             }
             setTimeout(() => {
                 document.querySelector('#x-q-domain').value = domainValue;
-                tanchuang('已自动填充域名，请输入电子邮箱后继续~')
+                tanchuang('已自动生成域名信息，请检查域名是否正确~', 4000)
             }, 100);
         };
 
@@ -367,7 +367,8 @@ export default ({ copy, dTitle, getQuery, tanchuang }) => {
 <div class="row">
     <div class="col-12 mb-3">
         <h2 class="fw-light mb-4">结果输出</h2>
-        <p class="mb-3">你需要立即复制或下载， ZeoSeven 的服务器不会保存它，它只会显示这一次。</p>
+        <p class="mb-1">您需要立即复制或下载， ZeoSeven 的服务器不会保存它，它只会显示这一次。</p>
+        <p class="mb-3">您可能需要： <a href="../documents/#5">文档 - 安装在服务器 或 CDN</a></p>
     </div>
     <div class="col-6 mb-4">
         <p class="fw-bold m-0">PEM</p>

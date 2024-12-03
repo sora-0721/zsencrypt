@@ -6,7 +6,7 @@ export default () => {
             <meta name="keywords" content="ZSEncrypt,SSL,证书,免费证书,单域名证书,多域名证书,通配符证书,SSL证书申请,免费SSL证书,TLS证书,https证书,DV证书" />
         </Head>
         <span id="tagid">home</span>
-        <h1 className="display-5 mb-5">ZSEncrypt</h1>
+        <h1 className="display-5 mb-5 fw-bold">ZSEncrypt</h1>
         <div className="mb-5">
             <p className="mb-3">ZSEncrypt 的目的是提供一个简单快速申请有效 TLS/SSL 证书的平台，快速为您的站点提供 HTTPS 协议访问，而不是 ACME 自动化。</p>
             <p>支持 单域名证书、多域名证书 和 通配符证书，一切来自 <a href="https://letsencrypt.org/" target="_blank">Let's Encrypt</a> !</p>

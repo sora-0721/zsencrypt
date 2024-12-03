@@ -430,6 +430,18 @@ svg {
     font-weight: 300;
 }
 
+.documents pre {
+    background-color: #f1f1f1;
+    color: #333;
+    overflow-x: auto;
+    padding: 18px 36px;
+    font-size: 14px;
+    border-radius: 10px;
+    font-family: var(--q-code-font) !important;
+    font-weight: normal;
+    margin: 1rem 3rem;
+}
+
 .documents .mulu a {
     display: block;
     text-decoration: none;
@@ -446,9 +458,12 @@ svg {
 }
 
 .documents h4 {
-    padding: 0 2rem;
+    border-top: 1px solid #ddd;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
     margin-top: 2rem;
-    margin-bottom: 1rem;
     font-weight: 300;
 }
 
@@ -469,7 +484,7 @@ svg {
 
 .documents img {
     max-width: 100%;
-    padding: 0 2rem;
+    padding: 1rem 2rem;
 }
 
 qd {
