@@ -119,10 +119,10 @@ export default ({ dTitle, tanchuang }) => {
                 if (confirm('您确定要删除吗？此操作将不可逆 ...')) {
                     data.splice(dataIndex, 1);
                     localStorage.setItem('q-manageDataPairs', JSON.stringify(data));
-                    tanchuang('已删除 ...');
+                    tanchuang('正在删除 ...', 1000);
                     setTimeout(() => {
                         window.location.reload();
-                    }, 2500);
+                    }, 1500);
                 };
             });
         });

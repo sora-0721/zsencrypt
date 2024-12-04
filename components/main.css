@@ -32,6 +32,7 @@ a {
 }
 
 a:hover {
+    text-decoration: none;
     background-color: #00cc00;
     color: #fff;
 }
@@ -100,6 +101,7 @@ img {
 
 .label-radio:hover {
     color: #00cc00;
+    background-color: #0000;
 }
 
 input[type="radio"]:checked + .label-radio {
@@ -352,6 +354,10 @@ svg {
     height: 27px;
 }
 
+.seven0daohanglan .navbar .navbar-brand:hover {
+    background-color: #0000;
+}
+
 .seven0daohanglan .navbar-toggler {
     border: 1px solid #0000;
 }
@@ -470,6 +476,8 @@ svg {
 
 .documents .mulu a:hover {
     text-decoration: underline;
+    background-color: #0000;
+    color: #007700;
 }
 
 .documents h2 {
@@ -491,11 +499,6 @@ svg {
 .documents h2 a,
 .documents h4 a {
     text-decoration: none;
-}
-
-.documents h2 a:hover,
-.documents h4 a:hover {
-    text-decoration: underline;
 }
 
 .documents p {

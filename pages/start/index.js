@@ -145,7 +145,7 @@ export default ({ copy, dTitle, getQuery }) => {
     </div>
     <p class="spinner-border text-dark spinner-border-sm mb-4" role="status"></p>
     <div class="acmeReadDirState"></div>
-    <script src="/q/start/steps1.js"></script>
+    <script src="/q/start/init.js"></script>
 </div>
 
 
@@ -328,7 +328,7 @@ export default ({ copy, dTitle, getQuery }) => {
     </div>
     <div class="step1Hide step2Hide step3Show">
         <div class="verifyBox"></div>
-        <script src="/q/start/steps3.js"></script>
+        <script src="/q/start/verify.js"></script>
         <div class="itemBox">
             <div class="Center text-center">
                 <span class="mainBtn verifyStepBtn btn btn-q fw-bold me-3" onclick="verifyStepClick()">
@@ -425,7 +425,7 @@ export default ({ copy, dTitle, getQuery }) => {
             <h1 className='display-5 mb-2'>申请证书</h1>
             <p className='mb-5 fs-14'>需要帮助吗？ ZeoSeven 提供了 <a href='../documents/' target='_blank'>文档</a> 。</p>
             <div dangerouslySetInnerHTML={{ __html: PageInfo }} />
-            <script src="/q/start/api.js"></script>
+            <script src="/q/start/main.js"></script>
             <script src="/q/start/depend.js"></script>
         </>
     )
