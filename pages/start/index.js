@@ -426,7 +426,6 @@ export default ({ copy, dTitle, getQuery }) => {
             <p className='mb-5 fs-14'>需要帮助吗？ ZeoSeven 提供了 <a href='../documents/' target='_blank'>文档</a> 。</p>
             <div dangerouslySetInnerHTML={{ __html: PageInfo }} />
             <script src="/q/start/main.js"></script>
-            <script src="/q/start/depend.js"></script>
         </>
     )
 };
