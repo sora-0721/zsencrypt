@@ -32,7 +32,7 @@ export default ({ copy, dTitle, getQuery }) => {
         // 自动创建填充和记忆账户私钥
         const storageAccountKey = localStorage.getItem('q-acmeAccountKey');
         const accountKey = document.querySelector('.in_accountKey');
-        if (!storageAccountKey && storageAccountKey === '') {
+        if (!storageAccountKey || storageAccountKey === '') {
             document.querySelector('input[name="choice_accountKey"][value="generateECC"]').click();
             const trySet = setInterval(() => {
                 if (accountKey.value) {

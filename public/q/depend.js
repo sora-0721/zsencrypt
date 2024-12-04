@@ -1,3 +1,7 @@
+// ===========================================
+// ===== Modified by: Qiu (zeoseven.com) =====
+// ===========================================
+
 const Version = "1.0.230820";
 console.log("LICENSE: GPL-3.0, https://github.com/xiangyuecn/ACME-HTML-Web-Browser-Client/blob/main/LICENSE");
 
@@ -9,6 +13,7 @@ console.log("LICENSE: GPL-3.0, https://github.com/xiangyuecn/ACME-HTML-Web-Brows
 // ===========================================
 // ===== Modified by: Qiu (zeoseven.com) =====
 // ===========================================
+
 var acmeReadDirGotoCORSInit = function () {
     if (!window.IsReadDirGotoCORS) return;
     var stateEl = $(".acmeReadDirGotoCORSState").show().html(`
