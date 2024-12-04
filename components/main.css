@@ -32,7 +32,8 @@ a {
 }
 
 a:hover {
-    color: #007700;
+    background-color: #00cc00;
+    color: #fff;
 }
 
 .alert {
@@ -98,7 +99,7 @@ img {
 }
 
 .label-radio:hover {
-    color: #007700;
+    color: #00cc00;
 }
 
 input[type="radio"]:checked + .label-radio {
