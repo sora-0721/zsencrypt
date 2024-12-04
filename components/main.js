@@ -80,7 +80,7 @@ export const Header = () => {
                                 </a>
                             </li>
                             <li className="nav-item">
-                                <a className={`nav-link${tagid === 'start' ? ' active' : ''}`} href='/start/'>
+                                <a className={`nav-link${tagid === 'apply' ? ' active' : ''}`} href='/apply/'>
                                     申请证书
                                 </a>
                             </li>

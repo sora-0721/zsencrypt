@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import Head from 'next/head';
-import { tanchuang } from '@components/main';
 
 export default ({ copy, dTitle, getQuery }) => {
     useEffect(() => {
@@ -125,11 +124,6 @@ export default ({ copy, dTitle, getQuery }) => {
     }, []);
 
     const PageInfo = `
-<script>
-    const Version = "1.0.230820";
-    console.log("LICENSE: GPL-3.0, https://github.com/xiangyuecn/ACME-HTML-Web-Browser-Client/blob/main/LICENSE");
-</script>
-
 <div id="q-steps1">
     <div class="d-none">
         <div>
@@ -145,7 +139,6 @@ export default ({ copy, dTitle, getQuery }) => {
     </div>
     <p class="spinner-border text-dark spinner-border-sm mb-4" role="status"></p>
     <div class="acmeReadDirState"></div>
-    <script src="/q/start/init.js"></script>
 </div>
 
 
@@ -328,7 +321,6 @@ export default ({ copy, dTitle, getQuery }) => {
     </div>
     <div class="step1Hide step2Hide step3Show">
         <div class="verifyBox"></div>
-        <script src="/q/start/verify.js"></script>
         <div class="itemBox">
             <div class="Center text-center">
                 <span class="mainBtn verifyStepBtn btn btn-q fw-bold me-3" onclick="verifyStepClick()">
@@ -421,11 +413,11 @@ export default ({ copy, dTitle, getQuery }) => {
             <Head>
                 <title>{`申请证书 | ${dTitle}`}</title>
             </Head>
-            <span id="tagid">start</span>
+            <span id="tagid">apply</span>
             <h1 className='display-5 mb-2'>申请证书</h1>
             <p className='mb-5 fs-14'>需要帮助吗？ ZeoSeven 提供了 <a href='../documents/' target='_blank'>文档</a> 。</p>
             <div dangerouslySetInnerHTML={{ __html: PageInfo }} />
-            <script src="/q/start/main.js"></script>
+            <script src="/q/depend.js"></script>
         </>
     )
 };

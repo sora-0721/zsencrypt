@@ -42,7 +42,7 @@ export default ({ dTitle, tanchuang }) => {
                 dataDiv.innerHTML += item;
             });
         } else {
-            document.querySelector('.q-table').innerHTML = "<p>您还没有申请任何一个证书，请前往 <a href='../start/'>申请证书</a> 页面开始~</p>";
+            document.querySelector('.q-table').innerHTML = "<p>您还没有申请任何一个证书，请前往 <a href='../apply/'>申请证书</a> 页面开始~</p>";
         };
 
 
@@ -135,7 +135,7 @@ export default ({ dTitle, tanchuang }) => {
                 const domainPre = document.getElementById('td-domain-' + dataIndex);
 
                 const domains = domainPre.textContent || domainPre.innerText;
-                window.location.href = `/start/?domain=${domains}&type=0`;
+                window.location.href = `/apply/?domain=${domains}&type=0`;
             });
         });
 
