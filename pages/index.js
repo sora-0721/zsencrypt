@@ -16,20 +16,20 @@ export default () => {
             <p>为了更快，您无需注册任何账户，只需要提供一些 DNS 记录来验证您对域名的所有权，剩下的一切交给 ZSEncrypt 。</p>
         </div>
         <div className="mb-5">
-            <p>输入您的裸域名，不要带 http(s):// 或 www 。</p>
             <form action="./start/" method="get">
                 <div>
-                    <input name="domain" className="form-control form-control-sm q-form" placeholder="example.org" required />
+                    <p>输入您的裸域名，不要带 http(s):// 或 www 。</p>
+                    <input name="domain" className="form-control q-form" placeholder="example.org" required />
                 </div>
                 <div className="mt-3 mb-2">
                     <input type="radio" name="type" id="q-private1" value="1" className="d-none" defaultChecked />
-                    <label htmlFor="q-private1" className="label-radio">通配符证书</label>
+                    <label htmlFor="q-private1" className="label-radio">通配符(泛域名)证书</label>
                     <input type="radio" name="type" id="q-private0" value="0" className="d-none" />
                     <label htmlFor="q-private0" className="label-radio">单域名证书</label>
                 </div>
                 <div>
-                    <button type="submit" className="btn btn-lg btn-q">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-lightning-charge-fill" viewBox="0 0 16 16">
+                    <button type="submit" className="btn btn-q">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-lightning-charge-fill" viewBox="0 0 16 16">
                             <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z" />
                         </svg><span className="ms-2">开始！</span>
                     </button>
@@ -52,7 +52,6 @@ export default () => {
         <div className="mb-5">
             <h2 className="fw-light mb-3">快速</h2>
             <p className="mb-3">只需使用 DNS 方式 或 文件方式 验证域名所有权并提供一个电子邮箱获取域名过期邮件即可。 ACME 账户私钥、证书私钥 等都将自动生成、记忆和处理。</p>
-            <p>内网等环境可能不必使用可信的 TLS/SSL 证书来加密， ZSEncrypt 也提供 <a href="./self-signed/">自签名证书</a> ，只需要填写域名和有效期即可颁发！</p>
         </div>
         <div className="mb-5">
             <h2 className="fw-light mb-3">易用</h2>

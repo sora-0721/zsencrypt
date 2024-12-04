@@ -39,6 +39,7 @@ export default ({ dTitle }) => {
 
                 <h4 id="1-1"><a href="#1-1">#</a> 域名</h4>
                 <p>多个域名以 <qd>英文逗号(,)</qd> 分隔。</p>
+                <p><qd>您输入的域名越多，需要提供的验证凭据越多，因为它们需要逐个验证，所以如果不是特殊需求而使用多域名证书，则更推荐通配符证书，因为通配符证书只需要提供两个凭据。</qd></p>
                 <p>域名填写裸域，比如 <qd>example.org, *.example.org</qd> 即可申请覆盖主域 example.org 及子域 blog.example.org、bbs.example.org 等域名的 TLS/SSL 证书。</p>
                 <p>申请通配符证书需要向 DNS 添加 2 个相同主机记录但记录值不同的 TXT 记录。</p>
                 <p>您也可以精确匹配，比如只输入 www.example.org 来申请只覆盖 www 的单域名证书，或者输入 example.org, blog.example.org 来申请只覆盖主域名和 Blog 域名的多域名证书，但多域名证书通常直接使用通配符证书。</p>
@@ -48,7 +49,7 @@ export default ({ dTitle }) => {
                 <pre>zeoseven.com, zsencrypt.zeoseven.com</pre>
                 <p>那么这时候问题来了， ZeoSeven 还有一个 <qd>fonts.zeoseven.com</qd> ，如果想要覆盖它们，可以填写：</p>
                 <pre>zeoseven.com, zsencrypt.zeoseven.com, fonts.zeoseven.com</pre>
-                <p>这时候问题又来了，通配符证书只需要添加两个 TXT 记录或文件，而这样则需要添加三个，如果子域名特别多呢？不可能一个一个验证，那么可以用 通配符(*) 。</p>
+                <p>这时候问题又来了，通配符证书只需要添加两个 TXT 记录或文件，而这样则需要添加三个，如果子域名特别多呢？不可能一个一个验证，那样实在是过于麻烦，那么可以用 通配符(*) 。</p>
                 <pre>zeoseven.com, *.zeoseven.com</pre>
                 <p>这样以来，即可覆盖包括 zeoseven.com, www.zeoseven.com, zsencrypt.zeoseven.com, fonts.zeoseven.com ，甚至不使用的 bbs.zeoseven.com, api.zeoseven.com, blog.zeoseven.com 等一切子域名都可使用同一个 PEM 和 KEY 来开启 HTTPS 。</p>
                 <p>当然，因为 通配符(*) 匹配任何字符的特性，可以更方便的覆盖所有子域，但如果是 *.zeoseven.com ，则实际上只匹配 .zeoseven.com 前面任何英文字母和连字符，但如果遇到<qd>子域名的子域名</qd> ，如：</p>
@@ -84,7 +85,7 @@ export default ({ dTitle }) => {
 
             <div>
                 <h2 id="2"><a href="#2">#</a> 极速续期：一直继续</h2>
-                <p>如果您首次申请证书时一切顺利并成功输出 TLS/SSL 证书，而您也<qd>没有删除</qd>首次验证域名所添加的 TXT 记录，那么如果您还在 首次申请证书的浏览器且没有删除浏览器数据 或者 使用了 <a href="#4">数据迁移</a>，那么这时候，您不去修改域名的输入，原封不动的，<qd>您就可以一直点继续</qd>，即便是开始验证阶段，也无需等待直接点击，极速续期来输出 TLS/SSL 证书！</p>
+                <p>如果您首次申请证书时一切顺利并成功输出 TLS/SSL 证书，而您也<qd>没有删除</qd>首次验证域名所添加的 TXT 记录，并且您还在 首次申请证书的浏览器且没有删除浏览器数据 或者 使用了 <a href="#4">数据迁移</a>，那么这时候，您不去修改域名的输入，原封不动的，<qd>您就可以一直点继续</qd>，即便是开始验证阶段，也无需等待直接点击，极速续期来输出 TLS/SSL 证书！</p>
                 <h4 id="2-1"><a href="#2-1">#</a> 原理</h4>
                 <p>如果您查阅过 <a href="../settings/">设置</a> 页面，您可能会注意到一个叫做 “ACME 账户私钥” 的数据，它可以被看作是 Let's Encrypt 账户。</p>
                 <p>比如我在 账户 A 中验证了域名 zeoseven.com 和 *.zeoseven.com 的所有权(成功颁发证书) ，那么 Let's Encrypt 账户会记住，<qd>并在续期时要求和申请时一样的验证凭据</qd>，通常是 <qd>DNS 中使用相同的 TXT 记录值</qd> 。</p>

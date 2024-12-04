@@ -1,30 +1,31 @@
 import { useEffect } from 'react';
 import Head from 'next/head';
+import { tanchuang } from '@components/main';
 
-export default ({ copy, dTitle, getQuery, tanchuang }) => {
+export default ({ copy, dTitle, getQuery }) => {
     useEffect(() => {
 
         // 首页到开始的域名填充
         const domain = getQuery('domain');
-        const type = getQuery('type');
+        const type = getQuery('type') || '1';
         if (domain && type) {
             const domainOut = domain.replace(/^(https?:\/\/)?/, '');
             let domainValue = '';
             if (type === '1') {
-                domainValue = `*.${domainOut},${domainOut}`;
+                const firstDomain = domainOut.split(',')[0];
+                domainValue = `*.${firstDomain}, ${firstDomain}`;
             } else {
                 domainValue = domainOut;
             }
             setTimeout(() => {
                 document.querySelector('#x-q-domain').value = domainValue;
-                tanchuang('已自动生成域名信息，请检查域名是否正确~', 4000)
             }, 100);
         };
 
 
 
         // 前往设置后，如果发生改变，立即重新输入账户私钥值
-        window.addEventListener('storage', function(event) {
+        window.addEventListener('storage', function (event) {
             if (event.key === 'q-acmeAccountKey') {
                 document.querySelector('.in_accountKey').value = event.newValue;
             };
@@ -91,7 +92,6 @@ export default ({ copy, dTitle, getQuery, tanchuang }) => {
                 (e || window.event).returnValue = '你所做的更改可能未保存。';
             };
         });
-
         const XqiuInputs = document.querySelectorAll('#x-q-domain, #x-q-email');
         function XqiuSaveInputData() {
             XqiuInputs.forEach(input => {
@@ -111,11 +111,15 @@ export default ({ copy, dTitle, getQuery, tanchuang }) => {
             });
         });
 
+        const txtKey = document.querySelector('.txt_downloadKey');
+        const txtPem = document.querySelector('.txt_downloadCert');
+
+        // PEM 和 KEY 的复制按钮
         document.getElementById('x-q-copy-textpem').addEventListener('click', function () {
-            copy(document.querySelector('.txt_downloadCert').value);
+            copy(txtPem.value);
         });
         document.getElementById('x-q-copy-textkey').addEventListener('click', function () {
-            copy(document.querySelector('.txt_downloadKey').value);
+            copy(txtKey.value);
         });
 
     }, []);
@@ -157,6 +161,7 @@ export default ({ copy, dTitle, getQuery, tanchuang }) => {
     <label for="x-q-domain">域名</label>
     <textarea id="x-q-domain" class="in_domains inputLang form-control q-form" rows="1"
         placeholder-cn="example.org, *.example.org"></textarea>
+    <p class="fs-12">多域名证书或其它域名输入问题可参阅 <a href="../documents/#1-1" target="_blank">文档 - 域名</a> 。</p>
 </div>
 
 
@@ -248,7 +253,7 @@ export default ({ copy, dTitle, getQuery, tanchuang }) => {
     <input type="radio" name="q-privateKey" id="q-privateKey-user" value="rsa" class="d-none">
     <label for="q-privateKey-user" class="label-radio">自定义</label>
     <div class="mt-2 mb-3">
-        <textarea style="display: none;" id="q-privateKey-userInput" class="form-control q-form fs-12" rows="3" placeholder="输入证书私钥 ..."></textarea>
+        <textarea style="display: none;" id="q-privateKey-userInput" class="form-control q-form fs-14" rows="5" placeholder="输入证书私钥 ..."></textarea>
     </div>
 
 
@@ -292,7 +297,7 @@ export default ({ copy, dTitle, getQuery, tanchuang }) => {
 
 
         <div class="Center text-end mt-5">
-            <button class="mainBtn btn btn-q" onclick="configStepClick()">
+            <button class="mainBtn btn btn-q step1-main-btn" onclick="configStepClick()">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-lightning-fill" viewBox="0 0 16 16">
                     <path d="M5.52.359A.5.5 0 0 1 6 0h4a.5.5 0 0 1 .474.658L8.694 6H12.5a.5.5 0 0 1 .395.807l-7 9a.5.5 0 0 1-.873-.454L6.823 9.5H3.5a.5.5 0 0 1-.48-.641z"/>
                 </svg><span class="ms-2">继续 <em>Go!</em></span>
@@ -367,8 +372,7 @@ export default ({ copy, dTitle, getQuery, tanchuang }) => {
 <div class="row">
     <div class="col-12 mb-3">
         <h2 class="fw-light mb-4">结果输出</h2>
-        <p class="mb-1">您需要立即复制或下载， ZeoSeven 的服务器不会保存它，它只会显示这一次。</p>
-        <p class="mb-3">您可能需要： <a href="../documents/#5">文档 - 安装在服务器 或 CDN</a></p>
+        <p class="mb-3 fs-14">证书的 PEM 和 KEY 已经保存到 <a href="../manage/">证书管理</a>，您可能需要：<a href="../documents/#5">文档 - 安装在服务器 或 CDN</a></p>
     </div>
     <div class="col-6 mb-4">
         <p class="fw-bold m-0">PEM</p>
@@ -419,7 +423,7 @@ export default ({ copy, dTitle, getQuery, tanchuang }) => {
             </Head>
             <span id="tagid">start</span>
             <h1 className='display-5 mb-2'>申请证书</h1>
-            <p className='mb-5 fs-14'>需要帮助吗？ ZeoSeven 提供了 <a href='../documents/' target='_blank'>参考文档</a> 。</p>
+            <p className='mb-5 fs-14'>需要帮助吗？ ZeoSeven 提供了 <a href='../documents/' target='_blank'>文档</a> 。</p>
             <div dangerouslySetInnerHTML={{ __html: PageInfo }} />
             <script src="/q/start/api.js"></script>
             <script src="/q/start/depend.js"></script>

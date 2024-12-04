@@ -9,11 +9,8 @@ export default function () {
             </Head>
 
             <span id="tagid"></span>
-            <div className='px-sm-5 pt-5'>
-                <iframe src={`https://zeoseven.com/_const/d/iframe/httpError/?i=404`}
-                    style={{ width: '100%', height: '100vh' }}
-                ></iframe>
-            </div>
+            <h1 className='display-5 mb-5 fw-bold text-danger'>404 Not Found</h1>
+            <p>未找到页面，它可能已经被弃用或您的输入错误，您可以 <a href="/">返回首页</a> 。</p>
 
         </>
     )

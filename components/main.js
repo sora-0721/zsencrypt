@@ -85,8 +85,8 @@ export const Header = () => {
                                 </a>
                             </li>
                             <li className="nav-item">
-                                <a className={`nav-link${tagid === 'self-signed' ? ' active' : ''}`} href='/self-signed/'>
-                                    自签名
+                                <a className={`nav-link${tagid === 'manage' ? ' active' : ''}`} href='/manage/'>
+                                    证书管理
                                 </a>
                             </li>
                             <li className="nav-item">
@@ -115,6 +115,7 @@ export const Header = () => {
                                         <div className="dropdown-div">
                                             <li><a className={`dropdown-item${tagid === 'updatelogs' ? ' active' : ''}`} href="/info/UpdateLogs/">更新日志</a></li>
                                             <li><a className={`dropdown-item${tagid === 'open' ? ' active' : ''}`} href='/info/open/'>开源</a></li>
+                                            <li><a className="dropdown-item" href='https://zeoseven.com/message/feedback/' target="_blank">错误反馈</a></li>
                                         </div>
                                     </ul>
                                 </li>
@@ -155,7 +156,7 @@ export const WhitePage = ({ children }) => {
     return (
         <div className='container pt-5 px-4'>
             <div className='row justify-content-center'>
-                <div className='col-12 col-md-8 bg-white p-5'>
+                <div id='WhitePage' className='col-12 col-lg-8 bg-white p-5'>
                     {children}
                 </div>
             </div>

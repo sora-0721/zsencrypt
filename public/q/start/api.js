@@ -679,10 +679,25 @@
         $(".step4Hide").hide();
         $(".step4Show").show();
         ShowState(".downloadStepState", false);
-
         var config = ACME.StepData.config;
         var hasPEM = ACME.StepData.order.downloadPEM;
         var pemTxt = hasPEM || Lang("未发现证书，请刷新页面重新开始。", "", true);
+
+
+
+        // Qiu: 保存用于证书管理
+        let nowTime = new Date().toISOString();
+        let q_manageData = {
+            cert: pemTxt,
+            key: config.privateKey.pem,
+            time: nowTime,
+            domains: config.domains,
+        };
+        let q_manageDataOut = JSON.parse(localStorage.getItem('q-manageDataPairs')) || [];
+        q_manageDataOut.push(q_manageData);
+        localStorage.setItem('q-manageDataPairs', JSON.stringify(q_manageDataOut));
+
+
 
         $(".txt_downloadCert").val(pemTxt);
         $(".txt_downloadKey").val(config.privateKey.pem);

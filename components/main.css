@@ -386,6 +386,26 @@ svg {
 }
 
 
+.q-table {
+    overflow: auto;
+}
+
+.q-table thead td {
+    background-color: #00ff6e25;
+}
+
+.q-table thead td {
+    font-size: 13px;
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+.q-table td {
+    white-space: nowrap;
+    font-size: 14px;
+}
+
+
 
 
 

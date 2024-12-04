@@ -38,11 +38,11 @@ value="${i0}_${i}" challidx="${chall.challIdx}">&nbsp;${chall.name}
         boxEl.append(`
 <div class="itemBox my-5" style="border: #ccc 1px solid; border-radius: 10px;">
 <div class="pd FlexBox">
-<div style="background-color: #00ff6e25; border: none; padding: 16px; border-radius: 10px 10px 0px 0px;" class="mb-3 fw-bold">域名：${domain}</div>
-<div class="FlexItem px-3">${choiceHtml}</div>
+<div style="background-color: #00ff6e25; border: none; padding: 16px 32px; border-radius: 10px 10px 0px 0px;" class="mb-3 fw-bold">域名：${domain}</div>
+<div class="FlexItem" style="padding: 0 32px;">${choiceHtml}</div>
 </div>
-<div class="verifyItemBox_${i0} px-3"></div>
-<div class="verifyItemState_${i0} px-3 pb-3"></div>
+<div class="verifyItemBox_${i0}" style="padding: 0 32px;"></div>
+<div class="verifyItemState_${i0} pb-3" style="padding: 0 32px;"></div>
 </div>
 `);
     };
@@ -51,7 +51,7 @@ value="${i0}_${i}" challidx="${chall.challIdx}">&nbsp;${chall.name}
     $(".choice_authChall").bind("click", function (e) {
         var el = e.target, vals = el.value.split("_"), i0 = +vals[0], i2 = +vals[1];
         var domain = domains[i0], auth = auths[domain], chall = auth.challenges[i2];
-        var html = ['<div class="mt-1" style="font-size:14px;color:#aaa">'];
+        var html = ['<div class="mt-1" style="font-size:12px;color:#aaa">'];
         var nameCss = 'color: #333;';
         if (chall.type == "dns-01") {
             html.push(Lang('前往域名权威 DNS 服务器中添加以下 TXT 记录。在 添加 DNS 记录 后强烈建议等待 30 秒后再点击开始验证。因为如果验证失败，需要重新提交信息。', ' ') + '</div>');
