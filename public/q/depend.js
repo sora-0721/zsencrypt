@@ -30,15 +30,13 @@ console.log("LICENSE: GPL-3.0, https://github.com/xiangyuecn/ACME-HTML-Web-Brows
 
 var acmeReadDirGotoCORSInit = function () {
     if (!window.IsReadDirGotoCORS) return;
-    /* 
-        var stateEl = $(".acmeReadDirGotoCORSState").show().html(`
-            <div style="color:#cb1d1d">
-                <span class="langCN">本客户端正在以跨域兼容模式运行，请按正常流程操作即可，目标ACME服务URL=${window.Default_ACME_URL}</span>
-                <span class="langEN"></span>
-            </div>
-        `);
-        LangReview(stateEl);
-    */
+    var stateEl = $(".acmeReadDirGotoCORSState").show().html(`
+<div style="color:#cb1d1d">
+<span class="langCN">本客户端正在以跨域兼容模式运行，请按正常流程操作即可，目标ACME服务URL=${window.Default_ACME_URL}</span>
+<span class="langEN"></span>
+</div>
+    `);
+    LangReview(stateEl);
 };
 var acmeReadDirGotoCORS = function () {
     "use strict";
