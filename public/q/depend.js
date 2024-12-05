@@ -148,7 +148,7 @@ value="${i0}_${i}" challidx="${chall.challIdx}">&nbsp;${chall.name}
         boxEl.append(`
 <div class="itemBox my-5" style="border: #ccc 1px solid; border-radius: 10px;">
 <div class="pd FlexBox">
-<div style="background-color: #00ff6e25; border: none; padding: 16px 32px; border-radius: 10px 10px 0px 0px;" class="mb-3 fw-bold">域名：${domain}</div>
+<div style="background-color: #00ff6e25; border: none; padding: 16px 32px; border-radius: 10px 10px 0px 0px;" class="mb-3 fw-bold">${domain}</div>
 <div class="FlexItem" style="padding: 0 32px;">${choiceHtml}</div>
 </div>
 <div class="verifyItemBox_${i0}" style="padding: 0 32px;"></div>
@@ -164,45 +164,45 @@ value="${i0}_${i}" challidx="${chall.challIdx}">&nbsp;${chall.name}
         var html = ['<div class="mt-1" style="font-size:12px;color:#aaa">'];
         var nameCss = 'color: #333;';
         if (chall.type == "dns-01") {
-            html.push(Lang('前往域名权威 DNS 服务器中添加以下 TXT 记录。在 添加 DNS 记录 后强烈建议等待 30 秒后再点击开始验证。因为如果验证失败，需要重新提交信息。', ' ') + '</div>');
+            html.push(Lang('前往域名权威 DNS 服务器中添加以下 TXT 记录。', ' ') + '</div>');
             html.push(`<div class="pd FlexBox my-3">
-<div style="${nameCss}">${Lang('主机记录：', '')}</div>
+<div class="fs-14" style="${nameCss}">${Lang('主机记录：', '')}</div>
 <div class="FlexItem">
-<input class="form-control q-form" readonly value="_acme-challenge.${auth.identifier.value}" />
+<input class="form-control fs-13 q-form" readonly value="_acme-challenge.${auth.identifier.value}" />
 </div>
 </div>
 <div class="pd FlexBox mb-3">
-<div style="${nameCss}">${Lang('TXT 记录值：', '')}</div>
+<div class="fs-14" style="${nameCss}">${Lang('TXT 记录值：', '')}</div>
 <div class="FlexItem">
-<input class="form-control q-form" readonly value="${chall.authTxtSHA256}" />
+<input class="form-control fs-13 q-form" readonly value="${chall.authTxtSHA256}" />
 </div>
 </div>`);
         } else if (chall.type == "http-01") {
-            html.push(Lang('在网站根目录中创建 <b>/.well-known/acme-challenge/</b> 目录，目录内创建 <b>' + FormatText(chall.token) + '</b> 文件，文件内保存下面的文件内容，保存好后 <a href="http://' + auth.identifier.value + '/.well-known/acme-challenge/' + FormatText(chall.token) + '" target="_blank">打开验证文件</a> 测试能否能够正常访问。这个文件 URL 必须是 80 端口，并且公网可以访问，否则 ACME 无法访问到此地址将会验证失败。Windows 操作提示： Windows 中用 <b>.well-known.</b> 作为文件夹名称就能创建 <b>.well-known</b> 文件夹； IIS 可能需在此文件夹下的 MIME 类型中给 <b>.</b> 添加 <b>text/plain</b> 。', ' ') + '</div>');
+            html.push(Lang('验证前可 <a href="http://' + auth.identifier.value + '/.well-known/acme-challenge/' + FormatText(chall.token) + '" target="_blank">打开凭据文件</a> 以测试有效性。', '') + '</div>');
             html.push(`<div class="pd FlexBox my-3">
-<div style="${nameCss}">${Lang('文件路径：', '')}</div>
+<div class="fs-14" style="${nameCss}">${Lang('文件路径：', '')}</div>
 <div class="FlexItem">
-<input class="form-control q-form" readonly value="http://${auth.identifier.value}/.well-known/acme-challenge/${FormatText(chall.token)}" />
+<input class="form-control fs-13 q-form" readonly value="http://${auth.identifier.value}/.well-known/acme-challenge/${FormatText(chall.token)}" />
 </div>
 </div>
 <div class="pd FlexBox mb-3">
-<div style="${nameCss}">${Lang('文件内容：', '')}</div>
+<div class="fs-14" style="${nameCss}">${Lang('文件内容：', '')}</div>
 <div class="FlexItem">
-<input class="form-control q-form" readonly value="${chall.authTxt}" />
+<input class="form-control fs-13 q-form" readonly value="${chall.authTxt}" />
 </div>
 </div>`);
         } else {
-            html.push(Lang('非预定义验证类型，请使用 <b>Key Authorizations (Token+.+指纹)</b> 自行处理，<b>Digest</b> 为 Key Authorizations 的 SHA-256 Base64 值。', '') + '</div>');
+            html.push(Lang('', '') + '</div>');
             html.push(`<div class="pd FlexBox my-3">
-<div style="${nameCss}">Key Authorizations: </div>
+<div class="fs-14" style="${nameCss}">Key Authorizations: </div>
 <div class="FlexItem">
-<input class="form-control q-form" readonly value="${chall.authTxt}" />
+<input class="form-control fs-13 q-form" readonly value="${chall.authTxt}" />
 </div>
 </div>
 <div class="pd FlexBox mb-3">
-<div style="${nameCss}">Digest (SHA-256 Base64): </div>
+<div class="fs-14" style="${nameCss}">Digest (SHA-256 Base64): </div>
 <div class="FlexItem">
-<input class="form-control q-form" readonly value="${chall.authTxtSHA256Base64}" />
+<input class="form-control fs-13 q-form" readonly value="${chall.authTxtSHA256Base64}" />
 </div>
 </div>`);
         }

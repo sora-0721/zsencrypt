@@ -154,9 +154,9 @@ export const getQuery = function (i) {
 
 export const WhitePage = ({ children }) => {
     return (
-        <div className='container pt-5 px-4'>
+        <div className='container pt-5 px-sm-4'>
             <div className='row justify-content-center'>
-                <div id='WhitePage' className='col-12 col-lg-8 bg-white p-5'>
+                <div id='WhitePage' className='col-12 col-lg-8 bg-white py-5 px-4 px-sm-5'>
                     {children}
                 </div>
             </div>

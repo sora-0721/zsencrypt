@@ -19,6 +19,7 @@ export default ({ dTitle }) => {
                     <a href="#1-2">高级选项 - 证书类型(私钥)</a>
                     <a href="#1-3">验证域名所有权</a>
                 </div>
+                <a href="#6">验证凭据</a>
                 <a href="#2">极速续期：一直继续</a>
                 <div className="ps-5">
                     <a href="#2-1">原理</a>
@@ -79,7 +80,7 @@ export default ({ dTitle }) => {
                 <p>前往您的域名权威 DNS 服务器中添加 TXT 记录，输出的所有记录值都需要一一添加，但通常申请的通配符域名证书只需要添加两个 TXT 主机记录。</p>
                 <p><qd>建议在添加全部 TXT 记录后，不要急于点击开始验证按钮，等待 30 秒左右再点击，以缓解 DNS 传播的延迟。</qd>否则如果至多一个记录验证失败，则验证不通过，需要重新添加新的记录值。</p>
                 <p>如果一切顺利，您应该会看到 PEM 和 KEY 的输出页面：</p>
-                <img src="/q/documents/03.png" />
+                <img src="/q/documents/03.webp" />
                 <p>您可以下载 .pem 和 .key 文件安装到服务器上，也可以直接复制源字符串。</p>
             </div>
 

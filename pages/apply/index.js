@@ -312,7 +312,8 @@ export default ({ copy, dTitle, getQuery }) => {
 
 
 <div id="q-steps3" style="display: none;">
-    <h2 class="fw-light mb-2">最后一步，验证域名所有权</h4>
+    <h2 class="fw-light mb-2">最后一步，验证域名所有权</h2>
+    <p class="mb-2">您可能需要： <a href="/documents/#1-3" target="_blank">文档 - 验证域名所有权</a> 。</p>
     <div class="step3Hide step2Show step1Show">
         <div class="itemBox mt-2" style="color:#999">
             <span class="spinner-border text-dark spinner-border-sm me-2" role="status"></span>
