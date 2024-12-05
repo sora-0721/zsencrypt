@@ -1,6 +1,24 @@
 // ===========================================
 // ===== Modified by: Qiu (zeoseven.com) =====
 // ===========================================
+// LICENSE: GPLv3, https://github.com/zeoseven/zsencrypt/
+// ===========================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 const Version = "1.0.230820";
 console.log("LICENSE: GPL-3.0, https://github.com/xiangyuecn/ACME-HTML-Web-Browser-Client/blob/main/LICENSE");
@@ -10,21 +28,19 @@ console.log("LICENSE: GPL-3.0, https://github.com/xiangyuecn/ACME-HTML-Web-Brows
 //=================================================
 //LICENSE: GPL-3.0, https://github.com/xiangyuecn/ACME-HTML-Web-Browser-Client
 
-// ===========================================
-// ===== Modified by: Qiu (zeoseven.com) =====
-// ===========================================
-
 var acmeReadDirGotoCORSInit = function () {
     if (!window.IsReadDirGotoCORS) return;
-    var stateEl = $(".acmeReadDirGotoCORSState").show().html(`
-<div style="color:#cb1d1d">
-<span class="langCN">本客户端正在以跨域兼容模式运行，请按正常流程操作即可，目标ACME服务URL=${window.Default_ACME_URL}</span>
-<span class="langEN"></span>
-</div>
-`);
-    LangReview(stateEl);
+    /* 
+        var stateEl = $(".acmeReadDirGotoCORSState").show().html(`
+            <div style="color:#cb1d1d">
+                <span class="langCN">本客户端正在以跨域兼容模式运行，请按正常流程操作即可，目标ACME服务URL=${window.Default_ACME_URL}</span>
+                <span class="langEN"></span>
+            </div>
+        `);
+        LangReview(stateEl);
+    */
 };
-var acmeReadDirGotoCORS = function (title) {
+var acmeReadDirGotoCORS = function () {
     "use strict";
     var codes = "// " + Lang("请复制本代码到打开的ACME服务URL页面的浏览器控制台中运行。", "", true)
         + "\n\nvar Default_ACME_URL=" + JSON.stringify(ACME.URL) + ";"
@@ -102,10 +118,6 @@ var acmeReadDirGotoCORS = function (title) {
 //================= UI functions ==================
 //=================================================
 //LICENSE: GPL-3.0, https://github.com/xiangyuecn/ACME-HTML-Web-Browser-Client
-
-// ===========================================
-// ===== Modified by: Qiu (zeoseven.com) =====
-// ===========================================
 
 var verifyBoxShow = function () {
     "use strict";
@@ -232,10 +244,6 @@ value="${i0}_${i}" challidx="${chall.challIdx}">&nbsp;${chall.name}
 //================= UI functions ==================
 //=================================================
 //LICENSE: GPL-3.0, https://github.com/xiangyuecn/ACME-HTML-Web-Browser-Client
-
-// ===========================================
-// ===== Modified by: Qiu (zeoseven.com) =====
-// ===========================================
 
 (function () {
     "use strict";
@@ -772,17 +780,18 @@ value="${i0}_${i}" challidx="${chall.challIdx}">&nbsp;${chall.name}
                     ShowState(stateEl, false);
                     clearTimeout(auth.authTimer); auth.authTimer = 0;
                 } else if (auth.authState == 2)
-                    ShowState(stateEl, Lang("等待重试中...", "")
+                    // 等待重试中 ...
+                    ShowState(stateEl, Lang("准备 ... ", "")
                         + " " + auth.authTryCount + " " + auth.authError, 3, "");
                 else if (auth.authState == 1)
-                    ShowState(stateEl, Lang("验证中...", ""), 0, "");
-                else ShowState(stateEl, Lang("等待验证...", ""), 0, "");
+                    ShowState(stateEl, Lang("验证中 ... ", ""), 0, "");
+                else ShowState(stateEl, Lang("等待验证 ... ", ""), 0, "");
             }
             if (!isStop || stopNow) {
                 var goto2 = Lang("请重试", " ");
                 var msg = ShowState(sEl, (isFail ? Lang("验证失败，", "") + goto2 :
                     isStop ? Lang("已取消，", "Canceled, ") + goto2 :
-                        Lang("正在验证，请耐心等待... ", ""))
+                        Lang("正在验证，请耐心等待 ... ", ""))
                     + "<div>"
                     + Lang("验证通过：", "") + okCount + ", "
                     + Lang("未通过：", "") + errCount + ", "
@@ -2121,10 +2130,6 @@ value="${i0}_${i}" challidx="${chall.challIdx}">&nbsp;${chall.name}
 //===========================================================
 //LICENSE: GPL-3.0, https://github.com/xiangyuecn/ACME-HTML-Web-Browser-Client
 
-// ===========================================
-// ===== Modified by: Qiu (zeoseven.com) =====
-// ===========================================
-
 (function () {
     "use strict";
 
@@ -2340,10 +2345,6 @@ value="${i0}_${i}" challidx="${chall.challIdx}">&nbsp;${chall.name}
 //================= Launch ==================
 //===========================================
 //LICENSE: GPL-3.0, https://github.com/xiangyuecn/ACME-HTML-Web-Browser-Client
-
-// ===========================================
-// ===== Modified by: Qiu (zeoseven.com) =====
-// ===========================================
 
 (function () {
     "use strict";
