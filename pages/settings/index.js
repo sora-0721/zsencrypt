@@ -105,19 +105,6 @@ export default ({ dTitle, tanchuang }) => {
 
 
 
-        function getLocalStorageSize() {
-            var totalSize = 0;
-            for (var key in window.localStorage) {
-                if (!window.localStorage.hasOwnProperty(key)) continue;
-                var value = window.localStorage.getItem(key);
-                totalSize += (key.length + value.length) * 2;
-            }
-            return totalSize;
-        };
-        console.log('当前localStorage已使用大小：' + getLocalStorageSize() + ' 字节');
-
-
-
 
 
 

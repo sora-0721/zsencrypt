@@ -55,7 +55,7 @@ export const tanchuang = (i, t) => {
 export const Header = () => {
     const [tagid, setTagid] = useState('');
     useEffect(() => {
-        var tagid = document.getElementById('tagid');
+        let tagid = document.getElementById('tagid');
         if (tagid) {
             setTagid(tagid.textContent.trim());
         }

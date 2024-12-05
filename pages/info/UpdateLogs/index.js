@@ -11,6 +11,13 @@ export default ({ dTitle }) => {
 
 
 
+                <h3>BETA 5
+                    <p></p>
+                </h3>
+                <p>—— 将原 HTML 字符串统一为 JSX ，并将原 JS 逻辑封装为模块，以实现更好的性能。</p>
+
+
+
                 <h3>BETA 4
                     <p>2024-12-04 上午</p>
                 </h3>
