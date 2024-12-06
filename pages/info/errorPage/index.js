@@ -1,12 +1,13 @@
 import { useEffect } from 'react';
 import Head from 'next/head';
+import { zsQ } from '@components/main';
 
-export default ({ dTitle, getQuery }) => {
+export default () => {
 
     useEffect(() => {
 
-        const getMsg = getQuery('msg') || null;
-        const getType = getQuery('type') || null;
+        const getMsg = zsQ.getQuery('msg') || null;
+        const getType = zsQ.getQuery('type') || null;
         const msgDiv = document.getElementById('msg');
         const typeDiv = document.getElementById('type');
 
@@ -35,7 +36,7 @@ export default ({ dTitle, getQuery }) => {
     return (
         <>
             <Head>
-                <title>{`出现错误 | ${dTitle}`}</title>
+                <title>{`出现错误 | ${zsQ.title}`}</title>
             </Head>
             <h1 className='display-5 mb-5'>出现错误</h1>
             <div id='type'></div>

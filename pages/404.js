@@ -1,11 +1,11 @@
 import Head from "next/head"
-import { dTitle } from "@components/main"
+import { zsQ } from "@components/main"
 
 export default function () {
     return (
         <>
             <Head>
-                <title>{`404 Not Found | ${dTitle}`}</title>
+                <title>{`404 Not Found | ${zsQ.title}`}</title>
             </Head>
 
             <span id="tagid"></span>

@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { zsQ } from "@components/main";
 
 export default () => {
     return (<>

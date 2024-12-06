@@ -1,9 +1,10 @@
 import Head from "next/head";
+import { zsQ } from '@components/main';
 
-export default ({ dTitle }) => {
+export default () => {
     return (<>
         <Head>
-            <title>{`文档 | ${dTitle}`}</title>
+            <title>{`文档 | ${zsQ.title}`}</title>
         </Head>
         <span id="tagid">doc</span>
         <div className="documents">
@@ -73,7 +74,7 @@ export default ({ dTitle }) => {
                 <p>通常选择自动，如果您的服务器是相对较新的版本，支持 ECC 椭圆加密算法，那么应该选择 ECC ，因为它提供更好的安全性和效率。而 RSA 因存在历史较 ECC 更久远，所以 <qd>RSA 的兼容性更强，但效率并不如 ECC</qd> 。</p>
 
                 <h4 id="1-3"><a href="#1-3">#</a> 验证域名所有权</h4>
-                <p>以 zeoseven.com, *.zeoseven.com 为例，当在输入信息页面点击 “继续” 按钮后， ZSEncrypt 会输出需要验证的信息详情和选择验证方法。</p>
+                <p>以 zsencrypt.zeoseven.com 为例，当在输入信息页面点击 “继续” 按钮后， ZSEncrypt 会输出需要验证的信息详情和选择验证方法。</p>
                 <p>不论什么， ZSEncrypt 更推荐使用 DNS 记录验证，因为它通常来说相对其它验证方式更容易。</p>
                 <p>输出的信息看起来像这样：</p>
                 <img src="/q/documents/02.webp" />

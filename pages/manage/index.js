@@ -1,11 +1,12 @@
 import { useEffect } from 'react';
 import Head from 'next/head';
+import { zsQ } from '@components/main';
 
-export default ({ dTitle, tanchuang }) => {
+export default () => {
+
+    zsQ.pW100();
 
     useEffect(() => {
-
-        document.getElementById('WhitePage').classList.remove('col-lg-8');
 
         const dataDiv = document.getElementById('dataDiv');
 
@@ -119,7 +120,7 @@ export default ({ dTitle, tanchuang }) => {
                 if (confirm('您确定要删除吗？此操作将不可逆 ...')) {
                     data.splice(dataIndex, 1);
                     localStorage.setItem('q-manageDataPairs', JSON.stringify(data));
-                    tanchuang('正在删除 ...', 1000);
+                    zsQ.tc('正在删除 ...', 1000);
                     setTimeout(() => {
                         window.location.reload();
                     }, 1500);
@@ -144,7 +145,7 @@ export default ({ dTitle, tanchuang }) => {
     return (<>
 
         <Head>
-            <title>{`证书管理 | ${dTitle}`}</title>
+            <title>{`证书管理 | ${zsQ.title}`}</title>
         </Head>
         <span id='tagid'>manage</span>
         <h1 className='display-5 mb-5'>证书管理</h1>

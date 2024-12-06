@@ -1,9 +1,10 @@
 import Head from "next/head";
+import { zsQ } from '@components/main';
 
-export default ({ dTitle }) => {
+export default () => {
     return (<>
         <Head>
-            <title>{`更新日志 | ${dTitle}`}</title>
+            <title>{`更新日志 | ${zsQ.title}`}</title>
         </Head>
         <span id="tagid">updatelogs</span>
             <div className="updatelogs">
@@ -12,9 +13,10 @@ export default ({ dTitle }) => {
 
 
                 <h3>BETA 5
-                    <p></p>
+                    <p>2024-12-07 黎明</p>
                 </h3>
                 <p>—— 将原 HTML 字符串统一为 JSX ，并将原 JS 逻辑封装为模块，以实现更好的性能。</p>
+                <p>—— 根据错误经验，将反骨用户在首页输入的可能存在 www. 开头及连续的 *. 进行过滤以降低错误率。</p>
 
 
 

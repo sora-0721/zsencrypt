@@ -2,7 +2,7 @@ import App from 'next/app';
 import Head from 'next/head';
 import Script from 'next/script';
 import '@components/main.css';
-import { copy, tanchuang, Header, Footer, getQuery, WhitePage, dTitle } from '@components/main';
+import { Header, Footer, zsQ } from '@components/main';
 
 class MyApp extends App {
 
@@ -37,7 +37,7 @@ class MyApp extends App {
         return (
             <>
                 <Head>
-                    <title>{`${dTitle}`}</title>
+                    <title>{`${zsQ.title}`}</title>
                     <meta name="viewport" content="width=device-width, initial-scale=0.85" />
                     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
                     <link rel="icon" href='/favicon.ico' type='image/x-icon' />
@@ -58,17 +58,9 @@ class MyApp extends App {
                     ></iframe>
                 </noscript>
                 <Header />
-                <WhitePage>
-                    <main>
-                        <Component
-                            {...pageProps}
-                            copy={copy}
-                            dTitle={dTitle}
-                            tanchuang={tanchuang}
-                            getQuery={getQuery}
-                        />
-                    </main>
-                </WhitePage>
+                <zsQ.Page>
+                    <Component {...pageProps} />
+                </zsQ.Page>
                 <button id="_zsApi-goTop" data-border-color="#00ff6e90" data-background-color="#00ff6e75" style={{ display: 'none' }}></button>
                 <Footer />
 

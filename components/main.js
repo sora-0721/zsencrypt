@@ -1,71 +1,5 @@
 import React, { useState, useEffect } from 'react';
 
-
-
-
-
-function copyDiv(message, time) {
-    const t = time || 2000;
-    let toast = document.createElement('div');
-    toast.textContent = message;
-    toast.style.position = 'fixed';
-    toast.style.top = '20vh';
-    toast.style.left = '50%';
-    toast.style.transform = 'translateX(-50%)';
-    toast.style.backgroundColor = '#000';
-    toast.style.color = '#fff';
-    toast.style.padding = '10px 20px';
-    toast.style.zIndex = '3';
-    toast.style.fontSize = '14px';
-    toast.style.opacity = '0';
-    toast.style.border = '1px solid #ccc';
-    toast.style.transition = 'opacity 0.5s';
-    toast.style.boxShadow = '0 0 7px #00000050';
-
-    document.body.appendChild(toast);
-
-    setTimeout(function () {
-        toast.style.opacity = '1';
-    }, 100);
-
-    setTimeout(function () {
-        toast.style.opacity = '0';
-        setTimeout(function () {
-            document.body.removeChild(toast);
-        }, 500);
-    }, t);
-};
-
-export const copy = (text) => {
-    navigator.clipboard.writeText(text).then(() => {
-        copyDiv("已复制~");
-    }).catch(err => {
-        copyDiv(err);
-    });
-};
-
-export const tanchuang = (i, t) => {
-    copyDiv(i, t);
-};
-
-
-
-
-
-export const Loading = ({ text }) => {
-    const t = text || '载入 ...';
-    return (
-        <div className="q-font text-center my-5">
-            <span className="spinner-border spinner-border-sm text-danger"></span>
-            <span className="ms-3">{t}</span>
-        </div>
-    );
-};
-
-
-
-
-
 export const Header = () => {
     const [tagid, setTagid] = useState('');
     useEffect(() => {
@@ -156,30 +90,88 @@ export const Footer = () => {
     );
 };
 
+function toast(i, time) {
+    const t = time || 2000;
+    let toast = document.createElement('div');
+    toast.textContent = i;
+    toast.style.position = 'fixed';
+    toast.style.top = '20vh';
+    toast.style.left = '50%';
+    toast.style.transform = 'translateX(-50%)';
+    toast.style.backgroundColor = '#000';
+    toast.style.color = '#fff';
+    toast.style.padding = '10px 20px';
+    toast.style.zIndex = '3';
+    toast.style.fontSize = '14px';
+    toast.style.opacity = '0';
+    toast.style.border = '1px solid #ccc';
+    toast.style.transition = 'opacity 0.5s';
+    toast.style.boxShadow = '0 0 7px #00000050';
 
+    document.body.appendChild(toast);
 
+    setTimeout(function () {
+        toast.style.opacity = '1';
+    }, 100);
 
-export const getQuery = function (i) {
-    return (new URLSearchParams(window.location.search)).get(i);
+    setTimeout(function () {
+        toast.style.opacity = '0';
+        setTimeout(function () {
+            document.body.removeChild(toast);
+        }, 500);
+    }, t);
 };
 
 
 
 
-export const WhitePage = ({ children }) => {
-    return (
-        <div className='container pt-5 px-sm-4'>
-            <div className='row justify-content-center'>
-                <div id='WhitePage' className='col-12 col-lg-8 bg-white py-5 px-4 px-sm-5'>
-                    {children}
-                </div>
+
+export const zsQ = {
+
+    getQuery: function (i) {
+        return (new URLSearchParams(window.location.search)).get(i);
+    },
+
+    title: "ZSEncrypt - 简单快速的申请免费 TLS/SSL 证书",
+
+    Loading: ({ text }) => {
+        const t = text || '载入 ...';
+        return (
+            <div className="q-font text-center my-5">
+                <span className="spinner-border spinner-border-sm text-danger"></span>
+                <span className="ms-3">{t}</span>
             </div>
-        </div>
-    );
+        );
+    },
+
+    Page: ({ children }) => {
+        return (
+            <main className='container pt-5 px-sm-4'>
+                <div className='row justify-content-center'>
+                    <div id='WhitePage' className='col-12 col-lg-8 bg-white py-5 px-4 px-sm-5'>
+                        {children}
+                    </div>
+                </div>
+            </main>
+        );
+    },
+
+    pW100: () => {
+        useEffect(() => {
+            document.getElementById('WhitePage').classList.remove('col-lg-8');
+        }, []);
+    },
+
+    copy: (text) => {
+        navigator.clipboard.writeText(text).then(() => {
+            toast("已复制~");
+        }).catch(err => {
+            toast(err);
+        });
+    },
+
+    tc: (i, t) => {
+        toast(i, t);
+    }
+
 };
-
-
-
-
-
-export const dTitle = "ZSEncrypt - 简单快速的申请免费 TLS/SSL 证书";

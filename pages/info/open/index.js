@@ -1,9 +1,10 @@
 import Head from "next/head";
+import { zsQ } from '@components/main';
 
-export default ({ dTitle }) => {
+export default () => {
     return (<>
         <Head>
-            <title>{`开源 | ${dTitle}`}</title>
+            <title>{`开源 | ${zsQ.title}`}</title>
         </Head>
         <span id="tagid">open</span>
         <h1 className="display-5 mb-5">开源</h1>

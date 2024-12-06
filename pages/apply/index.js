@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import Head from 'next/head';
 import depend from '@components/depend';
-import { Loading } from '@components/main';
+import { zsQ } from '@components/main';
 
-export default ({ copy, dTitle, getQuery }) => {
+export default () => {
     useEffect(() => {
 
 
@@ -13,14 +13,15 @@ export default ({ copy, dTitle, getQuery }) => {
 
 
         // 首页到开始的域名填充
-        const domain = getQuery('domain');
-        const type = getQuery('type') || '1';
+        const domain = zsQ.getQuery('domain');
+        const type = zsQ.getQuery('type') || '1';
         if (domain && type) {
             const domainOut = domain.replace(/^(https?:\/\/)?/, '');
             let domainValue = '';
             if (type === '1') {
-                const firstDomain = domainOut.split(',')[0];
-                domainValue = `*.${firstDomain}, ${firstDomain}`;
+                const result = (domainOut.split(',')[0]).replace(/^www\./, '');
+                const out = `*.${result}, ${result}`;
+                domainValue = out.split('*.*.').filter(Boolean).join('')
             } else {
                 domainValue = domainOut;
             }
@@ -122,10 +123,10 @@ export default ({ copy, dTitle, getQuery }) => {
         const txtKey = document.querySelector('.txt_downloadKey');
         const txtPem = document.querySelector('.txt_downloadCert');
         document.getElementById('x-q-copy-textpem').addEventListener('click', function () {
-            copy(txtPem.value);
+            zsQ.copy(txtPem.value);
         });
         document.getElementById('x-q-copy-textkey').addEventListener('click', function () {
-            copy(txtKey.value);
+            zsQ.copy(txtKey.value);
         });
 
     }, []);
@@ -133,7 +134,7 @@ export default ({ copy, dTitle, getQuery }) => {
     return (
         <>
             <Head>
-                <title>{`申请证书 | ${dTitle}`}</title>
+                <title>{`申请证书 | ${zsQ.title}`}</title>
             </Head>
             <span id="tagid">apply</span>
             <h1 className='display-5 mb-2'>申请证书</h1>
@@ -155,7 +156,7 @@ export default ({ copy, dTitle, getQuery }) => {
                         </button>
                     </div>
                 </div>
-                <Loading />
+                <zsQ.Loading />
                 <div className="acmeReadDirState"></div>
             </div>
 
@@ -163,7 +164,7 @@ export default ({ copy, dTitle, getQuery }) => {
 
             <div id="q-steps2" style={{ display: 'none' }}>
                 <div className="step2Hide step1Show">
-                    <Loading text="等待 ..." />
+                    <zsQ.Loading text="等待 ..." />
                 </div>
                 <div className="step1Hide step2Show">
 
@@ -320,7 +321,7 @@ export default ({ copy, dTitle, getQuery }) => {
                 <p className="mb-2">您可能需要： <a href="/documents/#1-3" target="_blank">文档 - 验证域名所有权</a> 。</p>
                 <div className="step3Hide step2Show step1Show">
                     <div className="itemBox">
-                        <Loading text="等待 ..." />
+                        <zsQ.Loading text="等待 ..." />
                     </div>
                 </div>
                 <div className="step1Hide step2Hide step3Show">
@@ -358,7 +359,7 @@ export default ({ copy, dTitle, getQuery }) => {
             <div id="q-steps4" style={{ display: 'none' }}>
                 <div className="step4Hide step3Show step2Show step1Show">
                     <div className="itemBox">
-                        <Loading />
+                        <zsQ.Loading />
                     </div>
                 </div>
                 <div className="step1Hide step2Hide step3Hide step4Show">

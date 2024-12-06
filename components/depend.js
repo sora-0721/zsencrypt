@@ -1167,7 +1167,7 @@ value="${i0}_${i}" challidx="${chall.challIdx}">&nbsp;${chall.name}
             , StepData: {}
             , ChallName: function (chall) { //验证类型名称
                 if (chall.type == "dns-01") { // https://letsencrypt.org/docs/challenge-types/
-                    return Lang("DNS 记录验证", " ");
+                    return Lang("DNS 记录验证(推荐)", " ");
                 } else if (chall.type == "http-01") {
                     return Lang("文件验证", " ");
                 } // tls-alpn-01 https://www.rfc-editor.org/rfc/rfc8737

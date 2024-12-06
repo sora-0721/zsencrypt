@@ -1,7 +1,8 @@
 import Head from "next/head";
 import { useEffect } from "react";
+import { zsQ } from '@components/main';
 
-export default ({ dTitle, tanchuang }) => {
+export default () => {
     useEffect(() => {
 
         const userDomain = localStorage.getItem('x-q-domain');
@@ -10,7 +11,7 @@ export default ({ dTitle, tanchuang }) => {
         };
         document.getElementById("saveUserDomain").addEventListener("click", () => {
             localStorage.setItem("x-q-domain", document.getElementById("userDomain").value);
-            tanchuang("保存成功~");
+            zsQ.tc("保存成功~");
         })
 
         const userEmail = localStorage.getItem('x-q-email');
@@ -19,7 +20,7 @@ export default ({ dTitle, tanchuang }) => {
         };
         document.getElementById("saveUserEmail").addEventListener("click", () => {
             localStorage.setItem("x-q-email", document.getElementById("userEmail").value);
-            tanchuang("保存成功~");
+            zsQ.tc("保存成功~");
         });
 
         const acmeAccountKey = localStorage.getItem('q-acmeAccountKey');
@@ -28,7 +29,7 @@ export default ({ dTitle, tanchuang }) => {
         };
         document.getElementById("saveAcmeAccountKey").addEventListener("click", () => {
             localStorage.setItem("q-acmeAccountKey", document.getElementById("acmeAccountKey").value);
-            tanchuang("保存成功~");
+            zsQ.tc("保存成功~");
         });
 
         const manageDataPairs = localStorage.getItem('q-manageDataPairs');
@@ -37,7 +38,7 @@ export default ({ dTitle, tanchuang }) => {
         };
         document.getElementById("saveManageDataPairs").addEventListener("click", () => {
             localStorage.setItem("q-manageDataPairs", document.getElementById("manageDataPairs").value);
-            tanchuang("保存成功~");
+            zsQ.tc("保存成功~");
         });
 
 
@@ -71,12 +72,12 @@ export default ({ dTitle, tanchuang }) => {
                                 localStorage.setItem(key, data[key]);
                             }
                         }
-                        tanchuang('数据导入成功~');
+                        zsQ.tc('数据导入成功~');
                         setTimeout(() => {
                             window.location.reload();
                         }, 1000);
                     } catch (error) {
-                        tanchuang('数据导入失败 ...' + error);
+                        zsQ.tc('数据导入失败 ...' + error);
                     };
                 };
                 file.readAsText(event.target.files[0]);
@@ -96,7 +97,7 @@ export default ({ dTitle, tanchuang }) => {
             const i = confirm('清空数据可能会解决 ZSEncrypt 无法正常工作的问题，但是会清空所有数据导致已验证的域名需要重新验证(除非您保存了 ACME 账户私钥)，确定要清空数据吗？');
             if (i) {
                 localStorage.clear();
-                tanchuang('已完成清除 ... 将在 5 秒后返回首页 ...', 5000);
+                zsQ.tc('已完成清除 ... 将在 5 秒后返回首页 ...', 5000);
                 setTimeout(() => {
                     window.location.href = '/';
                 }, 5000);
@@ -111,7 +112,7 @@ export default ({ dTitle, tanchuang }) => {
     }, [])
     return (<>
         <Head>
-            <title>{`设置 | ${dTitle}`}</title>
+            <title>{`设置 | ${zsQ.title}`}</title>
         </Head>
         <span id="tagid">settings</span>
         <h1 className="display-5 mb-5">设置</h1>
