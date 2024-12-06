@@ -80,7 +80,7 @@ class MyApp extends App {
                      * 您可以将它替换为 bootstrap.bundle.min.js （仅加载 Bootstrap 框架的 Bundle JS 文件）即可正常工作。
                      */
                 }
-                <Script src="https://zeoseven.com/_const/api.min.js" async></Script>
+                <Script src="https://zeoseven.com/_const/api.min.js" defer></Script>
 
             </>
         );
