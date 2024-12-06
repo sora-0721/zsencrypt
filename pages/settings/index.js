@@ -147,7 +147,7 @@ export default ({ dTitle, tanchuang }) => {
         </div>
         <div className="mb-5">
             <p>高级 - ACME 账户私钥</p>
-            <textarea className="form-control q-form" rows="5" id="acmeAccountKey" placeholder="..."></textarea>
+            <textarea className="form-control q-form fs-14" rows="5" id="acmeAccountKey" placeholder="..."></textarea>
             <button id="saveAcmeAccountKey" className="btn-q mt-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-floppy" viewBox="0 0 16 16">
                     <path d="M11 2H9v3h2z" />

@@ -52,6 +52,20 @@ export const tanchuang = (i, t) => {
 
 
 
+export const Loading = ({ text }) => {
+    const t = text || '载入 ...';
+    return (
+        <div className="q-font text-center my-5">
+            <span className="spinner-border spinner-border-sm text-danger"></span>
+            <span className="ms-3">{t}</span>
+        </div>
+    );
+};
+
+
+
+
+
 export const Header = () => {
     const [tagid, setTagid] = useState('');
     useEffect(() => {

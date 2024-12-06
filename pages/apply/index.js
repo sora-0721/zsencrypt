@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import Head from 'next/head';
 import depend from '@components/depend';
+import { Loading } from '@components/main';
 
 export default ({ copy, dTitle, getQuery }) => {
     useEffect(() => {
@@ -154,7 +155,7 @@ export default ({ copy, dTitle, getQuery }) => {
                         </button>
                     </div>
                 </div>
-                <p className="spinner-border text-dark spinner-border-sm mb-4" role="status"></p>
+                <Loading />
                 <div className="acmeReadDirState"></div>
             </div>
 
@@ -162,7 +163,7 @@ export default ({ copy, dTitle, getQuery }) => {
 
             <div id="q-steps2" style={{ display: 'none' }}>
                 <div className="step2Hide step1Show">
-                    <div><span className="spinner-border text-dark spinner-border-sm me-2" role="status"></span><span>等待中...</span></div>
+                    <Loading text="等待 ..." />
                 </div>
                 <div className="step1Hide step2Show">
 
@@ -318,9 +319,8 @@ export default ({ copy, dTitle, getQuery }) => {
                 <h2 className="fw-light mb-2">最后一步，验证域名所有权</h2>
                 <p className="mb-2">您可能需要： <a href="/documents/#1-3" target="_blank">文档 - 验证域名所有权</a> 。</p>
                 <div className="step3Hide step2Show step1Show">
-                    <div className="itemBox mt-2 color-9">
-                        <span className="spinner-border text-dark spinner-border-sm me-2" role="status"></span>
-                        <span className="langCN">载入 ...</span>
+                    <div className="itemBox">
+                        <Loading text="等待 ..." />
                     </div>
                 </div>
                 <div className="step1Hide step2Hide step3Show">
@@ -357,9 +357,8 @@ export default ({ copy, dTitle, getQuery }) => {
 
             <div id="q-steps4" style={{ display: 'none' }}>
                 <div className="step4Hide step3Show step2Show step1Show">
-                    <div className="itemBox color-9">
-                        <span className="spinner-border text-dark spinner-border-sm me-2" role="status"></span>
-                        <span className="langCN">继续 ...</span>
+                    <div className="itemBox">
+                        <Loading />
                     </div>
                 </div>
                 <div className="step1Hide step2Hide step3Hide step4Show">
