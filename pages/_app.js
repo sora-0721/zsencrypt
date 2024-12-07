@@ -43,19 +43,7 @@ class MyApp extends App {
                     <link rel="icon" href='/favicon.ico' type='image/x-icon' />
                 </Head>
                 <noscript>
-                    <iframe
-                        src="https://zeoseven.com/_const/d/iframe/httpError/"
-                        frameborder="0"
-                        style={{
-                            position: 'fixed',
-                            width: '100vw',
-                            height: '100vh',
-                            top: '0px',
-                            left: '0px',
-                            zIndex: '4',
-                            backgroundColor: '#fff'
-                        }}
-                    ></iframe>
+                    <iframe src="https://zeoseven.com/_const/d/iframe/httpError/" frameborder="0" style={{ position: 'fixed', width: '100vw', height: '100vh', top: '0px', left: '0px', zIndex: '4', backgroundColor: '#fff' }}></iframe>
                 </noscript>
                 <Header />
                 <zsQ.Page>
