@@ -133,8 +133,8 @@ export default function depend() {
                 choiceHtml += `
 <label class="fs-14">
 <input type="radio" name="choice_authItem_${i0}"
-class="form-check-input choice_authChall choice_authChall_${i0} choice_authChall_${i0}_${i}"
-value="${i0}_${i}" challidx="${chall.challIdx}">&nbsp;${chall.name}
+class="me-2 form-check-input choice_authChall choice_authChall_${i0} choice_authChall_${i0}_${i}"
+value="${i0}_${i}" challidx="${chall.challIdx}">${chall.name}
 </label><br>
 `;
             }
@@ -146,7 +146,7 @@ value="${i0}_${i}" challidx="${chall.challIdx}">&nbsp;${chall.name}
 <div class="FlexItem" style="padding: 0 32px;">${choiceHtml}</div>
 </div>
 <div class="verifyItemBox_${i0}" style="padding: 0 32px;"></div>
-<div class="verifyItemState_${i0} pb-3" style="padding: 0 32px;"></div>
+<div class="verifyItemState_${i0} fs-12 pb-3" style="padding: 0 32px;"></div>
 </div>
 `);
         };
@@ -1167,7 +1167,7 @@ value="${i0}_${i}" challidx="${chall.challIdx}">&nbsp;${chall.name}
             , StepData: {}
             , ChallName: function (chall) { //验证类型名称
                 if (chall.type == "dns-01") { // https://letsencrypt.org/docs/challenge-types/
-                    return Lang("DNS 记录验证(推荐)", " ");
+                    return Lang("DNS 记录验证", " ");
                 } else if (chall.type == "http-01") {
                     return Lang("文件验证", " ");
                 } // tls-alpn-01 https://www.rfc-editor.org/rfc/rfc8737
