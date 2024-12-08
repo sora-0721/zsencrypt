@@ -4,7 +4,7 @@ import Script from 'next/script';
 import '@components/main.css';
 import { Header, Footer, zsQ } from '@components/main';
 
-class MyApp extends App {
+class main extends App {
     render() {
         const { Component, pageProps } = this.props;
         return (
@@ -52,4 +52,4 @@ class MyApp extends App {
     }
 }
 
-export default MyApp;
+export default main;
