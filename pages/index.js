@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { zsQ } from "@components/main";
 
 export default () => {
     return (<>
@@ -11,6 +10,11 @@ export default () => {
         <div className="mb-5">
             <p className="mb-3">ZSEncrypt 的目的是提供一个简单快速申请有效 TLS/SSL 证书的平台，快速为您的站点提供 HTTPS 协议访问，而不是 ACME 自动化。</p>
             <p>支持 单域名证书、多域名证书 和 通配符证书，一切来自 <a href="https://letsencrypt.org/" target="_blank">Let's Encrypt</a> !</p>
+        </div>
+        <div className="mb-5">
+            <h2 className="fw-light mb-3">准备好一切</h2>
+            <p className="dl">1. 您需要有对 <qd>域名权威 DNS 服务器</qd> 的访问权限 或 <qd>文件控制</qd> 权限。因为 CA 需要验证您对域名的所有权，这是必须的。</p>
+            <p className="dl">2. 一个 <qd>电子邮箱</qd> 来接收域名过期邮件。</p>
         </div>
         <div className="mb-4">
             <h2 className="fw-light mb-3" id="开始">开始</h2>
@@ -36,14 +40,6 @@ export default () => {
                     </button>
                 </div>
             </form>
-        </div>
-        <div className="mb-5">
-            <h2 className="fw-light mb-3">准备好一切</h2>
-            <p>1. 您需要有对 <qd>域名权威 DNS 服务器</qd> 的访问权限。</p>
-            <p className="ms-4">1A. 如果您没有条件 1 ，则需要拥有域名的文件控制权限。</p>
-            <p>2. 您需要有一个 <qd>电子邮箱</qd> 来接收域名过期邮件。</p>
-            <p>3. 三分钟时间。</p>
-            <p className="ms-4">3A. 如果在续期阶段使用<a href="./documents/#2">极速续期</a>，则只需要 30 秒时间。</p>
         </div>
         <hr className="my-5 mx-0 p-0" />
         <div className="mb-5">

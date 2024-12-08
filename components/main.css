@@ -517,3 +517,7 @@ qd {
     font-weight: 700;
     color: inherit;
 }
+
+p.dl {
+    text-indent: 2rem;
+}
