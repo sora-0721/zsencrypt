@@ -1,5 +1,6 @@
 /*
     Cache-Control: public, max-age=43200
+    Content-Security-Policy: frame-ancestors 'none'
 
 /_next/static/*
     ! Cache-Control
