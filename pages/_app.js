@@ -5,33 +5,6 @@ import '@components/main.css';
 import { Header, Footer, zsQ } from '@components/main';
 
 class MyApp extends App {
-
-    componentDidMount() {
-        if (typeof window !== 'undefined') {
-
-            if (window.self !== window.top) {
-                let iframeDiv = document.createElement('div');
-                iframeDiv.innerHTML = `
-                    <iframe
-                        src="https://zeoseven.com/_const/d/iframe/httpError/?i=no-iframe"
-                        frameborder="0"
-                        style="
-                            position: fixed;
-                            width: 100vw;
-                            height: 100vh;
-                            top: 0px;
-                            left: 0px;
-                            z-index: 4;
-                            background-color: #fff;
-                        "
-                    ></iframe>
-                `;
-                document.body.appendChild(iframeDiv);
-            };
-
-        };
-    };
-
     render() {
         const { Component, pageProps } = this.props;
         return (
@@ -43,7 +16,19 @@ class MyApp extends App {
                     <link rel="icon" href='/favicon.ico' type='image/x-icon' />
                 </Head>
                 <noscript>
-                    <iframe src="https://zeoseven.com/_const/d/iframe/httpError/" frameborder="0" style={{ position: 'fixed', width: '100vw', height: '100vh', top: '0px', left: '0px', zIndex: '4', backgroundColor: '#fff' }}></iframe>
+                    <div style={{
+                        position: 'fixed',
+                        top: 0,
+                        left: 0,
+                        width: '100vw',
+                        height: '100vh',
+                        zIndex: 4,
+                        backgroundColor: '#ffffff70',
+                        paddingTop: '33vh',
+                        textAlign: 'center',
+                        backdropFilter: 'blur(10px)'
+                    }}><h1 style={{ color: '#cc0000', fontWeight: '300' }}>ZSEncrypt 需要 JavaScript 才能正常工作。</h1>
+                    </div>
                 </noscript>
                 <Header />
                 <zsQ.Page>
