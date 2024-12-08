@@ -20,7 +20,6 @@ export default () => {
                     <a href="#1-2">高级选项 - 证书类型(私钥)</a>
                     <a href="#1-3">验证域名所有权</a>
                 </div>
-                <a href="#6">验证凭据</a>
                 <a href="#2">极速续期：一直继续</a>
                 <div className="ps-5">
                     <a href="#2-1">原理</a>

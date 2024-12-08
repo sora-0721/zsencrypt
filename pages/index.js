@@ -23,7 +23,7 @@ export default () => {
         <div className="mb-5">
             <form action="./apply/" method="get">
                 <div>
-                    <p>输入您的裸域名，不要带 http(s):// 或 www 。</p>
+                    <p>输入您的域名，不要带 http(s):// 或 www 。</p>
                     <input name="domain" className="form-control q-form" placeholder="example.org" required />
                 </div>
                 <div className="mt-3 mb-2">
@@ -40,6 +40,16 @@ export default () => {
                     </button>
                 </div>
             </form>
+        </div>
+        <div className="mb-5">
+            <h4 className="fw-light mb-3">您可能想了解</h4>
+            <a href="./documents/#2">极速续期</a>
+            <span> | </span>
+            <a href="./documents/#1-1">域名输入格式示例</a>
+            <span> | </span>
+            <a href="./manage/">证书管理</a>
+            <span> | </span>
+            <a href="https://zeoseven.com/" target="_blank">关于 ZeoSeven</a>
         </div>
         <hr className="my-5 mx-0 p-0" />
         <div className="mb-5">
