@@ -1,3 +1,5 @@
+import { zsQ } from "@components/main";
+
 /* 
  * =====================================================
  * === Origin by: xiangyuecn (github.com/xiangyuecn) ===
@@ -860,6 +862,9 @@ value="${i0}_${i}" challidx="${chall.challIdx}">${chall.name}
             };
             //全部验证成功
             var verifyOK = function () {
+
+                zsQ.tc('验证成功，正在颁发 ...');
+
                 CLog(tag, 0, "Verify OK!");
                 verifyEnd();
 

@@ -179,16 +179,6 @@ input[type="radio"]:checked + .label-radio {
     color: #999;
 }
 
-.color-9 a {
-    color: #999;
-}
-
-.color-9 a:hover {
-    text-decoration: none;
-    background-color: #00cc00;
-    color: #fff;
-}
-
 .br-15 {
     border-radius: 15px;
 }
