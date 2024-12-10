@@ -126,6 +126,22 @@ function toast(i, time) {
 
 
 
+export const Page = ({ type, children }) => {
+    return (
+        <main className='container pt-5 px-sm-4'>
+            <div className='row justify-content-center'>
+                <div className={`col-12${type === 'w100' ? '' : ' col-lg-8'} bg-white py-5 px-4 px-sm-5`}>
+                    {children}
+                </div>
+            </div>
+        </main>
+    );
+};
+
+
+
+
+
 export const zsQ = {
 
     getQuery: function (i) {
@@ -142,24 +158,6 @@ export const zsQ = {
                 <span className="ms-3">{t}</span>
             </div>
         );
-    },
-
-    Page: ({ children }) => {
-        return (
-            <main className='container pt-5 px-sm-4'>
-                <div className='row justify-content-center'>
-                    <div id='WhitePage' className='col-12 col-lg-8 bg-white py-5 px-4 px-sm-5'>
-                        {children}
-                    </div>
-                </div>
-            </main>
-        );
-    },
-
-    pW100: () => {
-        useEffect(() => {
-            document.getElementById('WhitePage').classList.remove('col-lg-8');
-        }, []);
     },
 
     copy: (text) => {

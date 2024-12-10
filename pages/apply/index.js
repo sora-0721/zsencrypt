@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import Head from 'next/head';
 import depend from '@components/depend';
-import { zsQ } from '@components/main';
+import { zsQ, Page } from '@components/main';
 
 export default () => {
     useEffect(() => {
@@ -131,11 +131,11 @@ export default () => {
 
     }, []);
 
-    return (
-        <>
-            <Head>
-                <title>{`申请证书 | ${zsQ.title}`}</title>
-            </Head>
+    return (<>
+        <Head>
+            <title>{`申请证书 | ${zsQ.title}`}</title>
+        </Head>
+        <Page>
             <span id="tagid">apply</span>
             <h1 className='display-5 mb-2'>申请证书</h1>
             <p className='mb-5 fs-14'>需要帮助吗？ ZeoSeven 提供了 <a href='../documents/' target='_blank'>文档</a> 。</p>
@@ -411,6 +411,6 @@ export default () => {
 
                 </div>
             </div>
-        </>
-    )
+        </Page>
+    </>)
 };

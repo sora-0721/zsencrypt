@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import Head from 'next/head';
-import { zsQ } from '@components/main';
+import { zsQ, Page } from '@components/main';
 
 export default () => {
 
@@ -38,9 +38,11 @@ export default () => {
             <Head>
                 <title>{`出现错误 | ${zsQ.title}`}</title>
             </Head>
-            <h1 className='display-5 mb-5'>出现错误</h1>
-            <div id='type'></div>
-            <div id='msg' className='mt-4'></div>
+            <Page>
+                <h1 className='display-5 mb-5'>出现错误</h1>
+                <div id='type'></div>
+                <div id='msg' className='mt-4'></div>
+            </Page>
         </>
     )
 }

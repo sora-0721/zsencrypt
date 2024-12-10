@@ -31,9 +31,7 @@ class main extends App {
                     </div>
                 </noscript>
                 <Header />
-                <zsQ.Page>
-                    <Component {...pageProps} />
-                </zsQ.Page>
+                <Component {...pageProps} />
                 <button id="_zsApi-goTop" data-border-color="#00ff6e90" data-background-color="#00ff6e75" style={{ display: 'none' }}></button>
                 <Footer />
 

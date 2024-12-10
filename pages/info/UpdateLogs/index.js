@@ -1,12 +1,13 @@
 import Head from "next/head";
-import { zsQ } from '@components/main';
+import { zsQ, Page } from '@components/main';
 
 export default () => {
     return (<>
         <Head>
             <title>{`更新日志 | ${zsQ.title}`}</title>
         </Head>
-        <span id="tagid">updatelogs</span>
+        <Page>
+            <span id="tagid">updatelogs</span>
             <div className="updatelogs">
                 <h1 className="display-5 mb-5">更新日志</h1>
 
@@ -59,5 +60,6 @@ export default () => {
 
 
             </div>
+        </Page>
     </>)
 };

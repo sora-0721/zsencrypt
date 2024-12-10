@@ -1,10 +1,8 @@
 import { useEffect } from 'react';
 import Head from 'next/head';
-import { zsQ } from '@components/main';
+import { zsQ, Page } from '@components/main';
 
 export default () => {
-
-    zsQ.pW100();
 
     useEffect(() => {
 
@@ -147,21 +145,23 @@ export default () => {
         <Head>
             <title>{`证书管理 | ${zsQ.title}`}</title>
         </Head>
-        <span id='tagid'>manage</span>
-        <h1 className='display-5 mb-5'>证书管理</h1>
-        <div className='q-table'>
-            <table className="table table-bordered m-0 p-0">
-                <thead>
-                    <tr>
-                        <td>序号</td>
-                        <td>域名</td>
-                        <td>预计到期时间</td>
-                        <td>操作</td>
-                    </tr>
-                </thead>
-                <tbody id="dataDiv"></tbody>
-            </table>
-        </div>
+        <Page type='w100'>
+            <span id='tagid'>manage</span>
+            <h1 className='display-5 mb-5'>证书管理</h1>
+            <div className='q-table'>
+                <table className="table table-bordered m-0 p-0">
+                    <thead>
+                        <tr>
+                            <td>序号</td>
+                            <td>域名</td>
+                            <td>预计到期时间</td>
+                            <td>操作</td>
+                        </tr>
+                    </thead>
+                    <tbody id="dataDiv"></tbody>
+                </table>
+            </div>
+        </Page>
 
     </>)
 };

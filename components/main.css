@@ -171,20 +171,6 @@ input[type="radio"]:checked + .label-radio {
     background-color: #00ff6e50;
 }
 
-.btn-q-form {
-    background-color: #eee;
-    border: 1px solid #ccc !important;
-    display: inline-block;
-}
-
-.btn-q-form:hover {
-    background-color: #ddd;
-}
-
-.btn-q-form:active {
-    background-color: #ccc !important;
-}
-
 .h-20vh {
     height: 20vh;
 }
@@ -195,6 +181,12 @@ input[type="radio"]:checked + .label-radio {
 
 .color-9 a {
     color: #999;
+}
+
+.color-9 a:hover {
+    text-decoration: none;
+    background-color: #00cc00;
+    color: #fff;
 }
 
 .br-15 {
@@ -507,6 +499,10 @@ svg {
 .documents img {
     max-width: 100%;
     padding: 1rem 2rem;
+}
+
+.documents b {
+    font-weight: 700;
 }
 
 qd {
