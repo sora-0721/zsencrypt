@@ -138,7 +138,7 @@ export default () => {
         <Page>
             <span id="tagid">apply</span>
             <h1 className='display-5 mb-2'>申请证书</h1>
-            <p className='mb-5 fs-14'>需要帮助吗？ ZeoSeven 提供了 <a href='../documents/' target='_blank'>文档</a> 。</p>
+            <p className='mb-5 fs-14'>需要帮助吗？ ZeoSeven 提供了 <a href='../documents/' target='_blank'>文档</a> 和 <a href="https://www.bilibili.com/video/BV1KRBuYrEjo/" rel="noopener" target="_blank">视频</a> 。</p>
 
 
 
