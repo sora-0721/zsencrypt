@@ -9,9 +9,18 @@ export default () => {
         <Page>
             <span id="tagid">home</span>
             <h1 className="display-5 mb-5 fw-bold">ZSEncrypt</h1>
-            <div className="mb-5">
+            <div className="mb-3">
                 <p className="mb-3">ZSEncrypt 的目的是提供一个简单快速申请有效 TLS/SSL 证书的平台，快速为您的站点提供 HTTPS 协议访问，而不是 ACME 自动化。</p>
                 <p>支持 单域名证书、多域名证书 和 通配符证书，一切来自 <a href="https://letsencrypt.org/" target="_blank">Let's Encrypt</a> !</p>
+            </div>
+            <div className="mb-5">
+                <p className="fw-bold">如果您感到困惑，还可以观看 ZSEncrypt 申请证书的全过程(2分钟)视频。</p>
+                <a href="https://www.bilibili.com/video/BV1KRBuYrEjo/" rel="noopener" target="_blank" style={{ position: "relative", display: "inline-block" }}>
+                    <img src="/q/homeVideo.webp" style={{ width: "100%", height: "auto", display: "block", filter: "brightness(0.9)" }} />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-play-circle-fill" viewBox="0 0 16 16" style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)" }}>
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z" />
+                    </svg>
+                </a>
             </div>
             <div className="mb-4">
                 <h2 className="fw-light mb-3" id="开始">开始</h2>
