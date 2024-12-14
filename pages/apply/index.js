@@ -117,6 +117,31 @@ export default () => {
             });
         });
 
+        document.querySelector('.step1-main-btn').addEventListener('click', function () {
+            const domainValue = document.getElementById('x-q-domain').value;
+            let domainJson = localStorage.getItem('q-domainJson');
+            domainJson = domainJson ? JSON.parse(domainJson) : {};
+            if (!domainJson.hasOwnProperty(domainValue)) {
+                domainJson[domainValue] = '';
+                localStorage.setItem('q-domainJson', JSON.stringify(domainJson));
+            };
+        });
+
+        const domainJson = localStorage.getItem('q-domainJson');
+        if (domainJson) {
+            const domainJsonObj = JSON.parse(domainJson);
+            for (let i in domainJsonObj) {
+                if (domainJsonObj.hasOwnProperty(i)) {
+                    let option = document.createElement('option');
+                    option.value = i;
+                    document.getElementById('x-q-domain-datalist').appendChild(option);
+                };
+            };
+        };
+
+
+
+
 
 
         // PEM 和 KEY 的复制按钮
@@ -170,7 +195,8 @@ export default () => {
 
                     <div className="mb-4">
                         <label htmlFor="x-q-domain">域名</label>
-                        <textarea id="x-q-domain" className="in_domains inputLang form-control q-form" rows="1" placeholder-cn="example.org, *.example.org"></textarea>
+                        <input id="x-q-domain" list="x-q-domain-datalist" className="in_domains inputLang form-control q-form" placeholder="example.org, *.example.org" />
+                        <datalist id="x-q-domain-datalist"></datalist>
                         <p className="fs-12">多域名证书或其它域名输入问题可参阅 <a href="../documents/#1-1" target="_blank">文档 - 域名</a> 。</p>
                     </div>
 

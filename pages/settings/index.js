@@ -41,6 +41,15 @@ export default () => {
             zsQ.tc("保存成功~");
         });
 
+        const domainJson = localStorage.getItem('q-domainJson');
+        if (domainJson) {
+            document.getElementById("domainJson").value = domainJson;
+        };
+        document.getElementById("saveDomainJson").addEventListener("click", () => {
+            localStorage.setItem("q-domainJson", document.getElementById("domainJson").value);
+            zsQ.tc("保存成功~");
+        });
+
 
         document.getElementById("outLocalStorage").addEventListener("click", () => {
             const data = {};
@@ -151,6 +160,16 @@ export default () => {
                 <p>高级 - ACME 账户私钥</p>
                 <textarea className="form-control q-form fs-14" rows="5" id="acmeAccountKey" placeholder="..."></textarea>
                 <button id="saveAcmeAccountKey" className="btn-q mt-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-floppy" viewBox="0 0 16 16">
+                        <path d="M11 2H9v3h2z" />
+                        <path d="M1.5 0h11.586a1.5 1.5 0 0 1 1.06.44l1.415 1.414A1.5 1.5 0 0 1 16 2.914V14.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 14.5v-13A1.5 1.5 0 0 1 1.5 0M1 1.5v13a.5.5 0 0 0 .5.5H2v-4.5A1.5 1.5 0 0 1 3.5 9h9a1.5 1.5 0 0 1 1.5 1.5V15h.5a.5.5 0 0 0 .5-.5V2.914a.5.5 0 0 0-.146-.353l-1.415-1.415A.5.5 0 0 0 13.086 1H13v4.5A1.5 1.5 0 0 1 11.5 7h-7A1.5 1.5 0 0 1 3 5.5V1H1.5a.5.5 0 0 0-.5.5m3 4a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5V1H4zM3 15h10v-4.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5z" />
+                    </svg><span className="ms-2">保存 ...</span>
+                </button>
+            </div>
+            <div className="mb-5">
+                <p>高级 - 历史域名记忆.json</p>
+                <textarea className="form-control q-form fs-14" rows="5" id="domainJson" placeholder="..."></textarea>
+                <button id="saveDomainJson" className="btn-q mt-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-floppy" viewBox="0 0 16 16">
                         <path d="M11 2H9v3h2z" />
                         <path d="M1.5 0h11.586a1.5 1.5 0 0 1 1.06.44l1.415 1.414A1.5 1.5 0 0 1 16 2.914V14.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 14.5v-13A1.5 1.5 0 0 1 1.5 0M1 1.5v13a.5.5 0 0 0 .5.5H2v-4.5A1.5 1.5 0 0 1 3.5 9h9a1.5 1.5 0 0 1 1.5 1.5V15h.5a.5.5 0 0 0 .5-.5V2.914a.5.5 0 0 0-.146-.353l-1.415-1.415A.5.5 0 0 0 13.086 1H13v4.5A1.5 1.5 0 0 1 11.5 7h-7A1.5 1.5 0 0 1 3 5.5V1H1.5a.5.5 0 0 0-.5.5m3 4a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5V1H4zM3 15h10v-4.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5z" />
