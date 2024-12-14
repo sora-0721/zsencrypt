@@ -42,11 +42,6 @@ export const Header = () => {
                                     文档
                                 </a>
                             </li>
-                            <li className="nav-item">
-                                <a className={`nav-link${tagid === 'like' ? ' active' : ''}`} href='/LikeZSEncrypt/'>
-                                    捐助
-                                </a>
-                            </li>
                             <div className='d-flex'>
                                 <li className='nav-item'>
                                     <a className={`nav-link${tagid === 'settings' ? ' active' : ''}`} href='/settings/'>
