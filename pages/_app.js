@@ -26,7 +26,11 @@ class main extends App {
                     paddingTop: '33vh',
                     textAlign: 'center',
                     backdropFilter: 'blur(10px)'
-                }}><h1 style={{ color: '#cc0000', fontWeight: '300' }}>ZSEncrypt 需要 JavaScript 才能正常工作。</h1>
+                }}>
+                    <div style={{ padding: '0 5vw' }}>
+                        <h1 style={{ color: '#cc0000' }}>ZSEncrypt 需要 JavaScript 才能正常工作。</h1>
+                        <h2 style={{ color: '#000000' }}>请开启 JavaScript 后刷新页面。</h2>
+                    </div>
                 </div>
             </noscript>
             <Header />
