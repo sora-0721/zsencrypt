@@ -68,12 +68,8 @@ export default () => {
                 <p>ZSEncrypt 从不提供商业证书，只提供简单的 Let's Encrypt DV 证书。</p>
             </div>
             <div className="mb-5">
-                <h2 className="fw-light mb-3">快速</h2>
+                <h2 className="fw-light mb-3">简单而快速</h2>
                 <p className="mb-3">只需使用 DNS 方式 或 文件方式 验证域名所有权并提供一个电子邮箱获取域名过期邮件即可。 ACME 账户私钥、证书私钥 等都将自动生成、记忆和处理。</p>
-            </div>
-            <div className="mb-5">
-                <h2 className="fw-light mb-3">易用</h2>
-                <p>ZSEncrypt 应该以极致的易用和快速申请而闻名， ZSEncrypt 的目的也正是如此。</p>
             </div>
             <div className="mb-5">
                 <h2 className="fw-light mb-3">安全</h2>

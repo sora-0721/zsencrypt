@@ -16,7 +16,7 @@ export default () => {
                 <h3 className="fw-light">目录</h3>
                 <div className="px-4 mulu">
                     <a href="#1">首次申请证书</a>
-                    <div className="ps-5">
+                    <div className="ps-4">
                         <a href="#1-1">域名</a>
                         <a href="#1-1-1">域名格式示例</a>
                         <a href="#1-1-2">二级域名 (以 .com.cn, .org.cn, .eu.org 等结尾) 的格式示例</a>
@@ -24,17 +24,17 @@ export default () => {
                         <a href="#1-3">验证域名所有权</a>
                     </div>
                     <a href="#6">主机记录格式</a>
-                    <div className="ps-5">
+                    <div className="ps-4">
                         <a href="#6-1">原理</a>
                     </div>
                     <a href="#2">极速续期：一直继续</a>
-                    <div className="ps-5">
+                    <div className="ps-4">
                         <a href="#2-1">原理</a>
                     </div>
                     <a href="#3">配置</a>
                     <a href="#4">数据迁移 - 在其它浏览器或设备极速续期</a>
                     <a href="#5">安装在服务器 或 CDN</a>
-                    <div className="ps-5">
+                    <div className="ps-4">
                         <a href="#5-1">以 1Panel 为例</a>
                     </div>
                 </div>
