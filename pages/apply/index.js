@@ -119,25 +119,23 @@ export default () => {
 
         document.querySelector('.step1-main-btn').addEventListener('click', function () {
             const domainValue = document.getElementById('x-q-domain').value;
-            let domainJson = localStorage.getItem('q-domainJson');
-            domainJson = domainJson ? JSON.parse(domainJson) : {};
-            if (!domainJson.hasOwnProperty(domainValue)) {
-                domainJson[domainValue] = '';
-                localStorage.setItem('q-domainJson', JSON.stringify(domainJson));
-            };
+            let domainArray = localStorage.getItem('q-domainArray');
+            domainArray = domainArray ? JSON.parse(domainArray) : [];
+            if (domainArray.indexOf(domainValue) === -1) {
+                domainArray.push(domainValue);
+                localStorage.setItem('q-domainArray', JSON.stringify(domainArray));
+            }
         });
-
-        const domainJson = localStorage.getItem('q-domainJson');
-        if (domainJson) {
-            const domainJsonObj = JSON.parse(domainJson);
-            for (let i in domainJsonObj) {
-                if (domainJsonObj.hasOwnProperty(i)) {
-                    let option = document.createElement('option');
-                    option.value = i;
-                    document.getElementById('x-q-domain-datalist').appendChild(option);
-                };
-            };
+        const domainArray = localStorage.getItem('q-domainArray');
+        if (domainArray) {
+            const domainArrayObj = JSON.parse(domainArray);
+            domainArrayObj.forEach(function (domain) {
+                let option = document.createElement('option');
+                option.value = domain;
+                document.getElementById('x-q-domain-datalist').appendChild(option);
+            });
         };
+
 
 
 
