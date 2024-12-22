@@ -165,7 +165,7 @@ value="${i0}_${i}" challidx="${chall.challIdx}">${chall.name}
 <div class="fs-14" style="${nameCss}">${Lang('主机记录：', '')}</div>
 <div class="FlexItem">
 <input class="form-control fs-13 q-form" readonly value="_acme-challenge.${auth.identifier.value}" />
-<p class="fs-12 color-9">对于 DNS 记录验证的必读文档段落：<a href="/documents/#6" target="_blank">文档 - 主机记录格式</a></p>
+<p class="fs-12 color-9">对于 DNS 记录验证的必读文档段落：<a href="/documents/#主机记录格式" target="_blank">文档 - 主机记录格式</a></p>
 </div>
 </div>
 <div class="pd FlexBox mb-3">

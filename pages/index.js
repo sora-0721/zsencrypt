@@ -54,9 +54,9 @@ export default () => {
             </div>
             <div className="mb-5">
                 <h4 className="fw-light mb-3">您可能想了解</h4>
-                <a href="./documents/#2">极速续期</a>
+                <a href="./documents/#极速续期：一直继续">极速续期</a>
                 <span> | </span>
-                <a href="./documents/#1-1">域名输入格式示例</a>
+                <a href="./documents/#域名格式示例">域名输入格式示例</a>
                 <span> | </span>
                 <a href="./manage/">证书管理</a>
                 <span> | </span>

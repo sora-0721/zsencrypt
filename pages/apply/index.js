@@ -195,7 +195,7 @@ export default () => {
                         <label htmlFor="x-q-domain">域名</label>
                         <input id="x-q-domain" list="x-q-domain-datalist" className="in_domains inputLang form-control q-form" placeholder-cn="example.org, *.example.org" />
                         <datalist id="x-q-domain-datalist"></datalist>
-                        <p className="fs-12">多域名证书或其它域名输入问题可参阅 <a href="../documents/#1-1" target="_blank">文档 - 域名</a> 。</p>
+                        <p className="fs-12">多域名证书或其它域名输入问题可参阅 <a href="../documents/#域名" target="_blank">文档 - 域名</a> 。</p>
                     </div>
 
                     <div className="form-check d-none">
@@ -342,7 +342,7 @@ export default () => {
 
             <div id="q-steps3" style={{ display: 'none' }}>
                 <h2 className="fw-light mb-2">最后一步，验证域名所有权</h2>
-                <p className="mb-2">这是可信 CA 颁发证书所必需的阶段，您可能需要： <a href="/documents/#1-3" target="_blank">文档 - 验证域名所有权</a> 。</p>
+                <p className="mb-2">这是可信 CA 颁发证书所必需的阶段，您可能需要： <a href="/documents/#验证域名所有权" target="_blank">文档 - 验证域名所有权</a> 。</p>
                 <div className="step3Hide step2Show step1Show">
                     <div className="itemBox">
                         <zsQ.Loading text="等待 ..." />
@@ -391,7 +391,7 @@ export default () => {
                     <div className="row">
                         <div className="col-12 mb-3">
                             <h2 className="fw-light mb-4">结果输出</h2>
-                            <p className="mb-3 fs-14">证书的 PEM 和 KEY 已经保存到 <a href="../manage/">证书管理</a>，您可能需要：<a href="../documents/#5">文档 - 安装在服务器 或 CDN</a></p>
+                            <p className="mb-3 fs-14">证书的 PEM 和 KEY 已经保存到 <a href="../manage/">证书管理</a>，您可能需要：<a href="../documents/#安装在服务器 或 CDN">文档 - 安装在服务器 或 CDN</a></p>
                         </div>
                         <div className="col-6 mb-4">
                             <p className="fw-bold m-0">PEM</p>
