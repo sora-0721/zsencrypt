@@ -3,6 +3,6 @@
     "compatibility_date": "2024-12-01",
     "pages_build_output_dir": "./out",
     "var": {
-        "NODE_VERSION": "22.x"
+        "NODE_VERSION": "22"
     }
 }
