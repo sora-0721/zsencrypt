@@ -3,7 +3,6 @@
 :root {
     --q-font: system-ui, sans-serif, serif, monospace;
     --q-code-font: "Cascadia Mono", "Consolas", "Menlo", "Ubuntu Mono", "Liberation Mono", "DejaVu Sans Mono", "Roboto Mono", "San Francisco Mono", monospace;
-    --q-serif-font: "Times New Roman", Times, serif;
 }
 
 body {
@@ -221,13 +220,6 @@ input[type="radio"]:checked + .label-radio {
 
 svg {
     margin-bottom: 3px;
-}
-
-.font-code {
-    font-family: var(--q-code-font);
-    overflow-wrap: break-word;
-    word-break: break-all;
-    overflow: auto;
 }
 
 .dropdown-menu {
