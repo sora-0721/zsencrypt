@@ -40,13 +40,13 @@ class main extends App {
 
             {
                 /*
-                 * api.min.js 是 ZeoSeven 的几乎每个网页都会载入的文件，
+                 * api.js 是 ZeoSeven 的几乎每个网页都会载入的文件，
                  * 它可删除，
                  * 主要加载在线服务，如 前端框架的加载和冗余、网页统计、通用函数（优化的锚点定位、回到顶部按钮）等。
                  * 您可以将它替换为 bootstrap.bundle.min.js （仅加载 Bootstrap 框架的 Bundle JS 文件）即可正常工作。
                  */
             }
-            <Script src="https://webstatic.zeoseven.com/api.min.js" defer></Script>
+            <Script src="https://webstatic.zeoseven.com/api.js" defer></Script>
 
         </>);
     }
