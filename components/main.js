@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+
+
 export const Header = () => {
     const [tagid, setTagid] = useState('');
     useEffect(() => {
@@ -54,7 +56,7 @@ export const Header = () => {
                                 <li className="nav-item dropdown">
                                     <a className={`nav-link${tagid === 'updatelogs' ||
                                         tagid === 'open' ? ' active' : ''
-                                        }`} href="javascript:;" data-bs-toggle="dropdown" aria-expanded="false">
+                                        }`} href="#" data-bs-toggle="dropdown" aria-expanded="false">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" className="bi bi-three-dots" viewBox="0 0 16 16">
                                             <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
                                         </svg>
@@ -76,6 +78,8 @@ export const Header = () => {
     </>);
 };
 
+
+
 export const Footer = () => {
     return (
         <footer className="footer-div p-5">
@@ -89,6 +93,8 @@ export const Footer = () => {
         </footer>
     );
 };
+
+
 
 function toast(i, time) {
     const t = time || 2000;
@@ -124,8 +130,6 @@ function toast(i, time) {
 
 
 
-
-
 export const Page = ({ type, children }) => {
     return (
         <main className='container pt-5 px-sm-4'>
@@ -137,8 +141,6 @@ export const Page = ({ type, children }) => {
         </main>
     );
 };
-
-
 
 
 

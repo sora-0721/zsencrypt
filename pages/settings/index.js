@@ -129,11 +129,11 @@ export default () => {
             <div className="mb-5">
                 <p className="mb-2">一切数据在本地存储，位于 localStorage ，如果不明白这些是什么，应该不要碰它们。</p>
                 <div>
-                    <a id="outLocalStorage" href="javascript:;">导出数据</a>
+                    <button id="outLocalStorage" className="a">导出数据</button>
                     <span> | </span>
-                    <a id="inLocalStorage" href="javascript:;">导入数据</a>
+                    <button id="inLocalStorage" className="a">导入数据</button>
                     <span> | </span>
-                    <a id="clearStorage" href="javascript:;">清空数据</a>
+                    <button id="clearStorage" className="a">清空数据</button>
                 </div>
             </div>
             <div className="mb-5">

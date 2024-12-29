@@ -24,13 +24,17 @@ p {
     background-color: #00ff6e50;
 }
 
-a {
+a,
+button.a {
     display: inline;
     text-decoration: underline;
+    border: none;
+    background-color: #0000;
     color: #00cc00;
 }
 
-a:hover {
+a:hover,
+button.a:hover {
     text-decoration: none;
     background-color: #00cc00;
     color: #fff;
