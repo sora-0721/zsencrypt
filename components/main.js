@@ -6,9 +6,7 @@ export const Header = () => {
     const [tagid, setTagid] = useState('');
     useEffect(() => {
         let tagid = document.getElementById('tagid');
-        if (tagid) {
-            setTagid(tagid.textContent.trim());
-        }
+        tagid && setTagid(tagid.textContent.trim());
     }, []);
     const s = 'md', b = 'lg';
     return (<>
