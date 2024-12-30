@@ -10,7 +10,7 @@ export const Header = () => {
     }, []);
     const s = 'md', b = 'lg';
     return (<>
-        {/* <div className='daohang-top'></div> */}
+        <div className='daohang-top'>致命错误已被发现并修复，详见 <a href='/info/UpdateLogs/'>更新日志</a> 。</div>
         <header className="seven0daohanglan">
             <nav className={`navbar navbar-expand-${s}`}>
                 <div className={`container-fluid fs-14 px-${b}-5`}>

@@ -43,12 +43,16 @@ export default () => {
         const accountKey = document.querySelector('.in_accountKey');
         if (!storageAccountKey || storageAccountKey === '') {
             document.querySelector('input[name="choice_accountKey"][value="generateECC"]').click();
-            if (accountKey.value) {
-                localStorage.setItem('q-acmeAccountKey', accountKey.value);
-                clearInterval(trySet);
-            };
+            const trySet = setInterval(() => {
+                if (accountKey.value) {
+                    localStorage.setItem('q-acmeAccountKey', accountKey.value);
+                    clearInterval(trySet);
+                };
+            }, 100);
         } else {
-            document.querySelector('input[name="choice_accountKey"][value="manual"]').click();
+            setTimeout(function () {
+                accountKey.value = storageAccountKey;
+            }, 500);
             accountKey.value = storageAccountKey;
         };
 
@@ -56,7 +60,9 @@ export default () => {
 
         // 自动创建和监听证书类型
         const privateKey = document.getElementById('q-privateKey-userInput');
-        document.querySelector('input[name="choice_privateKey"][value="generateRSA"]').click();
+        setTimeout(() => {
+            document.querySelector('input[name="choice_privateKey"][value="generateRSA"]').click();
+        }, 1000);
         document.getElementById('q-privateKey-auto').addEventListener('change', function () {
             document.querySelector('input[name="choice_privateKey"][value="generateRSA"]').click();
             privateKey.style.display = 'none';
@@ -73,7 +79,9 @@ export default () => {
             document.querySelector('input[name="choice_privateKey"][value="manual"]').click();
             privateKey.style.display = '';
             privateKey.addEventListener('blur', function () {
-                document.querySelector('.in_privateKey').value = privateKey.value;
+                setTimeout(() => {
+                    document.querySelector('.in_privateKey').value = privateKey.value;
+                }, 50);
             });
         });
 

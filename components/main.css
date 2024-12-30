@@ -26,7 +26,8 @@ p {
 
 main a,
 footer a,
-button.a {
+button.a,
+.daohang-top a {
     display: inline;
     text-decoration: underline;
     border: none;
@@ -36,7 +37,8 @@ button.a {
 
 main a:hover,
 footer a:hover,
-button.a:hover {
+button.a:hover,
+.daohang-top a:hover {
     text-decoration: none;
     background-color: #00cc00;
     color: #fff;
