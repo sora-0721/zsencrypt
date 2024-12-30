@@ -24,7 +24,8 @@ p {
     background-color: #00ff6e50;
 }
 
-a,
+main a,
+footer a,
 button.a {
     display: inline;
     text-decoration: underline;
@@ -33,7 +34,8 @@ button.a {
     color: #00cc00;
 }
 
-a:hover,
+main a:hover,
+footer a:hover,
 button.a:hover {
     text-decoration: none;
     background-color: #00cc00;
@@ -107,7 +109,7 @@ img {
     background-color: #0000;
 }
 
-input[type="radio"]:checked + .label-radio {
+input[type="radio"]:checked+.label-radio {
     outline: 0;
     box-shadow: none;
     background-color: #00ff6e25;
@@ -294,7 +296,7 @@ svg {
 
 .seven0daohanglan .navbar,
 .container-fluid {
-    background-color: #ffffff00;
+    background-color: #0000;
 }
 
 .seven0daohanglan .nav-item:not(.seven0daohanglan .d-flex .nav-item) {
@@ -328,10 +330,6 @@ svg {
 .seven0daohanglan .navbar .logo {
     width: auto;
     height: 27px;
-}
-
-.seven0daohanglan .navbar .navbar-brand:hover {
-    background-color: #0000;
 }
 
 .seven0daohanglan .navbar-toggler {
@@ -449,9 +447,8 @@ svg {
 }
 
 .documents .mulu a:hover {
-    text-decoration: underline;
     background-color: #0000;
-    color: #007700;
+    color: #00ff00;
 }
 
 .documents h2 {
