@@ -82,7 +82,7 @@ export const Footer = () => {
     return (
         <footer className="footer-div p-5">
             <p>如果 ZSEncrypt 无法正常工作，可前往 <a href='/settings/' target="_blank">设置</a> 清空数据。</p>
-            <p className='my-2'>© 2024-2025 ZeoSeven | GPLv3</p>
+            <p className='my-2'>{`© 2024-${new Date().getFullYear()} ZeoSeven | GPLv3`}</p>
             <div>
                 <img src="https://webstatic.zeoseven.com/static/beian.icon-v1.png" className="icp-beian" /> <a href="https://beian.mps.gov.cn/#/query/webSearch?code=41130302000659" rel="noreferrer" target="_blank">豫公网安备41130302000659号</a>
                 <span> | </span>
