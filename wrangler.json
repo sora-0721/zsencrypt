@@ -1,7 +1,0 @@
-{
-    "name": "zsencrypt",
-    "pages_build_output_dir": "./out",
-    "vars": {
-        "NODE_VERSION": "22"
-    }
-}
