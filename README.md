@@ -26,7 +26,7 @@ ZSEncrypt 的目的是提供一个简单快速申请有效 TLS/SSL 证书的平�
 
 ## 使用的开源软件 & 致谢
 
-<p><a href="https://nextjs.org/">Next.js</a><span> Version 14.2.16 - MIT</span></p>
+<p><a href="https://nextjs.org/">Next.js</a><span> Version 14.x - MIT</span></p>
 <p><a href="https://getbootstrap.com/">Bootstrap</a><span> Version 5.3.3 - MIT</span></p>
 <p><a href="https://github.com/xiangyuecn/ACME-HTML-Web-Browser-Client">ACME HTML Web Browser Client</a><span> Version 1.0.230820 - GPLv3</span></p>
 

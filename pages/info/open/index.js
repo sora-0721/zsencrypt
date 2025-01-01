@@ -16,7 +16,7 @@ export default () => {
                 <h2 className="fw-light mb-3">使用的开源软件</h2>
                 <p>
                     <a href="https://nextjs.org/" target="_blank" rel="nofollow noopener noreferrer">Next.js</a>
-                    <span> Version 14.2.16 - MIT</span>
+                    <span> Version 14.x - MIT</span>
                 </p>
                 <p>
                     <a href="https://getbootstrap.com/" target="_blank" rel="nofollow noopener noreferrer">Bootstrap</a>
