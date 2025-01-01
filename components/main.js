@@ -10,7 +10,7 @@ export const Header = () => {
     }, []);
     const s = 'md', b = 'lg';
     return (<>
-        <div className='daohang-top'>致命错误已被发现并修复，详见 <a href='/info/UpdateLogs/'>更新日志</a> 。</div>
+        {`<div className='daohang-top'></div>`}
         <header className="seven0daohanglan">
             <nav className={`navbar navbar-expand-${s}`}>
                 <div className={`container-fluid fs-14 px-${b}-5`}>
@@ -81,7 +81,7 @@ export const Header = () => {
 export const Footer = () => {
     return (
         <footer className="footer-div p-5">
-            <p>如果 ZSEncrypt 无法正常工作，可前往 <a href='/settings/' target="_blank">设置</a> 清空数据。</p>
+            <p>如果 ZSEncrypt 无法正常工作，可前往 <a href='/settings/' target="_blank">设置</a> 清空数据或 <a src="https://zeoseven.instatus.com/" target='_blank'>查看状态页面</a> 。</p>
             <p className='my-2'>{`© 2024-${new Date().getFullYear()} ZeoSeven | GPLv3`}</p>
             <div>
                 <img src="https://webstatic.zeoseven.com/static/beian.icon-v1.png" className="icp-beian" /> <a href="https://beian.mps.gov.cn/#/query/webSearch?code=41130302000659" rel="noreferrer" target="_blank">豫公网安备41130302000659号</a>
