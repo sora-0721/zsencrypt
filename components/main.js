@@ -10,7 +10,7 @@ export const Header = () => {
     }, []);
     const s = 'md', b = 'lg';
     return (<>
-        {`<div className='daohang-top'></div>`}
+        {/* <div className='daohang-top'></div> */}
         <header className="seven0daohanglan">
             <nav className={`navbar navbar-expand-${s}`}>
                 <div className={`container-fluid fs-14 px-${b}-5`}>
