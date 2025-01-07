@@ -52,7 +52,7 @@ export const Header = () => {
                                     </a>
                                 </li>
                                 <li className="nav-item dropdown">
-                                    <a href='#' className={`nav-link${id === 'updatelogs' ||
+                                    <a href='javascript:;' className={`nav-link${id === 'updatelogs' ||
                                         id === 'open' ? ' active' : ''
                                         }`} data-bs-toggle="dropdown" aria-expanded="false">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" className="bi bi-three-dots" viewBox="0 0 16 16">
@@ -81,7 +81,7 @@ export const Header = () => {
 export const Footer = () => {
     return (
         <footer className="footer-div p-5">
-            <p>如果 ZSEncrypt 无法正常工作，可前往 <a href='/settings/' target="_blank">设置</a> 清空数据或 <a src="https://zeoseven.instatus.com/" target='_blank'>查看状态页面</a> 。</p>
+            <p>如果 ZSEncrypt 无法正常工作，可前往 <a href='/settings/' target="_blank">设置</a> 清空数据或 <a href="https://zeoseven.instatus.com/" target='_blank'>查看状态页面</a> 。</p>
             <p className='my-2'>{`© 2024-${new Date().getFullYear()} ZeoSeven | GPLv3`}</p>
             <div>
                 <img src="https://webstatic.zeoseven.com/static/beian.icon-v1.png" className="icp-beian" /> <a href="https://beian.mps.gov.cn/#/query/webSearch?code=41130302000659" rel="noreferrer" target="_blank">豫公网安备41130302000659号</a>

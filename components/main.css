@@ -231,7 +231,7 @@ svg {
 }
 
 .dropdown-menu {
-    box-shadow: 0px 0px 10px #ccc;
+    box-shadow: 0px 0px 10px #ddd;
     border-radius: 15px;
     border: 1px solid #eee;
     min-width: 0px;
@@ -241,7 +241,7 @@ svg {
 .dropdown-menu .dropdown-item {
     border-radius: 10px;
     color: #333;
-    border: 1px solid #0000;
+    border: 1px solid #ffffff00;
     transition: all 300ms ease-in-out;
 }
 
@@ -251,14 +251,14 @@ svg {
 
 .dropdown-menu .dropdown-item:hover,
 .dropdown-menu .dropdown-item:active {
-    color: #333 !important;
-    border: 1px solid #00cc0045;
+    color: #333;
+    border: 1px solid #00cc0050;
     background-color: #0000;
 }
 
 .dropdown-menu .dropdown-item.active {
     color: #333 !important;
-    background-color: #00cc0030;
+    background-color: #00cc0020;
 }
 
 .dropdown-menu .dropdown-item svg {

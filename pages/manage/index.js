@@ -25,13 +25,13 @@ export default () => {
                         <td>${domain}</td>
                         <td class="guoqi-time" data-time="${d.time}"></td>
                         <td>
-                            <a href="#" class="downPem" data-id="${index}">下载 .pem</a>
+                            <a href="javascript:;" class="downPem" data-id="${index}">下载 .pem</a>
                             <span> | </span>
-                            <a href="#" class="downKey" data-id="${index}">下载 .key</a>
+                            <a href="javascript:;" class="downKey" data-id="${index}">下载 .key</a>
                             <span> | </span>
-                            <a href="#" class="delete" data-id="${i}">删除</a>
+                            <a href="javascript:;" class="delete" data-id="${i}">删除</a>
                             <span> | </span>
-                            <a href="#" class="update" data-id="${index}">续期</a>
+                            <a href="javascript:;" class="update" data-id="${index}">续期</a>
                         </td>
                     </tr>
                     <pre id="td-pem-${index}" class="d-none">${pem}</pre>
