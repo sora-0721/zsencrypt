@@ -19,6 +19,79 @@ export default function depend() {
     const Version = "1.0.230820";
     console.log("LICENSE: GPL-3.0, https://github.com/xiangyuecn/ACME-HTML-Web-Browser-Client/blob/main/LICENSE");
 
+
+    /************** $ Selector / like jQuery **************/
+    const $ = function (cls) { if (cls && cls.is$) return cls; return new fn(cls) }
+    var fn = function (cls, node) {
+        this.length = 0;
+        if (!cls) return;
+        if (cls.appendChild) { this.push(cls); return }
+        var arr = (node || document).querySelectorAll(cls);
+        for (var i = 0; i < arr.length; i++)this.push(arr[i]);
+    };
+    fn.prototype = {
+        is$: 1
+        , push: function (val) { this[this.length++] = val }
+        , find: function (cls) { var el0 = this[0]; return new fn(el0 ? cls : "", el0) }
+        , val: function (val) { return this.prop("value", val) }
+        , hide: function () { return this.css("display", "none") }
+        , show: function (display) { return this.css("display", display === undefined ? null : display) }
+
+        , html: function (html) {
+            var el0 = this[0];
+            if (html === undefined) return el0 && el0.innerHTML || "";
+            for (var i = 0; i < this.length; i++) this[i].innerHTML = html;
+            return this;
+        }
+        , append: function (html) { return this._end(html) }
+        , prepend: function (html) { return this._end(html, 1) }
+        , _end: function (html, prep) {
+            var el0 = this[0];
+            if (html && el0) {
+                var nodes = html;
+                if (typeof (html) == "string") {
+                    var div = document.createElement("div");
+                    div.innerHTML = html;
+                    nodes = [];
+                    for (var i = 0; i < div.childNodes.length; i++)nodes.push(div.childNodes[i]);
+                } else if (html.appendChild) {
+                    nodes = [html];
+                }
+                if (prep) prep = el0.firstChild;
+                for (var i = 0; i < nodes.length; i++) {
+                    if (prep) el0.insertBefore(nodes[i], prep);
+                    else el0.appendChild(nodes[i])
+                }
+            }
+            return this;
+        }
+        , prop: function (key, val) {
+            var el0 = this[0];
+            if (val === undefined) return el0 && el0[key];
+            for (var i = 0; i < this.length; i++) this[i][key] = val;
+            return this;
+        }
+        , attr: function (key, val) {
+            var el0 = this[0];
+            if (val === undefined) return el0 && el0.getAttribute(key);
+            for (var i = 0; i < this.length; i++) {
+                if (val == null) this[i].removeAttribute(key);
+                else this[i].setAttribute(key, val);
+            }
+            return this;
+        }
+        , css: function (key, val) {
+            for (var i = 0; i < this.length; i++)
+                this[i].style[key] = val;
+            return this;
+        }
+        , bind: function (type, fn) {
+            for (var i = 0; i < this.length; i++)
+                this[i].addEventListener(type, fn);
+            return this;
+        }
+    };
+
     //=================================================
     //================= UI functions ==================
     //=================================================
@@ -2186,81 +2259,6 @@ value="${i0}_${i}" challidx="${chall.challIdx}">${chall.name}
             fn.apply(console, arr);
             return msg;
         };
-
-
-        /************** $ Selector / like jQuery **************/
-        (function () {
-            window.$ = function (cls) { if (cls && cls.is$) return cls; return new fn(cls) }
-            var fn = function (cls, node) {
-                this.length = 0;
-                if (!cls) return;
-                if (cls.appendChild) { this.push(cls); return }
-                var arr = (node || document).querySelectorAll(cls);
-                for (var i = 0; i < arr.length; i++)this.push(arr[i]);
-            };
-            fn.prototype = {
-                is$: 1
-                , push: function (val) { this[this.length++] = val }
-                , find: function (cls) { var el0 = this[0]; return new fn(el0 ? cls : "", el0) }
-                , val: function (val) { return this.prop("value", val) }
-                , hide: function () { return this.css("display", "none") }
-                , show: function (display) { return this.css("display", display === undefined ? null : display) }
-
-                , html: function (html) {
-                    var el0 = this[0];
-                    if (html === undefined) return el0 && el0.innerHTML || "";
-                    for (var i = 0; i < this.length; i++) this[i].innerHTML = html;
-                    return this;
-                }
-                , append: function (html) { return this._end(html) }
-                , prepend: function (html) { return this._end(html, 1) }
-                , _end: function (html, prep) {
-                    var el0 = this[0];
-                    if (html && el0) {
-                        var nodes = html;
-                        if (typeof (html) == "string") {
-                            var div = document.createElement("div");
-                            div.innerHTML = html;
-                            nodes = [];
-                            for (var i = 0; i < div.childNodes.length; i++)nodes.push(div.childNodes[i]);
-                        } else if (html.appendChild) {
-                            nodes = [html];
-                        }
-                        if (prep) prep = el0.firstChild;
-                        for (var i = 0; i < nodes.length; i++) {
-                            if (prep) el0.insertBefore(nodes[i], prep);
-                            else el0.appendChild(nodes[i])
-                        }
-                    }
-                    return this;
-                }
-                , prop: function (key, val) {
-                    var el0 = this[0];
-                    if (val === undefined) return el0 && el0[key];
-                    for (var i = 0; i < this.length; i++) this[i][key] = val;
-                    return this;
-                }
-                , attr: function (key, val) {
-                    var el0 = this[0];
-                    if (val === undefined) return el0 && el0.getAttribute(key);
-                    for (var i = 0; i < this.length; i++) {
-                        if (val == null) this[i].removeAttribute(key);
-                        else this[i].setAttribute(key, val);
-                    }
-                    return this;
-                }
-                , css: function (key, val) {
-                    for (var i = 0; i < this.length; i++)
-                        this[i].style[key] = val;
-                    return this;
-                }
-                , bind: function (type, fn) {
-                    for (var i = 0; i < this.length; i++)
-                        this[i].addEventListener(type, fn);
-                    return this;
-                }
-            };
-        })();
 
 
         /************** functions **************/
