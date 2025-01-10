@@ -233,16 +233,16 @@ svg {
 .dropdown-menu {
     box-shadow: 0px 0px 10px #ccc;
     border-radius: 15px;
-    border: 1px solid #eee;
     min-width: 0px;
     font-size: 14px;
     margin: 0 !important;
+    opacity: 0;
+    transition: all 300ms ease-in-out;
 }
 
 .dropdown-menu .dropdown-item {
     border-radius: 10px;
     color: #333;
-    border: 1px solid #ffffff00;
     transition: all 300ms ease-in-out;
 }
 
@@ -252,14 +252,13 @@ svg {
 
 .dropdown-menu .dropdown-item:hover,
 .dropdown-menu .dropdown-item:active {
-    color: #333;
-    border: 1px solid #00cc0050;
-    background-color: #0000;
+    background-color: #f2f2f2;
 }
 
 .dropdown-menu .dropdown-item.active {
-    color: #333 !important;
+    color: #00cc00;
     background-color: #00cc0020;
+    border: 1px solid #00cc0030;
 }
 
 .dropdown-menu .dropdown-item svg {
@@ -297,11 +296,6 @@ svg {
     font-size: 13.5px;
 }
 
-.seven0daohanglan .navbar,
-.container-fluid {
-    background-color: #0000;
-}
-
 .seven0daohanglan .nav-item:not(.seven0daohanglan .d-flex .nav-item) {
     margin-right: 10px;
 }
@@ -320,14 +314,13 @@ svg {
 }
 
 .seven0daohanglan .nav-item .nav-link:hover {
-    color: #333;
-    border: 1px solid #00cc0045;
-    background-color: #0000;
+    background-color: #eee;
 }
 
 .seven0daohanglan .nav-item .nav-link.active {
-    color: #333 !important;
-    background-color: #00cc0030;
+    color: #00cc00;
+    background-color: #00cc0020;
+    border: 1px solid #00cc0030;
 }
 
 .seven0daohanglan .navbar .logo {
