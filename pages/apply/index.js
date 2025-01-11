@@ -329,7 +329,7 @@ export default () => {
                         <div className="fs-12">
                             <span>点击继续后代表你同意 </span>
                             <a href="https://letsencrypt.org/documents/LE-SA-v1.4-April-3-2024.pdf" target="_blank" rel="nofollow noreferrer noopener">Let's Encrypt 使用条款</a> 。
-                            <p>来自 <a href="https://letsencrypt.org/" target="_blank">Let's Encrypt</a> 的 90 天 TLS 证书。</p>
+                            <p>来自 <a href="https://letsencrypt.org/" target="_blank">Let's Encrypt</a> 的 3 个月 TLS 证书。</p>
                         </div>
                     </div>
 
