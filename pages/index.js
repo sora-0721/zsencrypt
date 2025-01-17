@@ -33,10 +33,22 @@ export default () => {
                         <input name="domain" className="form-control q-form" placeholder="example.org" required />
                     </div>
                     <div className="mt-3 mb-2">
+
                         <input type="radio" name="type" id="q-private1" value="1" className="d-none" defaultChecked />
-                        <label htmlFor="q-private1" className="label-radio">通配符(泛域名)证书</label>
+                        <label htmlFor="q-private1" className="label-radio">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-layers-fill" viewBox="0 0 16 16">
+                                <path d="M7.765 1.559a.5.5 0 0 1 .47 0l7.5 4a.5.5 0 0 1 0 .882l-7.5 4a.5.5 0 0 1-.47 0l-7.5-4a.5.5 0 0 1 0-.882z" />
+                                <path d="m2.125 8.567-1.86.992a.5.5 0 0 0 0 .882l7.5 4a.5.5 0 0 0 .47 0l7.5-4a.5.5 0 0 0 0-.882l-1.86-.992-5.17 2.756a1.5 1.5 0 0 1-1.41 0z" />
+                            </svg><span className="ms-2">通配符(泛域名)证书<span className="fs-12 ms-2">域覆盖更广</span></span>
+                        </label>
+
                         <input type="radio" name="type" id="q-private0" value="0" className="d-none" />
-                        <label htmlFor="q-private0" className="label-radio">单域名证书</label>
+                        <label htmlFor="q-private0" className="label-radio">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-layers-half" viewBox="0 0 16 16">
+                                <path d="M8.235 1.559a.5.5 0 0 0-.47 0l-7.5 4a.5.5 0 0 0 0 .882L3.188 8 .264 9.559a.5.5 0 0 0 0 .882l7.5 4a.5.5 0 0 0 .47 0l7.5-4a.5.5 0 0 0 0-.882L12.813 8l2.922-1.559a.5.5 0 0 0 0-.882zM8 9.433 1.562 6 8 2.567 14.438 6z" />
+                            </svg><span className="ms-2">单域名证书<span className="fs-12 ms-2">申请更快速</span></span>
+                        </label>
+
                     </div>
                     <div>
                         <button type="submit" className="btn btn-q">
@@ -60,7 +72,7 @@ export default () => {
                 <span> | </span>
                 <a href="./manage/">证书管理</a>
                 <span> | </span>
-                <a href="https://zeoseven.com/" target="_blank">关于 ZeoSeven</a>
+                <a href="https://zeoseven.com/#关于" target="_blank">关于 ZeoSeven</a>
             </div>
             <hr className="my-5 mx-0 p-0" />
             <div className="mb-5">

@@ -15,7 +15,7 @@ export const Header = () => {
             <nav className={`navbar navbar-expand-${s}`}>
                 <div className={`container-fluid fs-14 px-${b}-5`}>
                     <a className="navbar-brand me-5" href="/">
-                        <img src='https://webstatic.zeoseven.com/static/logo/zsencrypt/logoa-v2.png' className='logo' />
+                        <img src='https://webstatic.zeoseven.com/static/logo/zsencrypt/v2/logoa.png' className='logo' />
                     </a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#daohanginfo" aria-controls="daohanginfo" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
@@ -82,7 +82,7 @@ export const Footer = () => {
     return (
         <footer className="footer-div p-5">
             <p>如果 ZSEncrypt 无法正常工作，可前往 <a href='/settings/' target="_blank">设置</a> 清空数据或 <a href="https://zeoseven.instatus.com/" target='_blank'>查看状态页面</a> 。</p>
-            <p className='my-2'>{`© 2024-${new Date().getFullYear()} ZeoSeven | GPLv3`}</p>
+            <p className='my-2'>{`© 2024-${new Date().getFullYear()} 瑶清秋 & 温魏 | GPLv3`}</p>
             <div>
                 <img src="https://webstatic.zeoseven.com/static/beian.icon-v1.png" className="icp-beian" /> <a href="https://beian.mps.gov.cn/#/query/webSearch?code=41130302000659" rel="noreferrer" target="_blank">豫公网安备41130302000659号</a>
                 <span> | </span>
@@ -130,7 +130,7 @@ function toast(i, time) {
 
 export const Page = ({ type, children }) => {
     return (
-        <main className='container pt-5 px-sm-4'>
+        <main className='container pt-5 px-4'>
             <div className='row justify-content-center'>
                 <div className={`col-12${type === 'w100' ? '' : ' col-lg-8'} bg-white py-5 px-4 px-sm-5`}>
                     {children}
@@ -162,7 +162,7 @@ export const zsQ = {
 
     copy: (text) => {
         navigator.clipboard.writeText(text).then(() => {
-            toast("已复制~");
+            toast("已复制 ~");
         }).catch(err => {
             toast(err);
         });
