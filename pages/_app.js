@@ -1,9 +1,49 @@
 import Head from 'next/head';
 import Script from 'next/script';
 import '@components/main.css';
+// import { useEffect } from 'react';
 import { Header, Footer, zsQ } from '@components/main';
 
 export default function ({ Component, pageProps }) {
+
+    /*
+        useEffect(() => {
+            const bsDropdowns = document.querySelectorAll('.dropdown');
+            bsDropdowns && bsDropdowns.forEach(i => {
+                const menu = i.querySelector('.dropdown-menu');
+                let timeout = null;
+                function add() {
+                    if (menu) {
+                        clearTimeout(timeout);
+                        menu.classList.add('show');
+                        menu.setAttribute('data-bs-popper', 'static');
+                        setTimeout(() => {
+                            menu.style.opacity = 1;
+                        }, 0);
+                    };
+                };
+                function remove() {
+                    if (menu) {
+                        menu.style.opacity = 0;
+                        timeout = setTimeout(() => {
+                            menu.classList.remove('show');
+                            menu.removeAttribute('data-bs-popper');
+                        }, 300);
+                    };
+                };
+                i.addEventListener('mouseenter', add);
+                i.addEventListener('click', add);
+                i.addEventListener('mouseleave', remove);
+                document.addEventListener('click', function (event) {
+                    !i.contains(event.target) && remove();
+                });
+                document.addEventListener('touchstart', function (event) {
+                    !i.contains(event.target) && remove();
+                });
+            });
+        }, []);
+     */
+
     return (<>
         <Head>
             <title>{`${zsQ.title}`}</title>

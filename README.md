@@ -16,7 +16,7 @@ ZSEncrypt 的目的是提供一个简单快速申请有效 TLS/SSL 证书的平�
 
 <a href="https://zsencrypt.zeoseven.com/#开始">前往 zsencrypt.zeoseven.com 开始申请！</a>
 
-## 部署
+## 私有化部署
 
 首先将位于 `pages/_app.js` 中的 `<Script src="https://webstatic.zeoseven.com/main.js" defer></Script>` 替换为 CDN 可用或位于你服务器本地的 `bootstrap.bundle.min.js` 即可正常工作，推荐使用 v5.3.3 版本，更改后再将 `pages/_app.js` 中被注释的 `useEffect` 取消注释以使它们工作。
 
