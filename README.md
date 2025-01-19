@@ -18,6 +18,10 @@ ZSEncrypt 的目的是提供一个简单快速申请有效 TLS/SSL 证书的平�
 
 ## 部署
 
+首先将位于 `pages/_app.js` 中的 `<Script src="https://webstatic.zeoseven.com/main.js" defer></Script>` 替换为 CDN 可用或位于你服务器本地的 `bootstrap.bundle.min.js` 即可正常工作，推荐使用 v5.3.3 版本，更改后再将 `pages/_app.js` 中被注释的 `useEffect` 取消注释以使它们工作。
+
+如果需要的话，将 `components/main.css` 中的 CDN 目标全部修改为指向你本地的可用版本，这样以来， ZSEncrypt 就完全脱离 ZeoSeven 和公共 CDN ，成为完全私有的 ZSEncrypt 。
+
 需要： Node.js 18.17 及以上。
 
 ```
