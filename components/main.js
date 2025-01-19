@@ -61,7 +61,6 @@ export const Header = () => {
                                     </a>
                                     <ul className="dropdown-menu dropdown-menu-end">
                                         <div className="dropdown-div">
-                                            <li><a className={`dropdown-item${id === 'updatelogs' ? ' active' : ''}`} href="/info/UpdateLogs/">更新日志</a></li>
                                             <li><a className={`dropdown-item${id === 'open' ? ' active' : ''}`} href='/info/open/'>开源</a></li>
                                             <li><a className="dropdown-item" href='https://zeoseven.com/message/feedback/' target="_blank">错误反馈</a></li>
                                         </div>
