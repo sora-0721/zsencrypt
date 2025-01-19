@@ -12,7 +12,7 @@ ZSEncrypt 的目的是提供一个简单快速申请有效 TLS/SSL 证书的平�
 
 ## 私有化部署
 
-你可以直接前往 <a href="./releases">Release</a> 直接下载稳定的预构建静态文件，当然，除非你想要使用最新版本。
+你可以直接前往 <a href="https://github.com/zeoseven/zsencrypt/releases">Release</a> 直接下载稳定的预构建静态文件，当然，除非你想要使用最新版本。
 
 首先将位于 `pages/_app.js` 中的 `<Script src="https://webstatic.zeoseven.com/main.js" defer></Script>` 替换为 CDN 可用或位于你服务器本地的 `bootstrap.bundle.min.js` 即可正常工作，推荐使用 v5.3.3 版本，更改后再将 `pages/_app.js` 中被注释的 `useEffect` 取消注释以使它们工作。
 
