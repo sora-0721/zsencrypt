@@ -4,19 +4,19 @@ ZSEncrypt 的目的是提供一个简单快速申请有效 TLS/SSL 证书的平�
 
 支持 单域名证书、多域名证书 和 通配符证书，一切来自 <a href="https://letsencrypt.org/">Let's Encrypt</a> !
 
-## 准备好一切
-
-1. 您需要有对 域名权威 DNS 服务器 的访问权限 或 文件控制 权限。因为 CA 需要验证您对域名的所有权，这是必须的。
-
-2. 一个 电子邮箱 来接收域名过期邮件。
-
 ## 立即开始
 
 为了更快，您无需注册任何账户，只需要提供一些 DNS 记录来验证您对域名的所有权，剩下的一切交给 ZSEncrypt 。
 
 <a href="https://zsencrypt.zeoseven.com/#开始">前往 zsencrypt.zeoseven.com 开始申请！</a>
 
-## 部署
+## 私有化部署
+
+你可以前往 <a href="https://github.com/zeoseven/zsencrypt/releases">Release</a> 直接下载 ZSEncrypt_Private-Build.zip 即可获得已经构建好的**私有化版本**，它是**完全静态的**，保留了其中的文档，并且所有资源都将在本地获取，当然，除非你想要使用最新版本。
+
+首先将位于 `pages/_app.js` 中的 `<Script src="https://webstatic.zeoseven.com/main.js" defer></Script>` 替换为 CDN 可用或位于你服务器本地的 `bootstrap.bundle.min.js` 即可正常工作，推荐使用 v5.3.3 版本，更改后再将 `pages/_app.js` 中被注释的 `useEffect` 取消注释以使它们工作。
+
+如果需要的话，将 `components/main.css` 中的 CDN 目标全部修改为指向你本地的可用版本，这样以来， ZSEncrypt 就完全脱离 ZeoSeven 和公共 CDN ，成为完全私有的 ZSEncrypt 。
 
 需要： Node.js 18.17 及以上。
 

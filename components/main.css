@@ -1,8 +1,7 @@
-@import url('https://static.zeoseven.com/zsft/gh/main/result.css');
 @import url('https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css');
 
 :root {
-    --q-font: "Inter", system-ui, sans-serif;
+    --q-font: system-ui, sans-serif;
     --q-code-font: "Cascadia Mono", "Consolas", "Menlo", "Ubuntu Mono", "Liberation Mono", "DejaVu Sans Mono", "Roboto Mono", "San Francisco Mono", monospace;
 }
 

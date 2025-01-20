@@ -30,7 +30,8 @@ export default () => {
             <div className="documents">
                 <h1 className="display-5 mb-3">文档</h1>
 
-                <div className="mb-5">ZSEncrypt 中的一切高级方法和限制都基于 ZSEncrypt 的证书颁发机构 Let's Encrypt 的 <a href="https://letsencrypt.org/zh-cn/docs/#%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF" target="_blank" rel="noopener nofollow">高级用户信息</a> 和 <a href="https://letsencrypt.org/zh-cn/docs/rate-limits/" target="_blank" rel="noopener nofollow">速率限制</a> ，这是不可避免的防止滥用措施。</div>
+                <div className="mb-3">ZSEncrypt 中的一切高级方法和限制都基于 ZSEncrypt 的证书颁发机构 Let's Encrypt 的 <a href="https://letsencrypt.org/zh-cn/docs/#%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF" target="_blank" rel="noopener nofollow">高级用户信息</a> 和 <a href="https://letsencrypt.org/zh-cn/docs/rate-limits/" target="_blank" rel="noopener nofollow">速率限制</a> ，这是不可避免的防止滥用措施。</div>
+                <div className="fw-bold mb-5">你还可以前往 <a href="https://github.com/zeoseven/zsencrypt/" target="_blank">github.com</a> 并阅读其中的 README.md 来部署一个私有的 ZSEncrypt 。</div>
 
                 <h3 className="fw-light">目录</h3>
                 <div className="px-4 mulu">
