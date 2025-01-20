@@ -8,7 +8,7 @@ Certple 的目的是提供一个简单快速申请有效 TLS/SSL 证书的客户
 
 为了更快，您无需注册任何账户，只需要提供一些 DNS 记录来验证您对域名的所有权，剩下的一切交给 Certple 。
 
-<a href="https://certple.zeoseven.com/home#开始">前往 certple.zeoseven.com 开始申请！</a>
+<a href="https://certple.zeoseven.com/home/#开始">前往 certple.zeoseven.com 开始申请！</a>
 
 ## 私有化部署
 
@@ -41,9 +41,9 @@ npm run s
 
 ## 文档
 
-使用文档可以在 <a href="https://certple.zeoseven.com/docs">certple.zeoseven.com/docs</a> 上查阅。
+使用文档可以在 <a href="https://certple.zeoseven.com/docs/">certple.zeoseven.com/docs</a> 上查阅。
 
 ## 使用的开源软件 & 致谢
 
-使用的所有开源软件可以在 <a href="https://certple.zeoseven.com/more">certple.zeoseven.com/more</a> 上查阅。
+使用的所有开源软件可以在 <a href="https://certple.zeoseven.com/more/">certple.zeoseven.com/more</a> 上查阅。
 
