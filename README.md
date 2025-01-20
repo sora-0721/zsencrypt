@@ -6,7 +6,7 @@ Certple 的目的是提供一个简单快速申请有效 TLS/SSL 证书的客户
 
 ## 立即开始
 
-为了更快，您无需注册任何账户，只需要提供一些 DNS 记录来验证您对域名的所有权，剩下的一切交给 ZSEncrypt 。
+为了更快，您无需注册任何账户，只需要提供一些 DNS 记录来验证您对域名的所有权，剩下的一切交给 Certple 。
 
 <a href="https://certple.zeoseven.com/home#开始">前往 certple.zeoseven.com 开始申请！</a>
 
@@ -33,7 +33,7 @@ npm run s
 ```
 这将更快的在 localhost:3000 可用。
 
-你可以编辑 ZSEncrypt （使用 `npm run d` 启动开发服务器），只要那符合 GPLv3 LICENSE。
+你可以更改 Certple （使用 `npm run d` 启动开发服务器），只要那符合 GPLv3 LICENSE。
 
 ## 许可证
 
