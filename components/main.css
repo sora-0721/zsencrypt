@@ -26,11 +26,11 @@
 p {
     margin: 0;
     scrollbar-width: thin;
-    scrollbar-color: #333 #0000;
+    scrollbar-color: #00cc00 #0000;
 }
 
 ::selection {
-    background-color: #333;
+    background-color: #00CC00;
     color: #fff;
 }
 
@@ -72,7 +72,7 @@ svg {
 
 a,
 button.a {
-    color: #333;
+    color: #00CC00;
     text-decoration: underline;
     background-color: #0000;
     border: none;
@@ -81,7 +81,7 @@ button.a {
 a:hover,
 button.a:hover {
     text-decoration: none;
-    background-color: #333;
+    background-color: #00CC00;
     color: #fff;
     cursor: pointer;
 }
@@ -198,22 +198,30 @@ button.a:hover {
 }
 
 .q-btn {
-    background-color: #333;
-    color: #fff !important;
-    border: none;
-    border-radius: 7px;
+    background-color: #00ff6e20;
+    padding: 9px 12px;
+    border: 1px solid #aaa !important;
+    color: #333 !important;
+    transition: all 200ms ease-in-out;
+    border-radius: 0px !important;
+    text-decoration: none !important;
+    font-weight: bold;
     padding: .5rem 1rem;
 }
 
 .q-btn:hover {
-    background-color: #555;
+    background-color: #00ff6e50;
     cursor: pointer;
+}
+
+.q-btn:active {
+    background-color: #00ff6e50 !important;
 }
 
 .btn-red {
     background-color: #cc000025;
     color: #cc0000 !important;
-    border-radius: 7px;
+    border-radius: 0;
     padding: .5rem 1rem;
     border: 1px solid #cc000075;
 }
@@ -257,21 +265,17 @@ button.a:hover {
     margin-right: 8px;
     margin-bottom: 8px;
     color: inherit;
-    transition: all 200ms ease-in-out;
 }
 
 .label-radio:hover {
-    box-shadow: 0 0 10px #ddd;
-    color: inherit;
+    color: #00cc00;
     background-color: #0000;
-    cursor: pointer;
 }
 
 input[type="radio"]:checked+.label-radio {
     outline: 0;
     box-shadow: none;
-    background-color: #33333375;
-    color: #fff;
+    background-color: #00ff6e25;
 }
 
 
@@ -297,7 +301,7 @@ input[type="radio"]:checked+.label-radio {
 .documents .mulu a {
     display: block;
     text-decoration: none;
-    color: #333;
+    color: #00cc00;
 }
 
 .documents .mulu a:hover {

@@ -7,11 +7,11 @@ import '@components/main.css';
 import { dTitle } from '@components/main';
 
 export default function ({ Component, pageProps }) {
+    const router = useRouter();
 
 
 
     const NavbarItem = ({ children, to }) => {
-        const router = useRouter();
         const path = router.pathname;
         let isActive = "";
         isActive = path == to ? "active" : "";
@@ -41,7 +41,11 @@ export default function ({ Component, pageProps }) {
 
     useEffect(() => {
         window.innerWidth < mdBreakpoint && setNavbarDisplay("d-none");
-    }, [])
+    }, []);
+
+    useEffect(() => {
+        window.innerWidth < mdBreakpoint && setNavbarDisplay("d-none");
+    }, [router.pathname])
 
     useEffect(() => {
 

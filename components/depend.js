@@ -217,7 +217,7 @@ value="${i0}_${i}" challidx="${chall.challIdx}">${chall.name}
             boxEl.append(`
 <div class="itemBox my-5" style="border: #ccc 1px solid; border-radius: 10px;">
 <div class="pd FlexBox">
-<div style="background-color: #33333325; color: #333; border: none; padding: 16px 32px; border-radius: 10px 10px 0px 0px;" class="mb-3 fw-bold">${domain}</div>
+<div style="background-color: #00ff6e25; border: none; padding: 16px 32px; border-radius: 10px 10px 0px 0px;" class="mb-3 fw-bold">${domain}</div>
 <div class="FlexItem" style="padding: 0 32px;">${choiceHtml}</div>
 </div>
 <div class="verifyItemBox_${i0}" style="padding: 0 32px;"></div>
