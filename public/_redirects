@@ -1,4 +1,4 @@
-/apply https://certple.zeoseven.com/ 301
-/apply/ https://certple.zeoseven.com/ 301
-/docuuments https://certple.zeoseven.com/docs 301
-/docuuments/ https://certple.zeoseven.com/docs 301
+/apply / 301
+/apply/ / 301
+/docuuments /docs 301
+/docuuments/ /docs 301
