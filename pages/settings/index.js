@@ -72,7 +72,7 @@ export default () => {
             };
             const a = document.createElement('a');
             a.setAttribute('href', 'data:application/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(data)));
-            a.setAttribute('download', 'ZSEncrypt_Data.json');
+            a.setAttribute('download', 'Certple_Data.json');
             a.click();
         });
 
@@ -115,7 +115,7 @@ export default () => {
         let clearStorage = document.getElementById('clearStorage');
         clearStorage.addEventListener('click', function (event) {
             event.preventDefault();
-            const i = confirm('清空数据可能会解决 ZSEncrypt 无法正常工作的问题，但是会清空所有数据导致已验证的域名需要重新验证(除非您保存了 ACME 账户私钥)，确定要清空数据吗？');
+            const i = confirm('清空数据可能会解决 Certple 无法正常工作的问题，但是会清空所有数据导致已验证的域名需要重新验证(除非您保存了 ACME 账户私钥)，确定要清空数据吗？');
             if (i) {
                 localStorage.clear();
                 tc('已完成清除 ... 将在 5 秒后返回首页 ...', 5000);
