@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import Head from 'next/head';
-import { zsQ, Page } from '@components/main';
+import { dTitle, tc } from '@components/main';
 
 export default () => {
 
@@ -41,7 +41,7 @@ export default () => {
                 dataDiv.innerHTML += item;
             });
         } else {
-            document.querySelector('.q-table').innerHTML = "<p>您还没有申请任何一个证书，请前往 <a href='../apply/'>申请证书</a> 页面开始~</p>";
+            document.querySelector('.q-table').innerHTML = "<p>您还没有申请任何一个证书，请前往 <a href='/'>申请证书</a> 页面开始 ~</p>";
         };
 
 
@@ -57,13 +57,12 @@ export default () => {
                     const days = Math.floor(time / (1000 * 60 * 60 * 24));
                     const hours = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                     const minutes = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
-                    const seconds = Math.floor((time % (1000 * 60)) / 1000);
-                    const timeOut = `${days}天 ${hours}小时 ${minutes}分${seconds}`;
+                    const timeOut = `${days} 天 ${hours} 小时 ${minutes} 分`;
                     i.textContent = timeOut;
                 };
             });
         }
-        setInterval(updateGuoqiTimes, 1000);
+        setInterval(updateGuoqiTimes, 60000);
         updateGuoqiTimes();
 
 
@@ -81,7 +80,7 @@ export default () => {
                 const blob = new Blob([pem], { type: 'application/x-pem-file' });
                 const downloadLink = document.createElement('a');
                 downloadLink.href = window.URL.createObjectURL(blob);
-                downloadLink.download = 'ZSencrypt_' + domains + '.pem';
+                downloadLink.download = 'Simcert_' + domains + '.pem';
                 document.body.appendChild(downloadLink);
                 downloadLink.click();
                 document.body.removeChild(downloadLink);
@@ -102,7 +101,7 @@ export default () => {
                 const blob = new Blob([pem], { type: 'application/x-key-file' });
                 const downloadLink = document.createElement('a');
                 downloadLink.href = window.URL.createObjectURL(blob);
-                downloadLink.download = 'ZSencrypt_' + domains + '.key';
+                downloadLink.download = 'Simcert_' + domains + '.key';
                 document.body.appendChild(downloadLink);
                 downloadLink.click();
                 document.body.removeChild(downloadLink);
@@ -118,7 +117,7 @@ export default () => {
                 if (confirm('您确定要删除吗？此操作将不可逆 ...')) {
                     data.splice(dataIndex, 1);
                     localStorage.setItem('q-manageDataPairs', JSON.stringify(data));
-                    zsQ.tc('正在删除 ...', 1000);
+                    tc('正在删除 ...', 1000);
                     setTimeout(() => {
                         window.location.reload();
                     }, 1500);
@@ -134,34 +133,31 @@ export default () => {
                 const domainPre = document.getElementById('td-domain-' + dataIndex);
 
                 const domains = domainPre.textContent || domainPre.innerText;
-                window.location.href = `/apply/?domain=${domains}&type=0`;
+                window.location.href = `/?domain=${domains}&type=0`;
             });
         });
 
-    }, []);
+    });
 
     return (<>
 
         <Head>
-            <title>{`证书管理 | ${zsQ.title}`}</title>
+            <title>{`证书管理 - ${dTitle}`}</title>
         </Head>
-        <Page type='w100'>
-            <span id='tagid'>manage</span>
-            <h1 className='display-5 mb-5'>证书管理</h1>
-            <div className='q-table'>
-                <table className="table table-bordered m-0 p-0">
-                    <thead>
-                        <tr>
-                            <td>序号</td>
-                            <td>域名</td>
-                            <td>预计到期时间</td>
-                            <td>操作</td>
-                        </tr>
-                    </thead>
-                    <tbody id="dataDiv"></tbody>
-                </table>
-            </div>
-        </Page>
+        <h1 className='display-5 fw-bold mb-4'>证书管理</h1>
+        <div className='q-table'>
+            <table>
+                <thead>
+                    <tr>
+                        <td>序号</td>
+                        <td>覆盖域名</td>
+                        <td>预计到期时间</td>
+                        <td>操作</td>
+                    </tr>
+                </thead>
+                <tbody id="dataDiv"></tbody>
+            </table>
+        </div>
 
     </>)
 };

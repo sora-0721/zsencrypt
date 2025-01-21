@@ -1,4 +1,4 @@
-import { zsQ } from "@components/main";
+import { tc } from "@components/main";
 
 /* 
  * =====================================================
@@ -8,7 +8,7 @@ import { zsQ } from "@components/main";
  * ===== Optimize by: wxy (github.com/wxy-dev) =========
  * =====================================================
  * ================== LICENSE: GPLv3 ===================
- * =========== github.com/zeoseven/zsencrypt ===========
+ * =========== github.com/zeoseven/certple ===========
  * =====================================================
  */
 
@@ -217,7 +217,7 @@ value="${i0}_${i}" challidx="${chall.challIdx}">${chall.name}
             boxEl.append(`
 <div class="itemBox my-5" style="border: #ccc 1px solid; border-radius: 10px;">
 <div class="pd FlexBox">
-<div style="background-color: #00ff6e25; border: none; padding: 16px 32px; border-radius: 10px 10px 0px 0px;" class="mb-3 fw-bold">${domain}</div>
+<div style="background-color: #33333325; color: #333; border: none; padding: 16px 32px; border-radius: 10px 10px 0px 0px;" class="mb-3 fw-bold">${domain}</div>
 <div class="FlexItem" style="padding: 0 32px;">${choiceHtml}</div>
 </div>
 <div class="verifyItemBox_${i0}" style="padding: 0 32px;"></div>
@@ -238,7 +238,7 @@ value="${i0}_${i}" challidx="${chall.challIdx}">${chall.name}
 <div class="fs-14" style="${nameCss}">${Lang('主机记录：', '')}</div>
 <div class="FlexItem">
 <input class="form-control fs-13 q-form" readonly value="_acme-challenge.${auth.identifier.value}" />
-<p class="fs-12 color-9">对于 DNS 记录验证的必读文档段落：<a href="/documents/#主机记录格式" target="_blank">文档 - 主机记录格式</a></p>
+<p class="fs-12 color-9">对于 DNS 记录验证的必读文档段落：<a href="/docs/#主机记录格式" target="_blank">文档 - 主机记录格式</a></p>
 </div>
 </div>
 <div class="pd FlexBox mb-3">
@@ -936,7 +936,7 @@ value="${i0}_${i}" challidx="${chall.challIdx}">${chall.name}
             //全部验证成功
             var verifyOK = function () {
 
-                zsQ.tc('验证成功，正在颁发 ...');
+                tc('验证成功，正在颁发 ...');
 
                 CLog(tag, 0, "Verify OK!");
                 verifyEnd();
@@ -1107,7 +1107,7 @@ value="${i0}_${i}" challidx="${chall.challIdx}">${chall.name}
             var url = URL.createObjectURL(new Blob([val], { "type": "text/plain" }));
             var downA = document.createElement("A");
             downA.href = url;
-            downA.download = "ZSEncrypt_" + fileName;
+            downA.download = "Certple_" + fileName;
             downA.click();
         };
         window.downloadFileNameShow = function (name) {//显示下载文件名称，优先使用手动设置的默认名称
