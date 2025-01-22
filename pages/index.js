@@ -155,6 +155,21 @@ export default () => {
 
 
 
+        let userStart = false;
+        document.querySelectorAll('input').forEach(function (input) {
+            input.addEventListener('input', function () {
+                userStart = true;
+            });
+        });
+        window.addEventListener('beforeunload', function (e) {
+            if (userStart) {
+                (e || window.event).returnValue = '你所做的更改可能未保存。';
+            };
+        });
+
+
+
+
 
 
 

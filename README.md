@@ -10,13 +10,27 @@ Certple 的目的是提供一个简单快速申请有效 TLS/SSL 证书的客户
 
 <a href="https://certple.zeoseven.com/home/#开始">前往 certple.zeoseven.com 开始申请！</a>
 
-## 私有化部署
-
-你可以前往 <a href="https://github.com/zeoseven/certple/releases">Release</a> 直接下载 Certple_Private-Build.zip 即可获得已经构建好的**私有化版本**，它是**完全静态的**，保留了其中的文档，并且所有资源都将在本地获取，当然，除非你想要使用最新版本。
-
-将位于 `pages/_app.js` 中的 `<Script src="https://webstatic.zeoseven.com/main.js" defer></Script>` 删除，即可获得完全私有化的 Certple 客户端。
+## 私有化
 
 需要： Node.js 18.17 及以上。
+
+### 私有化部署
+
+你可以前往 <a href="https://github.com/zeoseven/certple/releases">Releases</a> 直接下载 **Certple_Private-Build.zip** 即可获得已经构建好的**私有化版本**，它是**完全静态的**，你可以开设一个本地服务器来运行它，就像：
+
+```
+npm i serve -g
+```
+
+```
+serve
+```
+
+保留了其中的文档，并且核心资源都将在本地获取，当然，除非你想要使用最新版本。
+
+### 私有化构建
+
+将位于 `pages/_app.js` 中的 `<Script src="https://webstatic.zeoseven.com/main.js" defer></Script>` 删除，即可获得完全私有化的 Certple 客户端。
 
 ```
 npm i

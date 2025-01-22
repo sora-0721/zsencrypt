@@ -80,7 +80,7 @@ export default () => {
                 const blob = new Blob([pem], { type: 'application/x-pem-file' });
                 const downloadLink = document.createElement('a');
                 downloadLink.href = window.URL.createObjectURL(blob);
-                downloadLink.download = 'Simcert_' + domains + '.pem';
+                downloadLink.download = 'Certple_' + domains + '.pem';
                 document.body.appendChild(downloadLink);
                 downloadLink.click();
                 document.body.removeChild(downloadLink);
@@ -101,7 +101,7 @@ export default () => {
                 const blob = new Blob([pem], { type: 'application/x-key-file' });
                 const downloadLink = document.createElement('a');
                 downloadLink.href = window.URL.createObjectURL(blob);
-                downloadLink.download = 'Simcert_' + domains + '.key';
+                downloadLink.download = 'Certple_' + domains + '.key';
                 document.body.appendChild(downloadLink);
                 downloadLink.click();
                 document.body.removeChild(downloadLink);
