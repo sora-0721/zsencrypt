@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Script from 'next/script';
 import { useRouter } from 'next/router';
-import { use, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import '@components/main.css';
 import { dTitle } from '@components/main';
 
@@ -49,7 +49,7 @@ export default function ({ Component, pageProps }) {
 
     useEffect(() => {
         window.innerWidth < mdBreakpoint && setNavbarDisplay("d-none");
-    }, [router.pathname])
+    }, [router.pathname]);
 
     useEffect(() => {
 
