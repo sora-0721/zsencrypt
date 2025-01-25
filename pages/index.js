@@ -192,6 +192,7 @@ export default () => {
             clearTimeout(timer_1);
             clearTimeout(timer_2);
             clearTimeout(timer_3);
+            userStart = false;
         };
 
 
