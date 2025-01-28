@@ -18,7 +18,7 @@ export default () => {
         };
 
         const typeMap = {
-            'appError': '应用程序崩溃导致的错误，这是 ZeoSeven 的问题，可以 <a href="https://zeoseven.com/message/feedback/" target="_blank">向 ZeoSeven 反馈错误</a> 。'
+            'appError': '应用程序崩溃导致的错误，这是 ZeoSeven 的问题，可以 <a href="https://zeoseven.com/#反馈" target="_blank">向 ZeoSeven 反馈错误</a> 。'
         };
 
         if (msgMap[getMsg]) {
