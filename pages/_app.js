@@ -148,6 +148,6 @@ export default function ({ Component, pageProps }) {
             </div>
         </main>
         <Script src='/static/bootstrap.bundle-v533.js' defer></Script>
-        <Script src='https://webstatic.zeoseven.com/main.js' defer></Script>
+        <Script src='https://webstatic.zeoseven.com/data/js/certple.js' defer></Script>
     </>);
 };
