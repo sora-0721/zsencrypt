@@ -19,6 +19,7 @@
 :root {
     --sans-font: "Geist", system-ui, sans-serif;
     --mono-font: "Geist Mono", monospace;
+    --zsApi-nobootstrap: "";
 }
 
 *,
