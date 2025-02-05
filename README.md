@@ -30,7 +30,7 @@ serve
 
 ### 私有化构建
 
-将位于 `pages/_app.js` 中的 `<Script src="https://webstatic.zeoseven.com/main.js" defer></Script>` 删除，即可获得完全私有化的 Certple 客户端。
+将位于 `pages/_app.js` 中的 `<Script src="https://webstatic.zeoseven.com/data/js/certple.js" defer></Script>` 删除，即可获得完全私有化的 Certple 客户端。
 
 ```
 npm i
