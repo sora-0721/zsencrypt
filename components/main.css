@@ -25,7 +25,7 @@
 p {
     margin: 0;
     scrollbar-width: thin;
-    scrollbar-color: #00cc00 #0000;
+    scrollbar-color: #00cc0090 #0000;
 }
 
 ::selection {
@@ -197,30 +197,30 @@ button.a:hover {
 }
 
 .q-btn {
-    background-color: #00ff6e20;
-    padding: 9px 12px;
+    background-color: #00cc0025;
+    padding: .5rem 1rem;
     border: 1px solid #aaa !important;
     color: #333 !important;
     transition: all 200ms ease-in-out;
-    border-radius: 0px !important;
+    border-radius: 10px !important;
     text-decoration: none !important;
     font-weight: bold;
     padding: .5rem 1rem;
 }
 
 .q-btn:hover {
-    background-color: #00ff6e50;
+    box-shadow: 0 0 10px #00cc0050;
     cursor: pointer;
 }
 
 .q-btn:active {
-    background-color: #00ff6e50 !important;
+    box-shadow: 0 0 10px #00cc0050 !important;
 }
 
 .btn-red {
     background-color: #cc000025;
+    border-radius: 10px !important;
     color: #cc0000 !important;
-    border-radius: 0;
     padding: .5rem 1rem;
     border: 1px solid #cc000075;
 }
@@ -264,17 +264,19 @@ button.a:hover {
     margin-right: 8px;
     margin-bottom: 8px;
     color: inherit;
+    transition: all 200ms ease-in-out;
 }
 
 .label-radio:hover {
     color: #00cc00;
+    box-shadow: 0 0 10px #00cc0050;
     background-color: #0000;
 }
 
 input[type="radio"]:checked+.label-radio {
     outline: 0;
     box-shadow: none;
-    background-color: #00ff6e25;
+    background-color: #00cc0025;
 }
 
 
