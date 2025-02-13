@@ -106,7 +106,7 @@ export default function ({ Component, pageProps }) {
                 <div className={navbarDisplay} id='q-navbar-div'>
                     <div className='q-navbar'>
                         <div className='logo-div'>
-                            <img style={{ width: '100%' }} src='/static/logo/v2/logoa.png' />
+                            <img style={{ width: '100%' }} src='/static/logo/v3/logoa.png' />
                         </div>
                         <div style={{ padding: '0 .5rem' }}>
                             <NavbarItem to="/"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
