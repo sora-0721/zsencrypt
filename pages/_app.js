@@ -67,7 +67,7 @@ export default function ({ Component, pageProps }) {
         <Head>
             <title>{`${dTitle}`}</title>
             <meta name="viewport" content="width=device-width, initial-scale=0.85" />
-            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
             <link rel="icon" href='/favicon.ico' type='image/x-icon' />
         </Head>
         <noscript>
