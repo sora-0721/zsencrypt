@@ -12,9 +12,9 @@ Certple 的目的是提供一个简单快速申请有效 TLS/SSL 证书的客户
 
 ## 私有化
 
-Node.js 18.17 +
+> Node.js 18.17 +
 
-pnpm 10 +
+> pnpm 10 +
 
 ### 私有化部署
 
