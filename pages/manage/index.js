@@ -9,11 +9,11 @@ export default () => {
         const dataDiv = document.getElementById('dataDiv');
 
         const data = JSON.parse(localStorage.getItem('q-manageDataPairs')) || [];
+        const notFound = '未知'
 
         if (data.length !== 0) {
             dataDiv.innerHTML = "";
             data.forEach((d, i) => {
-                const notFound = '未知'
                 const pem = d.cert || notFound;
                 const key = d.key || notFound;
                 const domain = d.domains || notFound;

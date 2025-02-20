@@ -20,7 +20,7 @@ export default () => {
             <div className="mb-5">
                 <p className="fw-bold">如果您感到困惑，还可以观看 Certple 申请证书的全过程(2分钟)视频。</p>
                 <a href="https://www.bilibili.com/video/BV1KRBuYrEjo/" rel="noopener" target="_blank" style={{ position: "relative", display: "inline-block" }}>
-                    <img src="/data/homeVideo.webp" style={{ width: "100%", height: "auto", display: "block", filter: "brightness(0.9)" }} />
+                    <img src="/data/homeVideo.webp" loading='lazy' style={{ width: "100%", height: "auto", display: "block", filter: "brightness(0.9)" }} />
                     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" className="bi bi-play-circle-fill" viewBox="0 0 16 16" style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)" }}>
                         <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z" />
                     </svg>
