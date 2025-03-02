@@ -76,7 +76,7 @@ export default () => {
                 <span> | </span>
                 <Link href="/manage/">证书管理</Link>
                 <span> | </span>
-                <a href="https://www.zeoseven.com/more/" target="_blank">关于 ZeoSeven</a>
+                <a href="https://zeoseven.com/more/" target="_blank">关于 ZeoSeven</a>
             </div>
             <hr className="my-5 mx-0 p-0" />
             <div className="mb-5">
