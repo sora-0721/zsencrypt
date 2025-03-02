@@ -8,7 +8,7 @@ export default function () {
         </Head>
         <SmallPage name="关于 Certple">
             <div className="post mb-5">
-                <p>最早之前， <a href="https://zeoseven.com" target="_blank">ZeoSeven</a> 对 Next.js 的熟练度实际上并不怎么样，制作出的页面样式还不错但功能实际上过度依赖 useEffect 来使用客户端 JS 。</p>
+                <p>最早之前， <a href="https://www.zeoseven.com" target="_blank">ZeoSeven</a> 对 Next.js 的熟练度实际上并不怎么样，制作出的页面样式还不错但功能实际上过度依赖 useEffect 来使用客户端 JS 。</p>
                 <p>2024 年 9 月， <qd>秋</qd> 开发并发布了 <qd>秋的工具箱</qd> ，当然，那只是一通鱼龙混杂的在线工具来练习 React 。</p>
                 <p>2024 年 9 月末， 苦恼于 <qd>ZSFT</qd> 项目 CDN 的 TLS 证书没有特别简单的申请方式，而基于命令行的证书申请方式实在是看不懂一点。开始尝试自己开发一个 TLS 证书的在线申请，虽然已经可以正常工作，但甚至是 ACME 账户私钥都需要手动输入，这仍然不够好。</p>
                 <p>2024 年 11 月， <qd>秋的工具箱</qd> 在 ZeoSeven 官网消失不见，但其中的 <qd>Let's Encrypt 证书申请</qd> 功能被独立了出来，称为 <qd>ZSEncrypt</qd>。证书管理 和 自动化信息处理 功能也在这时被加入。</p>
