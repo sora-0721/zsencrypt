@@ -24,6 +24,17 @@ export default function ({ Component, pageProps }) {
 
 
 
+    useEffect(() => {
+        if (window.location.hostname == "certple.zeoseven.com") {
+            let mainScript = document.createElement('script');
+            mainScript.src = "https://objects.zeoseven.com/main.js";
+            mainScript.defer = true;
+            document.body.appendChild(mainScript);
+        };
+    }, []);
+
+
+
     const [navbarDisplay, setNavbarDisplay] = useState("");
     const mdBreakpoint = 768;
 
@@ -148,6 +159,5 @@ export default function ({ Component, pageProps }) {
             </div>
         </main>
         <Script src='/static/bootstrap.bundle-v533.js' defer></Script>
-        <Script src='https://objects.zeoseven.com/main.js' defer></Script>
     </>);
 };
