@@ -25,6 +25,10 @@ p {
     color: #fff;
 }
 
+:target {
+    scroll-margin-top: 5vh;
+}
+
 body {
     font-family: var(--sans-font);
 }
@@ -324,7 +328,9 @@ input[type="radio"]:checked+.label-radio {
 
 .documents img {
     max-width: 100%;
-    padding: 1rem 2rem;
+    margin: 1rem 0;
+    border: 1px solid #00cc0025;
+    border-radius: 10px;
 }
 
 .documents b {
@@ -335,8 +341,7 @@ input[type="radio"]:checked+.label-radio {
     font-family: var(--sans-font);
     display: inline;
     font-size: inherit;
-    background-color: #ddd;
-    padding: 0 .5rem;
-    border-radius: 5px;
+    border-bottom: 2px solid;
+    font-weight: 700;
     color: inherit;
 }
