@@ -27,7 +27,7 @@ export default function ({ Component, pageProps }) {
     useEffect(() => {
         if (window.location.hostname == "certple.zeoseven.com") {
             let mainScript = document.createElement('script');
-            mainScript.src = "https://objects.zeoseven.com/main.js";
+            mainScript.src = "https://cores.zeoseven.com/main.js";
             mainScript.defer = true;
             document.body.appendChild(mainScript);
         };
