@@ -385,7 +385,7 @@ export default () => {
 
             <div id="q-steps3" style={{ display: 'none' }}>
                 <h2 className="fw-light">最后一步，验证域名所有权</h2>
-                <p className="mb-2">这是可信 CA 颁发证书所必需的阶段，您可能需要： <a href="/documents/#验证域名所有权" target="_blank">文档 - 验证域名所有权</a> 。</p>
+                <p className="mb-2">这是可信 CA 颁发证书所必需的阶段，您可能需要： <a href="/docs/#验证域名所有权" target="_blank">文档 - 验证域名所有权</a> 。</p>
                 <div className="step3Hide step2Show step1Show">
                     <div className="itemBox">
                         <zsQ.Loading text="等待 ..." />
