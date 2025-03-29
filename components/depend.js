@@ -483,7 +483,7 @@ value="${i0}_${i}" challidx="${chall.challIdx}">${chall.name}
             localStorage[ChoiceAcmeURLStoreKey] = url;
             url = ACME.URL = url.replace(/\/$/, "");
 
-            var msg0 = CLog(tag, 0, ShowState(sEl, PleaseWaitTips() + Lang("正在初始化，", " ") + " URL=" + ACME.URL, 2));
+            var msg0 = CLog(tag, 0, ShowState(sEl, Lang("正在初始化 ... ", " ") + ACME.URL, 2));
             var reqDir = function () {
                 ACME.Directory(function (cache, saveCache) {
                     saveCacheCors = function (corsOK, err) {
@@ -516,7 +516,7 @@ value="${i0}_${i}" challidx="${chall.challIdx}">${chall.name}
             //ZeroSSL接口跨域支持太差，发现这种就直接在他们网站里面跑
             var testCORS = function () {
                 if (UserClickSyncKill(id, tag, msg0)) return;
-                msg0 = CLog(tag, 0, ShowState(sEl, PleaseWaitTips() + Lang("正在测试浏览器支持情况，", "") + " URL=" + ACME.URL, 2));
+                msg0 = CLog(tag, 0, ShowState(sEl, Lang("检查客户端环境 ... ", "") + ACME.URL, 2));
                 ACME.GetNonce(true, function () {
                     ACME.TestAccountCORS(function () {
                         CLog(tag, 0, Lang("此 ACME 服务对浏览器的支持良好。", ""));
@@ -669,9 +669,9 @@ value="${i0}_${i}" challidx="${chall.challIdx}">${chall.name}
                 if (!domain) {
                     domains.splice(i, 1); i--; continue;
                 } else if (mp[domain])
-                    return ShowState(sEl, Lang("域名" + domain + "重复！", ""), 1);
+                    return ShowState(sEl, Lang("域名" + domain + "重复 ... ", ""), 1);
                 if (/[:\/;]/.test(domain))//简单校验域名格式
-                    return ShowState(sEl, Lang("域名" + domain + "格式错误！", ""), 1);
+                    return ShowState(sEl, Lang("域名" + domain + "格式错误 ... ", ""), 1);
                 mp[domain] = 1;
             }
             localStorage[InputDomainsStoreKey] = domainsStore ? domains.join(", ") : "";
@@ -727,29 +727,27 @@ value="${i0}_${i}" challidx="${chall.challIdx}">${chall.name}
 
             //ACME账户接口调用
             var acmeNewAccount = function () {
-                var msg0 = CLog(tag, 0, ShowState(sEl, PleaseWaitTips() + Lang("调用 ACME 服务 newAccount 接口：", " ") + ACME.DirData.newAccount, 2));
+                var msg0 = CLog(tag, 0, ShowState(sEl, Lang("初始化 ... ", " ") + ACME.DirData.newAccount, 2));
                 ACME.StepAccount(function () {
                     if (UserClickSyncKill(id, tag, msg0)) return;
                     acmeNewOrder();
                 }, function (err) {
                     if (UserClickSyncKill(id, tag, msg0 + " err: " + err)) return;
-                    CLog(tag, 1, ShowState(sEl, Lang("调用 ACME 服务的 newAccount 接口：", " ")
-                        + ACME.DirData.newAccount + Lang("，发生错误：" + err, ""), 1));
+                    CLog(tag, 1, ShowState(sEl, Lang("发生错误：" + err, ""), 1));
                 });
             };
             //ACME订单创建接口调用
             var acmeNewOrder = function () {
                 var msg0, onProgress = function (tips) {
                     if (id != UserClickSyncID) return;
-                    msg0 = CLog(tag, 0, ShowState(sEl, PleaseWaitTips() + Lang("调用 ACME 服务订单接口。", " ") + ' ' + tips + " URL:" + ACME.DirData.newOrder, 2));
+                    msg0 = CLog(tag, 0, ShowState(sEl, Lang("发送订单 ... ", " ") + ACME.DirData.newOrder, 2));
                 }; onProgress("");
                 ACME.StepOrder(onProgress, function () {
                     if (UserClickSyncKill(id, tag, msg0)) return;
                     acmeOK();
                 }, function (err) {
                     if (UserClickSyncKill(id, tag, msg0 + " err: " + err)) return;
-                    CLog(tag, 1, ShowState(sEl, Lang("调用 ACME 服务订单接口：", "")
-                        + ACME.DirData.newOrder + Lang("，发生错误：" + err, ""), 1));
+                    CLog(tag, 1, ShowState(sEl, Lang("发生错误：" + err, ""), 1));
                 });
             };
             //ACME接口调用完成，显示下一步
