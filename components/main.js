@@ -55,7 +55,7 @@ export const zsQ = {
     },
 
     Loading: ({ text }) => {
-        const t = text || '载入 ...';
+        const t = text || 'Loading ...';
         return (
             <div className="q-font text-center my-5">
                 <span className="spinner-border spinner-border-sm text-danger"></span>
