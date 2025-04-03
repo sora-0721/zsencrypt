@@ -8,7 +8,7 @@ import { tc } from "@components/main";
  * ===== Optimize by: wxy (github.com/wxy-dev) =========
  * =====================================================
  * ================== LICENSE: GPLv3 ===================
- * =========== github.com/zeoseven/certple ===========
+ * ============ github.com/zeoseven/certple ============
  * =====================================================
  */
 
