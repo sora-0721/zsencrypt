@@ -1,0 +1,11 @@
+/*
+    ! Access-Control-Allow-Origin
+    Cache-Control: public, max-age=43200
+
+/static/*
+    ! Cache-Control
+    Cache-Control: public, max-age=31536000, immutable
+
+/_next/static/*
+    ! Cache-Control
+    Cache-Control: public, max-age=31536000, immutable
