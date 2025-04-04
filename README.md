@@ -14,8 +14,6 @@ Certple 的目的是提供一个简单快速申请有效 TLS/SSL 证书的客户
 
 > Node.js 18.17 +
 
-> pnpm 10 +
-
 ### 私有化部署
 
 你可以前往 <a href="https://github.com/zeoseven/certple/releases">Releases</a> 直接下载 Certple_Private-Build 即可获得已经构建好的私有化版本，它是完全静态的，你可以开设一个本地服务器来运行它，就像：
@@ -33,21 +31,21 @@ serve
 ### 私有化构建
 
 ```
-pnpm i
+npm i
 ```
 
 ```
-pnpm run b
+npm run b
 ```
 在这之后，构建文件将出现在 `out/` 文件夹。
 
 当然，如果你并不喜欢等待部署的过程，那么可以直接在启动生产服务器：
 ```
-pnpm run s
+npm run s
 ```
 这将更快的在 localhost:3000 可用。
 
-你可以更改 Certple （使用 `pnpm run d` 启动开发服务器），只要那符合 GPLv3 LICENSE。
+你可以更改 Certple （使用 `npm run d` 启动开发服务器），只要那符合 GPLv3 LICENSE。
 
 ## 许可证
 
