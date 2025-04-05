@@ -39,7 +39,6 @@ export default function () {
                     <p>React: 19.1.0</p>
                     <p>ACME HTML Web Browser Client: 1.0.230820</p>
                     <p>Bootstrap: 5.3.3</p>
-                    <p>Fonts: Geist 1.401</p>
                 </div>
             </div>
         </SmallPage>
