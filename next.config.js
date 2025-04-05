@@ -1,4 +1,5 @@
-module.exports = {
+export default {
     output: 'export',
-    trailingSlash: true
+    trailingSlash: true,
+    devIndicators: false
 };
