@@ -1,16 +1,8 @@
 @import url('/static/bootstrap-v533.css');
 
-@font-face {
-    font-family: "Geist";
-    src: url('/static/fonts/geist/1.4.01/variable.woff2') format('woff2');
-    font-weight: 100 900;
-    font-style: normal;
-    font-display: swap;
-}
-
 :root {
     --sans-font: "Geist", system-ui, sans-serif;
-    --mono-font: "Cascadia Mono", "Consolas", "Menlo", "Ubuntu Mono", "Liberation Mono", "DejaVu Sans Mono", "Roboto Mono", "San Francisco Mono", monospace;
+    --mono-font: "Geist Mono", "Cascadia Mono", "Consolas", "Menlo", "Ubuntu Mono", "Liberation Mono", "DejaVu Sans Mono", "Roboto Mono", "San Francisco Mono", monospace;
 }
 
 *,

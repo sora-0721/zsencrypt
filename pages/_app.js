@@ -27,8 +27,14 @@ export default function ({ Component, pageProps }) {
     useEffect(() => {
         if (window.location.hostname == "certple.zeoseven.com") {
             let mainScript = document.createElement('script');
-            mainScript.src = "https://cores.zeoseven.com/main.js";
+            mainScript.type = "module";
+            mainScript.src = "https://cores.zeoseven.com/main.m.js";
             mainScript.defer = true;
+            mainScript.onload = () => {
+                window._zsApi.init({
+                    geist: true
+                });
+            };
             document.body.appendChild(mainScript);
         };
     }, []);
