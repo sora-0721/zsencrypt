@@ -1,9 +1,9 @@
 {
     "type": "module",
     "scripts": {
-        "d": "next dev",
-        "b": "next build",
-        "s": "next build && next start"
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next build && next start"
     },
     "dependencies": {
         "next": "^15.2.4",

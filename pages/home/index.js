@@ -14,7 +14,7 @@ export default () => {
                 <h1 className="display-5 fw-bold">Certple</h1>
             </div>
             <div className="mb-3">
-                <p className="mb-3">Certple 的目的是提供一个简单快速申请有效 TLS/SSL 证书的客户端，快速为您的站点提供 HTTPS 协议访问，而不是 ACME 自动化。</p>
+                <p className="mb-3">Certple 的目的是提供一个简单快速申请有效 TLS/SSL 证书的开源客户端，快速为您的站点提供 TLS/SSL 加密层(HTTPS)，而不是 ACME 自动化。</p>
                 <p>支持 单域名证书、多域名证书 和 通配符证书，一切来自 <a href="https://letsencrypt.org/" target="_blank">Let's Encrypt</a> !</p>
             </div>
             <div className="mb-5">

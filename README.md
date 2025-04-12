@@ -1,6 +1,6 @@
 # Certple - 简单快速的申请免费 TLS/SSL 证书
 
-Certple 的目的是提供一个简单快速申请有效 TLS/SSL 证书的客户端，快速为您的站点提供 HTTPS 协议访问，而不是 ACME 自动化。
+Certple 的目的是提供一个简单快速申请有效 TLS/SSL 证书的客户端，快速为您的站点提供 TLS/SSL 加密层(HTTPS)，而不是 ACME 自动化。
 
 支持 单域名证书、多域名证书 和 通配符证书，一切来自 <a href="https://letsencrypt.org/">Let's Encrypt</a> !
 
