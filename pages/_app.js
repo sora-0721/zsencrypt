@@ -28,7 +28,7 @@ export default function ({ Component, pageProps }) {
         if (window.location.hostname == "certple.zeoseven.com") {
             let mainScript = document.createElement('script');
             mainScript.type = "module";
-            mainScript.src = "https://cores.zeoseven.com/main.m.js";
+            mainScript.src = "https://cores-v2.zeoseven.com/main.m.js";
             mainScript.defer = true;
             mainScript.onload = () => {
                 window._zsApi.init({
