@@ -35,7 +35,7 @@ export default function () {
                     </>)}
                 </div>
                 <div className="fs-12 color-9">
-                    <p>Next.js: 15.2.4</p>
+                    <p>Next.js: 15.3.0</p>
                     <p>React: 19.1.0</p>
                     <p>ACME HTML Web Browser Client: 1.0.230820</p>
                     <p>Bootstrap: 5.3.3</p>
