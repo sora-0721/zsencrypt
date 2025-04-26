@@ -73,7 +73,7 @@ export const SmallPage = ({ name, children }) => {
         <div className="container">
             <div className="row justify-content-center pt-4">
                 <div className="col-12 col-lg-7">
-                    {name && <h1 className="display-5 fw-bold mb-4">{name}</h1>}
+                    {name && <h1 className="fw-bold mb-4">{name}</h1>}
                     {children}
                 </div>
             </div>

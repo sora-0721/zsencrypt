@@ -79,6 +79,7 @@ button.a:hover {
     position: sticky;
     top: 0;
     height: 100vh;
+    overflow-y: auto;
 }
 
 .q-navbar .item {
@@ -106,11 +107,11 @@ button.a:hover {
 
 .q-navbar .logo-div {
     text-align: center;
-    padding: 1.5rem;
+    padding: 1.5rem 3rem;
     position: sticky;
     top: 0;
     background-color: #0000;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(.5rem);
 }
 
 .navbar-btnDiv {
@@ -185,23 +186,23 @@ button.a:hover {
     border: 1px solid #aaa !important;
     color: #333 !important;
     transition: all 200ms ease-in-out;
-    border-radius: 10px !important;
+    border-radius: .35rem !important;
     text-decoration: none !important;
     font-weight: bold;
 }
 
 .q-btn:hover {
-    box-shadow: 0 0 10px #00cc0050;
+    box-shadow: 0 .5rem 1rem #00cc0050;
     cursor: pointer;
 }
 
 .q-btn:active {
-    box-shadow: 0 0 10px #00cc0050 !important;
+    box-shadow: 0 .5rem 1rem #00cc0050 !important;
 }
 
 .btn-red {
     background-color: #cc000025;
-    border-radius: 10px !important;
+    border-radius: .35rem !important;
     color: #cc0000 !important;
     padding: .5rem 1rem;
     border: 1px solid #cc000075;
@@ -247,11 +248,12 @@ button.a:hover {
     margin-bottom: 8px;
     color: inherit;
     transition: all 200ms ease-in-out;
+    border-radius: .35rem;
 }
 
 .label-radio:hover {
     color: #00cc00;
-    box-shadow: 0 0 10px #00cc0050;
+    box-shadow: 0 .5rem 1rem #00cc0050 !important;
     background-color: #0000;
 }
 

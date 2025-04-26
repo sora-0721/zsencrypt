@@ -313,10 +313,10 @@ export default () => {
                             <label htmlFor="q-privateKey-auto" className="label-radio">自动</label>
 
                             <input type="radio" name="q-privateKey" id="q-privateKey-ecc" value="ecc" className="d-none" />
-                            <label htmlFor="q-privateKey-ecc" className="label-radio">ECC<span className="fs-12"> (效率推荐)</span></label>
+                            <label htmlFor="q-privateKey-ecc" className="label-radio">ECC<span className="fs-12"> 效率推荐</span></label>
 
                             <input type="radio" name="q-privateKey" id="q-privateKey-rsa" value="rsa" className="d-none" />
-                            <label htmlFor="q-privateKey-rsa" className="label-radio">RSA<span className="fs-12"> (兼容性推荐)</span></label>
+                            <label htmlFor="q-privateKey-rsa" className="label-radio">RSA<span className="fs-12"> 兼容性推荐</span></label>
 
                             <input type="radio" name="q-privateKey" id="q-privateKey-user" value="rsa" className="d-none" />
                             <label htmlFor="q-privateKey-user" className="label-radio">自定义</label>
