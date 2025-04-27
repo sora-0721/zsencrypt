@@ -144,7 +144,7 @@ export default () => {
         <Head>
             <title>{`证书管理 - ${dTitle}`}</title>
         </Head>
-        <h1 className='display-5 fw-bold mb-4'>证书管理</h1>
+        <h1 className='fw-bold mb-4'>证书管理</h1>
         <div className='q-table'>
             <table>
                 <thead>
