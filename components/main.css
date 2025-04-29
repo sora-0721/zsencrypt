@@ -9,7 +9,6 @@
 p {
     margin: 0;
     scrollbar-width: thin;
-    scrollbar-color: #00cc0090 #0000;
 }
 
 ::selection {
@@ -212,6 +211,16 @@ button.a:hover {
     background-color: #cc000010;
     cursor: pointer;
     border: 1px solid #cc000075;
+}
+
+
+
+#dataDiv label {
+    font-size: .75rem;
+}
+
+#dataDiv textarea {
+    font-size: .65rem;
 }
 
 
