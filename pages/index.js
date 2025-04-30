@@ -439,16 +439,16 @@ export default () => {
                         <div className="col-6 mb-4">
                             <p className="fw-bold m-0">PEM</p>
                             <textarea className="txt_downloadCert form-control q-form mb-2 fs-14" rows="5" readOnly></textarea>
-                            <a href="javascript:;" className="mainBtn" onClick={() => { downloadBtnClick('Cert') }}>下载 .pem</a>
+                            <a href="#!" className="mainBtn" onClick={() => { downloadBtnClick('Cert') }}>下载 .pem</a>
                             <span className="mx-2">|</span>
-                            <a href="javascript:;" id="x-q-copy-textpem">复制 PEM</a>
+                            <a href="#!" id="x-q-copy-textpem">复制 PEM</a>
                         </div>
                         <div className="col-6 mb-4">
                             <p className="fw-bold m-0">KEY</p>
                             <textarea className="txt_downloadKey form-control q-form mb-2 fs-14" rows="5" readOnly></textarea>
-                            <a href="javascript:;" className="mainBtn" onClick={() => { downloadBtnClick('Key') }}>下载 .key</a>
+                            <a href="#!" className="mainBtn" onClick={() => { downloadBtnClick('Key') }}>下载 .key</a>
                             <span className="mx-2">|</span>
-                            <a href="javascript:;" id="x-q-copy-textkey">复制 KEY</a>
+                            <a href="#!" id="x-q-copy-textkey">复制 KEY</a>
                         </div>
                         <div className="col-12 mt-5">
                             <p className="text-center">

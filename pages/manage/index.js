@@ -25,13 +25,25 @@ export default () => {
                         <td>${domain}</td>
                         <td class="guoqi-time" data-time="${d.time}"></td>
                         <td>
-                            <a href="javascript:;" class="downPem" data-id="${index}">下载 .pem</a>
+                            <a href="#!" class="downPem" data-id="${index}">下载 .pem</a>
                             <span> | </span>
-                            <a href="javascript:;" class="downKey" data-id="${index}">下载 .key</a>
+                            <a href="#!" class="downKey" data-id="${index}">下载 .key</a>
                             <span> | </span>
-                            <a href="javascript:;" class="delete" data-id="${i}">删除</a>
+                            <a href="#!" class="delete" data-id="${i}">删除</a>
                             <span> | </span>
-                            <a href="javascript:;" class="update" data-id="${index}">续期</a>
+                            <a href="#!" class="update" data-id="${index}">续期</a>
+                            <span> | </span>
+                            <a href="#!" data-id="${index}" data-bs-toggle="collapse" data-bs-target="#td-collapse-${index}" aria-expanded="false" aria-controls="td-collapse-${index}">显示源字符串</a>
+                            <div class="collapse" id="td-collapse-${index}">
+                                <div class="pt-4">
+                                    <div class="mb-3">
+                                        <label>证书内容 (PEM)</label>
+                                        <textarea class="form-control" rows="4">${pem}</textarea>
+                                    </div>
+                                    <label>私钥内容 (KEY)</label>
+                                    <textarea class="form-control" rows="4">${key}</textarea>
+                                </div>
+                            </div>
                         </td>
                     </tr>
                     <pre id="td-pem-${index}" class="d-none">${pem}</pre>
