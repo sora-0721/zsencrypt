@@ -7,18 +7,18 @@ function toast(i, time) {
     let toast = document.createElement('div');
     toast.textContent = i;
     toast.style.position = 'fixed';
-    toast.style.top = '20vh';
+    toast.style.top = '10vh';
     toast.style.left = '50%';
-    toast.style.transform = 'translateX(-50%)';
-    toast.style.backgroundColor = '#000';
-    toast.style.color = '#fff';
-    toast.style.padding = '10px 20px';
-    toast.style.zIndex = '3';
-    toast.style.fontSize = '14px';
+    toast.style.backgroundColor = '#fff';
+    toast.style.color = '#000';
+    toast.style.padding = '.5rem 2rem';
+    toast.style.zIndex = '99999';
+    toast.style.fontSize = '13px';
     toast.style.opacity = '0';
     toast.style.border = '1px solid #ccc';
+    toast.style.borderRadius = '1.25rem';
+    toast.style.transform = 'translateX(-50%)';
     toast.style.transition = 'opacity 0.5s';
-    toast.style.boxShadow = '0 0 7px #00000050';
 
     document.body.appendChild(toast);
 
