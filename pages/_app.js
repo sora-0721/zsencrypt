@@ -117,10 +117,10 @@ export default function ({ Component, pageProps }) {
 
 
 
-        <main style={{ height: '100vh', width: '100%' }}>
+        <div style={{ height: '100vh', width: '100%' }}>
             <div style={{ display: 'flex' }}>
 
-                <div className={navbarDisplay} id='q-navbar-div'>
+                <nav className={navbarDisplay} id='q-navbar-div'>
                     <div className='q-navbar'>
                         <div className='logo-div'>
                             <img style={{ width: '100%' }} src='/static/icon.png' loading='lazy' />
@@ -152,18 +152,18 @@ export default function ({ Component, pageProps }) {
                             </svg>GitHub</NavbarItem>
                         </div>
                     </div>
-                </div>
+                </nav>
 
-                <div style={{ flexGrow: '1', overflowY: 'auto' }}>
+                <main style={{ flexGrow: '1', overflowY: 'auto' }}>
                     <div style={{ padding: '.5rem 1rem' }}>
                         <div style={{ paddingBottom: '10vh' }}>
                             <Component {...pageProps} />
                         </div>
                     </div>
-                </div>
+                </main>
 
             </div>
-        </main>
+        </div>
         <Script src='/static/bootstrap.bundle-v533.js' defer></Script>
     </>);
 };
