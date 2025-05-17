@@ -10,6 +10,7 @@ function toast(i, time) {
     toast.style.top = '10vh';
     toast.style.left = '50%';
     toast.style.backgroundColor = '#fff';
+    toast.style.boxShadow = '0 0 1rem #ddd';
     toast.style.color = '#000';
     toast.style.padding = '.5rem 2rem';
     toast.style.zIndex = '99999';
