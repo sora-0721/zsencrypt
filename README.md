@@ -35,17 +35,17 @@ npm i
 ```
 
 ```
-npm run b
+npm run build
 ```
 在这之后，构建文件将出现在 `out/` 文件夹。
 
 当然，如果你并不喜欢等待部署的过程，那么可以直接在启动生产服务器：
 ```
-npm run s
+npm run start
 ```
 这将更快的在 localhost:3000 可用。
 
-你可以更改 Certple （使用 `npm run d` 启动开发服务器），只要那符合 GPLv3 LICENSE。
+你可以更改 Certple （使用 `npm run dev` 启动开发服务器），只要那符合 GPLv3 LICENSE。
 
 ## 许可证
 
