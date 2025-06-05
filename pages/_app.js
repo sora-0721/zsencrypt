@@ -32,7 +32,7 @@ export default function ({ Component, pageProps }) {
             mainScript.defer = true;
             mainScript.onload = () => {
                 window._zsApi.init({
-                    geist: true
+                    fonts: ["Geist"]
                 });
             };
             document.body.appendChild(mainScript);
