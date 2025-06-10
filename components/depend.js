@@ -233,12 +233,14 @@ value="${i0}_${i}" challidx="${chall.challIdx}">${chall.name}
             var html = ['<div class="mt-1" style="font-size:12px;color:#aaa">'];
             var nameCss = 'color: #333;';
             if (chall.type == "dns-01") {
-                html.push(Lang('前往域名权威 DNS 服务器中添加以下 TXT 记录。', ' ') + '</div>');
+                html.push(Lang(`前往域名权威 DNS 服务器中添加以下 TXT 记录，验证前可使用 <a href="https://dns.alidns.com/resolve?type=16&name=${auth.identifier.value}" target="_blank">DNS 查询</a> Authority 或 Answer 是否包含记录值以测试生效性。`, ' ') + '</div>');
                 html.push(`<div class="pd FlexBox my-3">
 <div class="fs-14" style="${nameCss}">${Lang('主机记录：', '')}</div>
 <div class="FlexItem">
 <input class="form-control fs-13 q-form" readonly value="_acme-challenge.${auth.identifier.value}" />
-<p class="fs-12 color-9">对于 DNS 记录验证的必读文档段落：<a href="/docs/#主机记录格式" target="_blank">文档 - 主机记录格式</a></p>
+<div class="fs-12 color-9">
+<p>对于 DNS 记录验证的必读文档段落：<a href="/docs/#主机记录格式" target="_blank">文档 - 主机记录格式</a></p>
+</div>
 </div>
 </div>
 <div class="pd FlexBox mb-3">
