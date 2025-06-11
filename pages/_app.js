@@ -164,6 +164,6 @@ export default function ({ Component, pageProps }) {
 
             </div>
         </div>
-        <Script src='/static/bootstrap.bundle-v533.js' defer></Script>
+        <Script src='/static/bootstrap@5.3.6/bootstrap.bundle.min.js' defer></Script>
     </>);
 };
