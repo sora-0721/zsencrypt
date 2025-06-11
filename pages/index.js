@@ -120,15 +120,15 @@ export default () => {
 
 
     // 记忆域名和邮箱
-    const XqiuInputs = document.querySelectorAll('#x-q-domain, #x-q-email');
-    function XqiuFillInputData() {
-      XqiuInputs.forEach(input => {
-        input.value = localStorage.getItem(input.id) || '';
+    const domainAndEmailInputs = document.querySelectorAll("#x-q-domain, #x-q-email");
+    function fillSavedInputData() {
+      domainAndEmailInputs.forEach(input => {
+        input.value = localStorage.getItem(input.id) || "";
       });
-    }
-    XqiuFillInputData();
-    XqiuInputs.forEach(input => {
-      input.addEventListener('input', () => {
+    };
+    fillSavedInputData();
+    domainAndEmailInputs.forEach(input => {
+      input.addEventListener("input", () => {
         localStorage.setItem(input.id, input.value);
       });
     });
