@@ -1,4 +1,4 @@
-@import url('/static/bootstrap-v533.css');
+@import url('/static/bootstrap@5.3.6/bootstrap.min.css');
 
 :root {
     --sans-font: "Geist", system-ui, sans-serif;
