@@ -25,18 +25,19 @@ export default function ({ Component, pageProps }) {
 
 
     useEffect(() => {
-        if (window.location.hostname == "certple.zeoseven.com") {
-            let mainScript = document.createElement('script');
-            mainScript.type = "module";
-            mainScript.src = "https://cores.zeoseven.com/main.m.js";
-            mainScript.defer = true;
-            mainScript.onload = () => {
-                window._zsApi.init({
-                    fonts: ["Geist"]
-                });
-            };
-            document.body.appendChild(mainScript);
+        const script = document.createElement("script");
+        script.src = "https://cores.zeoseven.com/main.js";
+        script.defer = true;
+        script.onload = () => {
+            window._zsCores.init({
+                fonts: ["Geist"]
+            });
+
+            router.events.on("routeChangeComplete", () => {
+                window._zsCores?.analytics && window._zsCores.analytics();
+            });
         };
+        document.body.appendChild(script);
     }, []);
 
 
