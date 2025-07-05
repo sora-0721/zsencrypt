@@ -2,7 +2,7 @@
 
 :root {
     --sans-font: "Geist", system-ui, sans-serif;
-    --mono-font: "Geist Mono", "Cascadia Mono", "Consolas", "Menlo", "Ubuntu Mono", "Liberation Mono", "DejaVu Sans Mono", "Roboto Mono", "San Francisco Mono", monospace;
+    --mono-font: "Geist Mono", "Lucida Console", ui-monospace, monospace;
 }
 
 *,
