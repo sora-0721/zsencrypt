@@ -1,5 +1,5 @@
 export default {
-    output: 'export',
+    output: "export",
     trailingSlash: true,
     devIndicators: false
 };
