@@ -2358,7 +2358,7 @@ value="${i0}_${i}" challidx="${chall.challIdx}">${chall.name}
             if (!msg) {
                 msg = SupportCrypto ? "browser-old-version" : "no-crypto";
             }
-            window.location.href = '/info/errorPage/?msg=' + encodeURIComponent(msg);
+            window.location.href = '/more/error-page/?msg=' + encodeURIComponent(msg);
             return;
         }
         $(".main").html($(".main").html()); //彻底干掉输入框自动完成

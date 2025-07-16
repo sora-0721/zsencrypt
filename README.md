@@ -1,18 +1,20 @@
-# Certple - 简单快速的申请免费 TLS/SSL 证书
+# Certple
+
+[![License: GPL-3.0](https://img.shields.io/badge/License-MIT-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.txt)
 
 Certple 的目的是提供一个简单快速申请有效 TLS/SSL 证书的客户端，快速为您的站点提供 TLS/SSL 加密层(HTTPS)，而不是 ACME 自动化。
 
 支持 单域名证书、多域名证书 和 通配符证书，一切来自 <a href="https://letsencrypt.org/">Let's Encrypt</a> !
 
-## 立即开始
+## 🚀 立即开始
 
-为了更快，您无需注册任何账户，只需要提供一些 DNS 记录来验证您对域名的所有权，剩下的一切交给 Certple 。
+无需注册任何账户，只需要提供一些 DNS 记录来验证您对域名的所有权，剩下的一切交给 Certple 。
 
 <a href="https://certple.zeoseven.com/home/#开始">前往 certple.zeoseven.com 开始申请！</a>
 
-## 私有化
+## ✨ 私有化
 
-> Node.js 18.18 +
+- Node.js 18.18 +
 
 ### 私有化部署
 
@@ -47,15 +49,10 @@ npm run start
 
 你可以更改 Certple （使用 `npm run dev` 启动开发服务器），只要那符合 GPLv3 LICENSE。
 
-## 许可证
-
-<a href="https://github.com/zeoseven/certple/blob/main/LICENSE">GPLv3</a>
-
-## 文档
+## ❓ 文档
 
 使用文档可以在 <a href="https://certple.zeoseven.com/docs/">certple.zeoseven.com/docs</a> 上查阅。
 
-## 使用的开源软件 & 致谢
+## 📜 许可证
 
-使用的所有开源软件可以在 <a href="https://certple.zeoseven.com/more/">certple.zeoseven.com/more</a> 上查阅。
-
+GPL-3.0 © ZeoSeven

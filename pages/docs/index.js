@@ -52,7 +52,7 @@ export default function () {
                     <H2>首次申请证书</H2>
                     <p>首次申请证书可能相对缓慢，并没有续期时极速颁发的高效率。</p>
                     <p>首先，在 <a href="/" target="_blank">申请证书</a> 页面，您可能会看到这样的内容：</p>
-                    <img src="/data/docs/01.webp" loading='lazy' />
+                    <img src="/static/data/docs/01.webp" loading='lazy' />
 
                     <H4>域名</H4>
                     <p>多个域名以 <qd>英文逗号(,)</qd> 分隔。</p>
@@ -90,12 +90,12 @@ export default function () {
                     <p>以 certple.zeoseven.com 为例，当在输入信息页面点击 “继续” 按钮后， Certple 会输出需要验证的信息详情和选择验证方法。</p>
                     <p>不论什么， Certple 更推荐使用 DNS 记录验证，因为它通常来说相对其它验证方式更容易。</p>
                     <p>输出的信息看起来像这样：</p>
-                    <img src="/data/docs/02.webp" loading='lazy' />
+                    <img src="/static/data/docs/02.webp" loading='lazy' />
                     <p>请先阅读 <A>主机记录格式</A> 了解添加规则，<qd>否则可能在不够智能的 DNS 控制台中导致隐性错误。</qd></p>
                     <p>前往您的域名权威 DNS 服务器中添加 TXT 记录，输出的所有记录值都需要逐个添加，但通常申请的通配符域名证书只需要添加两个 TXT 主机记录。</p>
                     <p><qd>建议在添加全部 TXT 记录后，不要急于点击开始验证按钮，等待 30 秒左右再点击，以缓解 DNS 传播的延迟。</qd>否则如果至多一个记录验证失败，则验证不通过，需要重新添加新的记录值。</p>
                     <p>如果一切顺利，您应该会看到 PEM 和 KEY 的输出页面：</p>
-                    <img src="/data/docs/03.webp" loading='lazy' />
+                    <img src="/static/data/docs/03.webp" loading='lazy' />
 
                 </div>
 
