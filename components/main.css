@@ -108,7 +108,7 @@ button.a:hover {
 
 .q-navbar .logo-div {
     text-align: center;
-    padding: 1.5rem 3rem;
+    padding: 1.5rem 3.25rem .75rem 3.25rem;
     position: sticky;
     top: 0;
     background-color: #0000;

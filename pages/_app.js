@@ -6,6 +6,8 @@ import { useEffect, useState } from 'react';
 import '@components/main.css';
 import { dTitle } from '@components/main';
 
+import packageData from "../package.json";
+
 export default function ({ Component, pageProps }) {
     const router = useRouter();
 
@@ -124,6 +126,7 @@ export default function ({ Component, pageProps }) {
                     <div className='q-navbar'>
                         <div className='logo-div'>
                             <img style={{ width: '100%' }} src='/static/icon.png' loading='lazy' />
+                            <p className='fs-12 pt-2 text-end fst-italic'>{packageData.version}</p>
                         </div>
                         <div style={{ padding: '0 .5rem' }}>
                             <NavbarItem to="/">
