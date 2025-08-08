@@ -38,7 +38,7 @@ export default () => {
                         <p>输入您的域名，不要带 http(s):// 或 www 。</p>
                         <input name="domain" className="form-control q-form" placeholder="example.org" required />
                     </div>
-                    <div className="mt-3 mb-2">
+                    <div className="mt-2 mb-1">
 
                         <input type="radio" name="type" id="q-private1" value="1" className="d-none" defaultChecked />
                         <label htmlFor="q-private1" className="label-radio">

@@ -87,7 +87,7 @@ button.a:hover {
     justify-content: left;
     text-decoration: none;
     padding: .5rem 1rem;
-    font-size: .9rem;
+    font-size: .8rem;
     border-radius: .7rem;
     transition: all 200ms ease-in-out;
     color: #333;
@@ -100,18 +100,22 @@ button.a:hover {
 }
 
 .q-navbar .item svg {
+    width: auto;
+    height: 1.1rem;
     margin-right: 1rem;
     margin-bottom: 0;
 }
 
 .q-navbar .logo-div {
     text-align: center;
-    padding: 1.5rem 3rem;
+    padding: 1.5rem 3.25rem .75rem 3.25rem;
     position: sticky;
     top: 0;
     background-color: #0000;
     backdrop-filter: blur(.5rem);
 }
+
+
 
 .navbar-btnDiv {
     z-index: 2;
@@ -128,6 +132,11 @@ button.a:hover {
     border-radius: 10px;
     background-color: #0000;
     backdrop-filter: blur(5px);
+}
+
+.navbar-btnDiv .navbar-btn svg {
+    width: auto;
+    height: 1.1rem;
 }
 
 
@@ -221,21 +230,6 @@ button.a:hover {
 
 #dataDiv textarea {
     font-size: .65rem;
-}
-
-
-
-.post qd {
-    display: inline;
-    background-color: #ddd;
-    padding: 0 .5rem;
-    border-radius: 5px;
-    font-size: inherit;
-    color: inherit;
-}
-
-.post p {
-    margin-bottom: 1rem;
 }
 
 
