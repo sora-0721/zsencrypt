@@ -1,5 +1,5 @@
 {
-    "version": "2.6.0",
+    "version": "2.6.1",
     "type": "module",
     "scripts": {
         "dev": "next dev",
