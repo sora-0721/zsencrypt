@@ -26,7 +26,7 @@
             "statusCode": 308
         },
         {
-            "source": "/docuuments*",
+            "source": "/documents*",
             "destination": "/docs/",
             "statusCode": 308
         }
