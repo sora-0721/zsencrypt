@@ -16,24 +16,6 @@ export default function ({ Component, pageProps }) {
 
 
 
-    useEffect(() => {
-        const script = document.createElement("script");
-        script.src = "https://cores.zeoseven.com/main.js";
-        script.defer = true;
-        script.onload = () => {
-            window._zsCores.init({
-                fonts: ["Geist"]
-            });
-
-            router.events.on("routeChangeComplete", () => {
-                window._zsCores?.analytics && window._zsCores.analytics();
-            });
-        };
-        document.body.appendChild(script);
-    }, []);
-
-
-
     const NavbarItem = ({ children, to, href }) => {
         if (to) {
             const path = router.pathname;
@@ -66,6 +48,13 @@ export default function ({ Component, pageProps }) {
 
 
     useEffect(() => {
+
+        if (window.location.hostname == "certple.zeoseven.com") {
+            const script = document.createElement("script");
+            script.src = "https://cores.zeoseven.com/main.js";
+            script.defer = true;
+            document.body.appendChild(script);
+        };
 
         window.innerWidth < mdBreakpoint && setNavbarDisplay("d-none");
 
