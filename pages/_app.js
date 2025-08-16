@@ -1,12 +1,15 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import Script from 'next/script';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import '@components/main.css';
-import { dTitle } from '@components/main';
+import { bootstrap } from '@components/bootstrap';
+import '@components/styles/main.css';
+import { dTitle, ImageFix } from '@components/main';
 
+import ICON_IMG from "@components/images/icon.png";
 import packageData from "../package.json";
+
+
 
 export default function ({ Component, pageProps }) {
     const router = useRouter();
@@ -23,24 +26,6 @@ export default function ({ Component, pageProps }) {
             return <a href={href} target='_blank' className="item">{children}</a>
         };
     };
-
-
-
-    useEffect(() => {
-        const script = document.createElement("script");
-        script.src = "https://cores.zeoseven.com/main.js";
-        script.defer = true;
-        script.onload = () => {
-            window._zsCores.init({
-                fonts: ["Geist"]
-            });
-
-            router.events.on("routeChangeComplete", () => {
-                window._zsCores?.analytics && window._zsCores.analytics();
-            });
-        };
-        document.body.appendChild(script);
-    }, []);
 
 
 
@@ -63,11 +48,21 @@ export default function ({ Component, pageProps }) {
 
 
     useEffect(() => {
+
+        if (window.location.hostname == "certple.zeoseven.com") {
+            const script = document.createElement("script");
+            script.src = "https://cores.zeoseven.com/main.js";
+            script.defer = true;
+            document.body.appendChild(script);
+        };
+
         window.innerWidth < mdBreakpoint && setNavbarDisplay("d-none");
+
     }, []);
 
     useEffect(() => {
         window.innerWidth < mdBreakpoint && setNavbarDisplay("d-none");
+        bootstrap();
     }, [router.pathname]);
 
     useEffect(() => {
@@ -87,24 +82,26 @@ export default function ({ Component, pageProps }) {
             <title>{`${dTitle}`}</title>
             <meta name="viewport" content="width=device-width, initial-scale=0.85" />
             <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-            <link rel="icon" href='/favicon.ico' type='image/x-icon' />
+            <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         </Head>
         <noscript>
             <div style={{
-                position: 'fixed',
+                position: "fixed",
                 top: 0,
                 left: 0,
-                width: '100vw',
-                height: '100vh',
-                zIndex: 4,
-                backgroundColor: '#ffffff70',
-                paddingTop: '33vh',
-                textAlign: 'center',
-                backdropFilter: 'blur(10px)'
+                width: "100vw",
+                height: "100vh",
+                zIndex: 5,
+                backgroundColor: "#ffffff70",
+                backdropFilter: "blur(1rem)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                color: "#000000",
+                textAlign: "center"
             }}>
-                <div style={{ padding: '0 5vw' }}>
-                    <h1 style={{ color: '#cc0000', fontWeight: '700' }}>Certple 需要 JavaScript 才能正常工作。</h1>
-                    <h2 style={{ color: '#000000', fontWeight: '300' }}>请开启 JavaScript 后刷新页面。</h2>
+                <div style={{ padding: "0 5vw", fontFamily: "system-ui" }}>
+                    <p>Certple 需要 JavaScript 才能正常工作，尝试开启浏览器 JavaScript 后刷新页面。</p>
                 </div>
             </div>
         </noscript>
@@ -123,10 +120,10 @@ export default function ({ Component, pageProps }) {
             <div style={{ display: 'flex' }}>
 
                 <nav className={navbarDisplay} id='q-navbar-div'>
-                    <div className='q-navbar'>
-                        <div className='logo-div'>
-                            <img style={{ width: '100%' }} src='/static/icon.png' loading='lazy' />
-                            <p className='fs-12 pt-2 text-end fst-italic'>{packageData.version}</p>
+                    <div className="q-navbar">
+                        <div className="logo-div">
+                            <ImageFix src={ICON_IMG} alt="Certple Icon" style={{ width: "100%", height: "auto" }} />
+                            <p className='fs-12 pt-2 text-end fst-italic fw-bold'>{packageData.version}</p>
                         </div>
                         <div style={{ padding: '0 .5rem' }}>
                             <NavbarItem to="/">
@@ -183,6 +180,5 @@ export default function ({ Component, pageProps }) {
 
             </div>
         </div>
-        <Script src="/static/bootstrap@5.3.7/bootstrap.bundle.min.js" defer></Script>
     </>);
 };

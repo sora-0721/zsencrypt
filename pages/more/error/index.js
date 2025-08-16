@@ -6,10 +6,8 @@ export default () => {
 
     useEffect(() => {
 
-        const getMsg = zsQ.getQuery('msg') || null;
-        const getType = zsQ.getQuery('type') || null;
+        const getMsg = zsQ.getQuery('q') || null;
         const msgDiv = document.getElementById('msg');
-        const typeDiv = document.getElementById('type');
 
         const msgMap = {
             'no-https': '正在使用非 https:// 的不安全协议访问，无法启用 Crypto 。',
@@ -17,19 +15,11 @@ export default () => {
             'no-crypto': '您的浏览器不支持 Web Cryptography API ，请更新浏览器或使用推荐的 Google® Chrome 。',
         };
 
-        const typeMap = {
-            'appError': '应用程序崩溃导致的错误，这是 Certple 的问题。'
-        };
-
         if (msgMap[getMsg]) {
             msgDiv.innerHTML = msgMap[getMsg];
         } else {
             msgDiv.innerHTML = `未知错误：<code>${getMsg}</code>`;
         };
-
-        if (typeMap[getType]) {
-            typeDiv.innerHTML = typeMap[getType];
-        }
 
     }, []);
 

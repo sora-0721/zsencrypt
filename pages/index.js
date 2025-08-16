@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import depend from '@components/depend';
+import depend from '@components/core';
 import { zsQ, dTitle, copy, SmallPage } from '@components/main';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';

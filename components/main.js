@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export const dTitle = 'Certple';
 
 
@@ -80,4 +82,8 @@ export const SmallPage = ({ name, children }) => {
             </div>
         </div>
     );
-}
+};
+
+
+
+export const ImageFix = Image.default || Image;
