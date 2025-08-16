@@ -5,10 +5,16 @@ export default {
     images: {
         unoptimized: true
     },
-    webpack: (config, { isServer }) => {
-        if (!isServer) {
-            config.output.chunkFilename = "chunks/[contenthash].js";
-            config.output.filename = "static/chunks/[contenthash].js";
+    webpack: (config, { isServer, dev }) => {
+        if (!isServer && !dev) {
+            config = {
+                ...config,
+                output: {
+                    ...config.output,
+                    chunkFilename: "chunks/[contenthash].js",
+                    filename: "static/chunks/[contenthash].js"
+                }
+            }
         };
         return config;
     }
