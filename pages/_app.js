@@ -171,7 +171,7 @@ export default function ({ Component, pageProps }) {
                 </nav>
 
                 <main style={{ flex: "1", overflow: "auto" }}>
-                    <div style={{ padding: ".5rem 1rem", minWidth: "480px", minHeight: "100vh" }}>
+                    <div style={{ padding: ".5rem 1rem", minWidth: "320px", minHeight: "100vh" }}>
                         <div style={{ paddingBottom: "10vh" }}>
                             <Component {...pageProps} />
                         </div>
