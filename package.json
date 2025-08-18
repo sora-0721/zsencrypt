@@ -1,5 +1,5 @@
 {
-    "version": "2.6.2-alpha",
+    "version": "2.6.3-canary",
     "type": "module",
     "scripts": {
         "dev": "next dev",
