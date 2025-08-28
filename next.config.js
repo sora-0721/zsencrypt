@@ -1,3 +1,5 @@
+import crypto from "crypto";
+
 export default {
     output: "export",
     trailingSlash: true,
@@ -28,3 +30,4 @@ export default {
         "builder/" + crypto.createHash("md5").update(String(Date.now())).digest("hex").slice(0, 16)
     )
 };
+
