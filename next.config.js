@@ -1,3 +1,5 @@
+import crypto from "crypto";
+
 export default {
     output: "export",
     trailingSlash: true,
@@ -11,11 +13,21 @@ export default {
                 ...config,
                 output: {
                     ...config.output,
-                    chunkFilename: "chunks/[contenthash].js",
-                    filename: "static/chunks/[contenthash].js"
+                    filename: (context) => {
+                        const name = context.chunk?.name?.includes("pages/");
+                        if (name) {
+                            return "static/chunks/[contenthash].js";
+                        } else {
+                            return "static/vendors/[contenthash].js";
+                        };
+                    }
                 }
             }
         };
         return config;
-    }
+    },
+    generateBuildId: async () => (
+        "builder/" + crypto.createHash("md5").update(String(Date.now())).digest("hex").slice(0, 16)
+    )
 };
+
