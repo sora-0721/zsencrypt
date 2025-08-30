@@ -1,4 +1,4 @@
-import crypto from "crypto";
+import Crypto from "crypto";
 
 export default {
     output: "export",
@@ -27,7 +27,8 @@ export default {
         return config;
     },
     generateBuildId: async () => (
-        "builder/" + crypto.createHash("md5").update(String(Date.now())).digest("hex").slice(0, 16)
+        "builder/" + Crypto.randomBytes(8).toString("hex")
     )
 };
+
 
