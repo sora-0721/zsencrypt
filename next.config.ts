@@ -14,13 +14,14 @@ export default {
                 output: {
                     ...config.output,
                     filename: (context) => {
-                        const name = context.chunk?.name?.includes("pages/");
-                        if (name) {
+                        const isChunks = context.chunk?.name?.includes("pages/") || context.chunk?.name?.includes("app/");
+                        if (isChunks) {
                             return "static/chunks/[contenthash].js";
                         } else {
                             return "static/vendors/[contenthash].js";
                         };
-                    }
+                    },
+                    chunkFilename: "static/chunks/[contenthash].js"
                 }
             }
         };
