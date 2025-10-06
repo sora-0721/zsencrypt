@@ -68,12 +68,29 @@ export default function ({ Component, pageProps }) {
     useEffect(() => {
 
         const navbarBtn = document.querySelector(".navbar-btn");
-        navbarBtn.addEventListener("click", () => {
-            navbarDisplay == "" ? setNavbarDisplay("d-none") : setNavbarDisplay("");
-        });
-        window.addEventListener("resize", () => {
-            window.innerWidth < mdBreakpoint && setNavbarDisplay("d-none");
-        });
+
+        const handleClick = () => {
+            setNavbarDisplay(prev => prev === "" ? "d-none" : "");
+        };
+
+        const handleResize = () => {
+            if (window.innerWidth < mdBreakpoint) {
+                setNavbarDisplay("d-none");
+            };
+        };
+
+        if (navbarBtn) {
+            navbarBtn.addEventListener("click", handleClick);
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            if (navbarBtn) {
+                navbarBtn.removeEventListener("click", handleClick);
+            };
+            window.removeEventListener("resize", handleResize);
+        };
 
     });
 
