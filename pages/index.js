@@ -300,7 +300,7 @@ export default () => {
           </div>
 
           <p className="no-a">
-            <a data-bs-toggle="collapse" href="#g" role="button" aria-expanded="false" aria-controls="g">
+            <a data-bs-toggle="collapse" href="#g">
               高级选项
             </a>
           </p>
