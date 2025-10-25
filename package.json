@@ -1,12 +1,12 @@
 {
-    "version": "2.7.1",
+    "version": "2.7.2-alpha.1",
     "type": "module",
     "scripts": {
         "dev": "next dev",
         "build": "next build"
     },
     "dependencies": {
-        "next": "15.5.4",
+        "next": "16.0.0",
         "react": "19.2.0",
         "react-dom": "19.2.0"
     }

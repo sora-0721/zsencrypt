@@ -58,11 +58,12 @@ export default function ({ Component, pageProps }) {
 
         window.innerWidth < mdBreakpoint && setNavbarDisplay("d-none");
 
+        bootstrap();
+
     }, []);
 
     useEffect(() => {
         window.innerWidth < mdBreakpoint && setNavbarDisplay("d-none");
-        bootstrap();
     }, [router.pathname]);
 
     useEffect(() => {
