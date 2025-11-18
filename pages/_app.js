@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { bootstrap } from '@components/bootstrap';
+import "bootstrap/dist/css/bootstrap.min.css";
 import '@components/styles/main.css';
 import { dTitle, ImageFix } from '@components/main';
 
@@ -58,7 +58,7 @@ export default function ({ Component, pageProps }) {
 
         window.innerWidth < mdBreakpoint && setNavbarDisplay("d-none");
 
-        bootstrap();
+        import("bootstrap");
 
     }, []);
 

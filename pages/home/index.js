@@ -11,7 +11,7 @@ export default () => {
         <SmallPage>
             <div className="mb-5">
                 <p className="fs-12 color-9">原名 ZSEncrypt</p>
-                <h1 className="display-5 fw-bold">Certple</h1>
+                <h1 className="display-5" style={{ fontWeight: "900" }}>Certple</h1>
             </div>
             <div className="mb-3">
                 <p className="mb-3">Certple 的目的是提供一个简单快速申请有效 TLS/SSL 证书的开源客户端，快速为您的站点提供 TLS/SSL 加密层(HTTPS)，而不是 ACME 自动化。</p>
@@ -72,13 +72,13 @@ export default () => {
             </div>
             <div className="mb-5">
                 <h4 className="fw-light mb-3">您可能想了解</h4>
-                <Link href="/docs/#极速续期：一直继续">极速续期</Link>
+                <Link href="/docs/#极速续期">极速续期</Link>
                 <span> | </span>
                 <Link href="/docs/#域名格式示例">域名输入格式示例</Link>
                 <span> | </span>
                 <Link href="/manage/">证书管理</Link>
                 <span> | </span>
-                <a href="https://zeoseven.com/more/" target="_blank">关于 ZeoSeven</a>
+                <a href="https://zeoseven.com/about/" target="_blank">关于 ZeoSeven</a>
             </div>
             <hr className="my-5 mx-0 p-0" />
             <div className="mb-5">
