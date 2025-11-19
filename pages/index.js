@@ -204,7 +204,7 @@ export default () => {
       <title>{`申请证书 - ${dTitle}`}</title>
     </Head>
     <SmallPage name="申请证书">
-      <p className='mb-5 fs-14'>需要帮助吗？ ZeoSeven 提供了 <a href='/docs' target='_blank'>文档</a> 和 <a href="https://www.bilibili.com/video/BV1KRBuYrEjo/" rel="noopener" target="_blank">视频</a> 。</p>
+      <p className='mb-5 fs-14'>需要帮助吗？ Certple 提供了 <a href='/docs/' target='_blank'>文档</a> 和 <a href="https://www.bilibili.com/video/BV1KRBuYrEjo/" rel="noopener" target="_blank">视频</a> 。</p>
 
 
 
