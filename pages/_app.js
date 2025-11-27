@@ -2,9 +2,11 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import { dTitle, ImageFix } from '@components/main';
+
+import "@components/styles/fonts/index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import '@components/styles/main.css';
-import { dTitle, ImageFix } from '@components/main';
 
 import ICON_IMG from "@components/images/icon.png";
 import packageData from "../package.json";
