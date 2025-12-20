@@ -5,7 +5,7 @@
             "headers": [
                 {
                     "key": "Cache-Control",
-                    "value": "public, max-age=43200"
+                    "value": "public, max-age=3600"
                 }
             ]
         },
@@ -23,12 +23,12 @@
         {
             "source": "/apply*",
             "destination": "/",
-            "statusCode": 308
+            "statusCode": 301
         },
         {
             "source": "/documents*",
             "destination": "/docs/",
-            "statusCode": 308
+            "statusCode": 301
         }
     ]
 }
