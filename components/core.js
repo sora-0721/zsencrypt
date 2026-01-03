@@ -1,11 +1,11 @@
 import { tc } from "@components/main";
 
-/* 
+/*! 
  * =====================================================
  * === Origin by: xiangyuecn (github.com/xiangyuecn) ===
  * =====================================================
  * ========= Modified by: Qiu (zeoseven.com) ===========
- * ===== Optimize by: wxy (github.com/wxy-dev) =========
+ * ================= Optimize by: wxy ==================
  * =====================================================
  * ================== LICENSE: GPLv3 ===================
  * ============ github.com/zeoseven/certple ============
@@ -233,7 +233,7 @@ value="${i0}_${i}" challidx="${chall.challIdx}">${chall.name}
             var html = ['<div class="mt-1" style="font-size:12px;color:#aaa">'];
             var nameCss = 'color: #333;';
             if (chall.type == "dns-01") {
-                html.push(Lang(`前往域名权威 DNS 服务器中添加以下 TXT 记录，验证前可使用 <a href="https://dns.alidns.com/resolve?type=16&name=${auth.identifier.value}" target="_blank">DNS 查询</a> Authority 或 Answer 是否包含记录值以测试生效性。`, ' ') + '</div>');
+                html.push(Lang(`前往域名权威 DNS 服务器中添加以下 TXT 记录，验证前可使用 <a href="https://dns.alidns.com/resolve?type=16&name=_acme-challenge.${auth.identifier.value}" target="_blank">DNS 查询</a> Answer 是否包含记录值以测试生效性。`, ' ') + '</div>');
                 html.push(`<div class="pd FlexBox my-3">
 <div class="fs-14" style="${nameCss}">${Lang('主机记录：', '')}</div>
 <div class="FlexItem">
