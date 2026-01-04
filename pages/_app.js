@@ -143,7 +143,7 @@ export default function ({ Component, pageProps }) {
                     <div className="q-navbar">
                         <div className="logo-div">
                             <ImageFix src={ICON_IMG} alt="Certple Icon" style={{ width: "100%", height: "auto" }} />
-                            <p className='fs-12 pt-2 text-end fst-italic fw-bold'>{packageData.version}</p>
+                            <p className='fs-12 pt-2 text-end fw-bold'>{packageData.version}</p>
                         </div>
                         <div style={{ padding: '0 .5rem' }}>
                             <NavbarItem to="/">
