@@ -154,7 +154,6 @@ export default () => {
                         </svg><span className="ms-2">清空数据</span>
                     </button>
                 </div>
-                <p className="text-success fw-bold">* 你的更改会立即被保存。</p>
             </div>
             <div className="mb-4">
                 <p>域名 [String]</p>

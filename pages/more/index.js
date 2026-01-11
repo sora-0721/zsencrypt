@@ -20,7 +20,7 @@ export default function () {
                 <p className="h3" style={{ fontFamily: "serif" }}>简单快速的申请免费 TLS/SSL 证书</p>
             </div>
             <div>
-                <p className="mb-4">© 2025 瑶清秋 & 温魏</p>
+                <p className="mb-4">© 2025-2026 qingqiuyao & wxy</p>
                 {hostname && (<>
                     <div className="fs-14 mb-4">
                         <div className="d-flex align-items-center">

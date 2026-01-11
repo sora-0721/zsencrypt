@@ -4,7 +4,6 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { dTitle, ImageFix } from '@components/main';
 
-import "@components/styles/fonts/index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import '@components/styles/main.css';
 
