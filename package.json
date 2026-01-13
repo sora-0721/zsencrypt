@@ -1,9 +1,9 @@
 {
-    "version": "2.7.3-alpha.1",
+    "version": "2.7.3-alpha.2",
     "type": "module",
     "scripts": {
-        "dev": "next dev --webpack",
-        "build": "next build --webpack",
+        "dev": "next dev",
+        "build": "next build",
         "start": "next start"
     },
     "dependencies": {
