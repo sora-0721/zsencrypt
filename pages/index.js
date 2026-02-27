@@ -434,7 +434,7 @@ export default () => {
           <div className="row">
             <div className="col-12 mb-3">
               <h2 className="fw-light">结果输出</h2>
-              <p className="mb-3 fs-14">证书的 PEM 和 KEY 已经保存到 <a href="/manage">证书管理</a> 。</p>
+              <p className="mb-3 fs-14">证书的 PEM 和 KEY 已经保存到 <a href="/manage/">证书管理</a> 。</p>
             </div>
             <div className="col-6 mb-4">
               <p className="fw-bold m-0">PEM</p>
