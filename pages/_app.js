@@ -13,7 +13,32 @@ import packageData from "../package.json";
 
 
 export default function ({ Component, pageProps }) {
+
+    const [VERSION, SET_VERSION] = useState(packageData.version);
+
     const router = useRouter();
+
+
+
+    useEffect(() => {
+
+        if (window.location.hostname == "certple.zeoseven.com") {
+            const script = document.createElement("script");
+            script.src = "https://cores.zeoseven.com/main.js";
+            script.defer = true;
+            document.body.appendChild(script);
+
+            const GIT_HASH = process.env.NEXT_PUBLIC_GIT_HASH;
+            if (GIT_HASH) {
+                SET_VERSION(i => `${i} (${GIT_HASH})`);
+            };
+        };
+
+        window.innerWidth < mdBreakpoint && setNavbarDisplay("d-none");
+
+        import("bootstrap");
+
+    }, []);
 
 
 
@@ -49,23 +74,10 @@ export default function ({ Component, pageProps }) {
 
 
     useEffect(() => {
-
-        if (window.location.hostname == "certple.zeoseven.com") {
-            const script = document.createElement("script");
-            script.src = "https://cores.zeoseven.com/main.js";
-            script.defer = true;
-            document.body.appendChild(script);
-        };
-
-        window.innerWidth < mdBreakpoint && setNavbarDisplay("d-none");
-
-        import("bootstrap");
-
-    }, []);
-
-    useEffect(() => {
         window.innerWidth < mdBreakpoint && setNavbarDisplay("d-none");
     }, [router.pathname]);
+
+
 
     useEffect(() => {
 
@@ -96,6 +108,8 @@ export default function ({ Component, pageProps }) {
 
     });
 
+
+
     return (<>
         <Head>
             <title>{`${dTitle}`}</title>
@@ -103,6 +117,9 @@ export default function ({ Component, pageProps }) {
             <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
             <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         </Head>
+
+
+
         <noscript>
             <div style={{
                 position: "fixed",
@@ -142,7 +159,7 @@ export default function ({ Component, pageProps }) {
                     <div className="q-navbar">
                         <div className="logo-div">
                             <ImageFix src={ICON_IMG} alt="Certple Icon" style={{ width: "100%", height: "auto" }} />
-                            <p className='fs-12 pt-2 text-end fw-bold'>{packageData.version}</p>
+                            <p>{VERSION}</p>
                         </div>
                         <div style={{ padding: '0 .5rem' }}>
                             <NavbarItem to="/">
@@ -183,7 +200,7 @@ export default function ({ Component, pageProps }) {
                             <NavbarItem href="https://zeoseven.com/sponsors/">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 -960 960 960">
                                     <path d="M440-501Zm0 381L313-234q-72-65-123.5-116t-85-96q-33.5-45-49-87T40-621q0-94 63-156.5T260-840q52 0 99 22t81 62q34-40 81-62t99-22q81 0 136 45.5T831-680h-85q-18-40-53-60t-73-20q-51 0-88 27.5T463-660h-46q-31-45-70.5-72.5T260-760q-57 0-98.5 39.5T120-621q0 33 14 67t50 78.5q36 44.5 98 104T440-228q26-23 61-53t56-50l9 9 19.5 19.5L605-283l9 9q-22 20-56 49.5T498-172l-58 52Zm280-160v-120H600v-80h120v-120h80v120h120v80H800v120h-80Z" />
-                                </svg>赞助
+                                </svg>捐助
                             </NavbarItem>
                         </div>
                     </div>

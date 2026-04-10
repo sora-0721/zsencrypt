@@ -54,6 +54,7 @@ p {
 
 body {
     font-family: var(--sans-font);
+    direction: ltr;
 }
 
 input[type="radio"],
@@ -140,11 +141,23 @@ button.a:hover {
 
 .q-navbar .logo-div {
     text-align: center;
-    padding: 1.5rem 3.25rem .75rem 3.25rem;
+    padding: 1.5rem 0 .75rem 0;
     position: sticky;
     top: 0;
     background-color: #0000;
     backdrop-filter: blur(.5rem);
+}
+
+.q-navbar .logo-div img {
+    padding: 0 3.25rem;
+    margin-bottom: .5rem;
+}
+
+.q-navbar .logo-div p {
+    padding: 0 1.5rem;
+    font-size: .75rem;
+    font-weight: bold;
+    text-align: end;
 }
 
 
