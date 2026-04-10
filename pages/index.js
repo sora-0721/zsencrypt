@@ -10,24 +10,29 @@ export default () => {
 
   // 防止因离开页面导致的中断
   useEffect(() => {
-    let userStart = false;
-    document.querySelectorAll('input').forEach(function (input) {
-      input.addEventListener('input', function () {
-        userStart = true;
-      });
-    });
-    const stopGo = () => {
-      if (userStart) {
-        if (!confirm('确定要离开吗？你所做的一切将会被终止 ...')) {
-          throw false;
-        };
+
+    const onBeforeunload = (event) => {
+      event.preventDefault();
+      event.returnValue = "";
+    };
+
+    const onRouteChangeStart = () => {
+      if (!confirm("确定要离开吗？你所做的一切将会被终止。")) {
+        throw false;
       };
     };
-    router.events.on('routeChangeStart', stopGo);
+
+
+
+    window.addEventListener("beforeunload", onBeforeunload);
+    router.events.on("routeChangeStart", onRouteChangeStart);
+
     return () => {
-      router.events.off('routeChangeStart', stopGo);
+      window.removeEventListener("beforeunload", onBeforeunload);
+      router.events.off("routeChangeStart", onRouteChangeStart);
     };
-  }, [router]);
+
+  }, []);
 
 
 
@@ -155,21 +160,6 @@ export default () => {
 
 
 
-    let userStart = false;
-    document.querySelectorAll('input').forEach(function (input) {
-      input.addEventListener('input', function () {
-        userStart = true;
-      });
-    });
-    window.addEventListener('beforeunload', function (e) {
-      if (userStart) {
-        (e || window.event).returnValue = '你所做的更改可能未保存。';
-      };
-    });
-
-
-
-
 
 
 
@@ -192,7 +182,6 @@ export default () => {
       clearTimeout(timer_1);
       clearTimeout(timer_2);
       clearTimeout(timer_3);
-      userStart = false;
     };
 
 
