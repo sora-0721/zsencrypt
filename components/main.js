@@ -86,4 +86,13 @@ export const SmallPage = ({ name, children }) => {
 
 
 
-export const ImageFix = Image.default || Image;
+export const ImageFix = (props) => {
+    const ImageReplace = Image.default || Image;
+
+    return (
+        <ImageReplace
+            alt=""
+            {...props}
+        />
+    );
+};
