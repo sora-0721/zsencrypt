@@ -7,7 +7,7 @@ export default async () => {
         return response.json();
     }).catch(e => console.log(e));
 
-    const GIT_HASH = repo && repo.object.sha && repo.object.sha.slice(0, 7) || "";
+    const GIT_HASH = repo?.object?.sha?.slice(0, 7) || "";
 
     return {
         output: "export",
