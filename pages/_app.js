@@ -14,8 +14,6 @@ import packageData from "../package.json";
 
 export default function ({ Component, pageProps }) {
 
-    const [VERSION, SET_VERSION] = useState(packageData.version);
-
     const router = useRouter();
 
 
@@ -27,11 +25,6 @@ export default function ({ Component, pageProps }) {
             script.src = "https://cores.zeoseven.com/main.js";
             script.defer = true;
             document.body.appendChild(script);
-
-            const GIT_HASH = process.env.NEXT_PUBLIC_GIT_HASH;
-            if (GIT_HASH) {
-                SET_VERSION(i => `${i} (${GIT_HASH})`);
-            };
         };
 
         window.innerWidth < mdBreakpoint && setNavbarDisplay("d-none");
@@ -159,7 +152,7 @@ export default function ({ Component, pageProps }) {
                     <div className="q-navbar">
                         <div className="logo-div">
                             <ImageFix src={ICON_IMG} alt="Certple Icon" style={{ width: "100%", height: "auto" }} />
-                            <p>{VERSION}</p>
+                            <p>{packageData.version}</p>
                         </div>
                         <div style={{ padding: '0 .5rem' }}>
                             <NavbarItem to="/">
