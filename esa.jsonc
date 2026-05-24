@@ -1,9 +1,5 @@
 {
-    "name": "certple",
-    "installCommand": "npm install",
-    "buildCommand": "npm run build:webpack",
     "assets": {
-        "directory": "./out",
         "notFoundStrategy": "404Page"
     }
 }
